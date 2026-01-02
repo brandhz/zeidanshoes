@@ -1,12 +1,30 @@
 [
   {
-    "id": 1,
-    "nome": "Nike Dunk Low Panda",
-    "marca": "Nike",
-    "preco": "R$ 699,90",
-    "genero": "Unissex",
-    "imagem": "img/nike-dunk-panda.jpg", 
-    "tamanhos_disponiveis": [38, 39, 40, 41, 42],
-    "destaque": true
+    "id_slug": "nike-dunk-low-panda",
+    "Marca": "NIKE",
+    "Produto": "Dunk Low Panda",
+    "Preco_Venda": "R$ 259,90",
+    "Preco_Original": "R$ 1.199,90",
+    "Gênero": "Unissex",
+    "Imagens": [
+      "img/dunk-panda.jpg",
+      "img/dunk-panda-1.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
+    "Descricao": "O ícone do streetwear. Design bicolor clássico em preto e branco que combina com absolutamente tudo. Couro premium e conforto para o dia todo.",
+    "Destaque": true
+  },
+  {
+    "id_slug": "yeezy-slide-onyx",
+    "Marca": "Adidas / Yeezy",
+    "Produto": "Yeezy Slide Onyx",
+    "Preco_Venda": "R$ 999,90",
+    "Gênero": "Unissex",
+    "Imagens": ["img/yeezy.webp"],
+    "Categoria": "Sandália",
+    "Tamanhos": [36, 37, 38, 39, 40, 41],
+    "Descricao": "Conforto supremo com design minimalista.",
+    "Destaque": true
   }
 ]

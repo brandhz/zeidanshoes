@@ -55,6 +55,10 @@
     flex-direction: column !important;
     justify-content: space-between !important;
     height: 100% !important; /* Estica o card até a altura do vizinho mais alto */
+    background: #e6e6e6 !important;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: 420px; /* Altura mínima garantida */
 }
 
 /* O conteúdo de texto cresce para ocupar o buraco vazio */
@@ -65,10 +69,41 @@
     justify-content: flex-start; /* Texto começa no topo */
 }
 
-/* A imagem não pode encolher */
+/* =================================================================
+   AQUI ESTÁ A CORREÇÃO DEFINITIVA DA IMAGEM
+   ================================================================= */
+
+/* A Caixa da Imagem: Altura FIXA e Recorte */
 .product-image-wrap {
-    flex-shrink: 0;
+    width: 100% !important;
+    height: 280px !important; /* Altura fixa (nem muito alta, nem muito baixa) */
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden !important; /* Corta o que sobrar */
+    margin-bottom: 10px !important;
+    padding: 0 !important;
+    border-radius: 8px;
+    background: transparent !important;
 }
+
+/* A Imagem: Preenche tudo com Zoom (Cover) */
+.product-image {
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* O SEGREDO: COVER dá zoom na foto para cobrir todo o espaço */
+    object-fit: cover !important; 
+    
+    /* Centraliza para cortar as bordas de cima/baixo igualmente */
+    object-position: center center !important;
+    
+    display: block !important;
+    border-radius: 8px;
+    margin: 0 !important;
+}
+
+/* ================================================================= */
 
 /* O botão sempre vai para o fundo (chão do prédio) */
 .product-actions {
@@ -138,17 +173,16 @@
     padding-left: 0 !important;
     margin-bottom: 15px;
 }
+
+/* Ajuste Mobile para a Imagem */
+@media (max-width: 600px) {
+    .product-image-wrap {
+        height: 160px !important; /* Menor no celular para não ocupar a tela toda */
+    }
+}
 </style>
   </head>
   <body>
-    <header class="top-bar">
-      <div class="top-bar-inner">
-        <div class="top-message">
-          ENTRE EM CONTATO COM A NOSSA EQUIPE PARA ENCOMENDAR O SEU PERFUME - (31) 99166-8430/(31) 97178-9632
-        </div>
-      </div>
-    </header>
-
     <section id="topo" class="hero">
       <div class="hero-inner">
         <div class="hero-top">
@@ -177,13 +211,6 @@
 
               <a href="contato.html" class="nav-button nav-link">Contato</a>
             </nav>
-          </div>
-
-          <div class="quiz-bar-centered">
-            <a href="consultor.html" class="btn-quiz-gold">
-               <i class="fa-solid fa-wand-magic-sparkles"></i>
-               ENCONTRE O SEU PERFUME
-            </a>
           </div>
 
           <div class="logo-wrap">
@@ -235,7 +262,6 @@
     <main id="inicio" class="page-content">
       <section id="marcas" class="product-section">
         <div class="section-title">Categorias</div>
-
       </section>
 
       <section class="category-filters">
@@ -246,16 +272,18 @@
     <button class="category-btn" data-cat="FEMININO">Feminino</button>
     <button class="category-btn" data-cat="UNISSEX">Unissex</button>
   <div style="width: 100%; height: 5px;"></div>
-    <button class="category-btn" data-cat="ARABE">Árabe</button>
-    <button class="category-btn" data-cat="DESIGNER">Designer</button>
-    <button class="category-btn" data-cat="NICHO">Nicho</button>
   </div>
 </section>
 
       <section id="produtos" class="product-section">
-        <h2 class="section-title">Perfumes</h2>
-        <div id="perfumeGrid" class="product-grid"></div>
-      </section>
+  <h2 class="section-title">TÊNIS & SNEAKERS</h2>
+  <div id="grid-produtos" class="product-grid"></div>
+</section>
+
+<section id="sandalias-section" class="product-section">
+  <h2 class="section-title">SANDÁLIAS & SLIDES</h2>
+  <div id="grid-sandalias" class="product-grid"></div>
+</section>
 
       <section id="historico-section" class="product-section">
         <h2 class="section-title" style="font-size: 15px; margin-bottom: 20px;">
@@ -359,7 +387,7 @@
       
       <div class="footer-inner">
         <a
-          href="https://instagram.com/zeidanparfum"
+          href="https://instagram.com/zeidanshoes"
           target="_blank"
           class="footer-instagram"
         >
@@ -378,114 +406,7 @@
           </div>
         </div>
 </div> 
-  
-      <section class="reviews-section">
-    <div class="section-title" style="margin-bottom: 30px;">
-        <i class="fa-solid fa-star" style="color:#FFD700"></i> QUEM COMPRA, RECOMENDA
-    </div>
 
-    <div class="reviews-wrapper">
-        <div class="reviews-track">
-            
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Gabriel M.</span>
-                    <span class="review-city">Belo Horizonte, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"O Lattafa Asad é top demais! Fixação monstra, durou o dia todo. Atendimento top no Zap."</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Ana Clara S.</span>
-                    <span class="review-city">Contagem, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Chegou super rápido e muito bem embalado. O perfume é original mesmo, podem confiar!"</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Rodrigo F.</span>
-                    <span class="review-city">Betim, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Melhor preço que achei. O site é fácil de encomendar e os meninos me ajudaram a escolher."</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Fernanda L.</span>
-                    <span class="review-city">Betim, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Amei o Club de Nuit! Já virei cliente fiel da Zeidan."</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Lucas P.</span>
-                    <span class="review-city">Contagem, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Entrega relâmpago. Veio com brindes e tudo certinho. Recomendo demais!"</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Gabriel M.</span>
-                    <span class="review-city">Belo Horizonte, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"O Lattafa Asad é idêntico ao Sauvage! Fixação monstra, durou o dia todo. Atendimento top no Zap."</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Ana Clara S.</span>
-                    <span class="review-city">Contagem, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Chegou super rápido e muito bem embalado. O perfume é original mesmo, podem confiar!"</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Rodrigo F.</span>
-                    <span class="review-city">Betim, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Melhor preço que achei. O site é fácil de encomendar e os meninos me ajudaram a escolher."</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Fernanda L.</span>
-                    <span class="review-city">Betim, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Amei o Club de Nuit! Já virei cliente fiel da Zeidan."</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">Lucas P.</span>
-                    <span class="review-city">Contagem, MG</span>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Entrega relâmpago. Veio com brindes e tudo certinho. Recomendo demais!"</p>
-                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
-            </div>
         </div> </div> </section> <div class="payment-bar-container">
 
     <div class="payment-text">FORMAS DE PAGAMENTO</div>
@@ -511,7 +432,7 @@
 </div>
 
 <p class="footer-copy">
-    Copyright ZEIDAN PARFUM - 2025. Todos os direitos reservados.
+    Copyright ZEIDAN SHOES - 2026. Todos os direitos reservados.
 </p>
 
 </footer> </body>

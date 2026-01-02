@@ -11,22 +11,7 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 
   /* --- COR DE FUNDO (Reserva de segurança) --- */
-  background-color: #041739;
-
-  /* --- IMAGEM DE FUNDO --- */
-  /* Aqui colocamos o nome exato que você salvou no GitHub */
-  background-image: url('background.png');
-
-  /* --- CONFIGURAÇÕES VISUAIS --- */
-  background-repeat: no-repeat; /* Não repete a imagem */
-  background-size: cover;       /* Estica para cobrir a tela inteira */
-  background-position: 10% center;  /* Centraliza a imagem horizontalmente e verticalmente */
-  background-attachment: fixed; /* Efeito Parallax: o fundo fica fixo ao rolar */
-
-  color: #ffffff;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+  background-color: #ffffff;
 
 /* Títulos gerais (Categorias, Perfumes, etc) CENTRALIZADOS */
 h1, h2, h3, h4, .section-title {
@@ -35,33 +20,16 @@ h1, h2, h3, h4, .section-title {
   display: block;
   margin: 20px auto 15px;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1cap;
   opacity: 0.9;
-  font-size: 14px;
+  font-size: 30px;
+  color: #000000
 }
 
 /* Remove sublinhados gerais de links */
 a {
   text-decoration: none;
   color: inherit;
-}
-
-/* =========================================
-   BARRA VERMELHA (Topo)
-   ========================================= */
-.top-bar {
-  background-color: #c34733;
-  color: #fff;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.top-bar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 6px 16px;
-  text-align: center;
 }
 
 /* =========================================
@@ -99,7 +67,7 @@ a {
   padding: 0 16px;
   font-size: 14px;
   outline: none;
-  color: #041739;
+  color: #e60505;
 }
 
 .search-btn {
@@ -119,7 +87,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 24px;
-  background: rgba(4, 23, 57, 0.85);
+  background: #e60505;
   padding: 6px 24px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
@@ -167,8 +135,8 @@ a {
   transform: translateX(-50%);
   width: 90vw;
   max-width: 900px;
-  background: #0f1f3c;
-  border: 1px solid rgba(255,255,255,0.1);
+  background: #e60505;
+  border: 1px solid rgba(138, 14, 14, 0.1);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
@@ -244,8 +212,8 @@ a {
   
   /* Cores Padrão (Fundo transparente e borda) */
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .category-btn:hover {
@@ -257,7 +225,7 @@ a {
 /* Botão Ativo (O Branco Cheio) */
 .category-btn.active {
   background-color: #ffffff;
-  color: #041739; /* Azul escuro do seu tema */
+  color: #e60505; /* Azul escuro do seu tema */
   border-color: #ffffff;
   font-weight: 800;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* Brilho chique */
@@ -278,9 +246,10 @@ a {
 
 /* Card - Correção de Links e Cores */
 .product-card {
-  background: rgba(3, 12, 40, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  background: #e6e6e6 !important;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -291,8 +260,8 @@ a {
 
 .product-card:hover {
   transform: translateY(-5px);
-  background: rgba(3, 12, 40, 1);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Sombra maior ao passar mouse */
+  border-color: #000; /* Borda preta ao passar o mouse */
 }
 
 /* Link que envolve o card (se houver) */
@@ -303,28 +272,23 @@ a {
   display: block;
 }
 
-/* Imagem Produto */
 .product-image-wrap {
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    height: 320px !important; /* Aumentei bastante para caber a foto em pé */
+    width: 100% !important;
+    overflow: hidden; /* Garante que não vaze nada */
 }
 
+/* Ajuste fino para a foto ficar centralizada */
 .product-image {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
+    object-position: center center !important; 
 }
 
 /* Infos Produto - Correção de Cores */
 .product-name {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 20px !important;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #fff !important; /* Força Branco */
+  color: #111 !important; /* Força Branco */
   text-decoration: none !important; /* Remove sublinhado */
   min-height: 34px;
   line-height: 1.3;
@@ -341,14 +305,14 @@ a {
 
 /* Classe específica para marca, caso exista */
 .product-brand, .brand-name {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: color: #666 !important;
     text-decoration: none !important;
 }
 
 .product-price {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: #111;
 }
 
 /* =========================================
@@ -389,10 +353,15 @@ a {
    RODAPÉ
    ========================================= */
 .site-footer {
-  background-color: #020a1a;
+  background-color: #000000;
   padding: 40px 20px;
   text-align: center;
   margin-top: auto;
+}
+
+.footer-title {
+  color: #ffffff;
+  font-size: 20px;
 }
 
 .footer-instagram {
@@ -567,14 +536,14 @@ a {
   letter-spacing: 0cap;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 15px;
+  padding-bottom: 0px;
   margin-top: 0;
 }
 
 .product-detail-price {
-  font-size: 28px;
+  font-size: 50px;
   font-weight: 700;
-  color: #6be276; /* Verde destaque */
+  color: #e60505; /* Verde destaque */
   text-align: left !important;
 }
 
@@ -667,8 +636,8 @@ button[onclick*="Comprar"] {
 /* 1. REMOVER O GIGANTESCO GAP DO TOPO */
 /* Puxa a Logo para cima, logo abaixo do menu fixo */
 .logo-wrap {
-  margin-top: 160px !important; /* Reduzido de 120/140px para 90px */
-  margin-bottom: 0 !important; /* Reduz espaço entre logo e conteúdo */
+  margin-top: 200px !important; /* Reduzido de 120/140px para 90px */
+  margin-bottom: 50px !important; /* Reduz espaço entre logo e conteúdo */
 }
 
 /* Garante que o menu fixo fique colado na barra vermelha */
@@ -681,7 +650,7 @@ button[onclick*="Comprar"] {
   width: 100%;
   z-index: 1000;
   
-  padding: 15px 16px;
+  padding: 0px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -699,7 +668,7 @@ button[onclick*="Comprar"] {
 
 /* Estado "Rolando" (Ativado pelo JavaScript) */
 .hero-bar.scrolled {
-  background-color: rgba(4, 23, 57, 0.98); /* Azul Escuro Forte */
+  background-color: #e60505; /* Azul Escuro Forte */
   backdrop-filter: blur(12px);
   
   /* --- A CORREÇÃO MÁGICA --- */
@@ -787,7 +756,7 @@ button[onclick*="Comprar"] {
 
 /* A "Caixinha" (Card) */
 .contact-card {
-  background: rgba(4, 23, 57, 0.85); /* Fundo escuro semi-transparente */
+  background: #474747; /* Fundo escuro semi-transparente */
   backdrop-filter: blur(12px);       /* Efeito de vidro borrado */
   padding: 40px;
   border-radius: 24px;               /* Bordas arredondadas */
@@ -809,7 +778,7 @@ button[onclick*="Comprar"] {
 .contact-title {
   font-size: 22px;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   margin-bottom: 10px;
   color: #fff;
 }
@@ -872,29 +841,32 @@ button[onclick*="Comprar"] {
 /* =========================================
    AJUSTE DE POSIÇÃO NO MOBILE (SEM MUDAR FONTE)
    ========================================= */
-@media (max-width: 600px) {
-  
-  /* 1. Empurra a barra de busca para baixo */
-  .hero-bar {
-    /* 65px deve ser suficiente para limpar as 3 linhas de texto */
-    top: 65px !important; 
+@media (max-width: 768px) {
     
-    background: transparent; /* Garante que não tenha fundo branco tapando */
-    padding: 5px 10px !important;
-  }
+    /* 1. Remove espaço extra do container principal */
+    .hero-bar {
+        padding-top: 10px !important;    /* Cola no topo */
+        padding-bottom: 5px !important; /* Diminui espaço embaixo */
+        gap: 8px !important;            /* Aproxima a Busca do Menu */
+    }
 
-  /* 2. Empurra a Logo mais para baixo ainda */
-  /* Como a busca desceu, a logo precisa descer também para não bater nela */
-  .logo-wrap {
-    margin-top: 150px !important; 
-  }
+    /* 2. Garante que a barra de busca não tenha margem atrapalhando */
+    .search-wrap {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 3. Se quiser subir ainda mais, podemos ajustar a logo também */
+    .logo-wrap {
+        margin-top: 120px !important;
+    }
 }
 
 /* =========================================
    BARRA DE BENEFÍCIOS (Trust Bar - Alinhado)
    ========================================= */
 .benefits-section {
-  background-color: rgba(2, 10, 26, 0.95); 
+  background-color: #000000; 
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 40px 20px;
@@ -913,7 +885,7 @@ button[onclick*="Comprar"] {
   justify-content: center;
   align-items: center; /* Garante alinhamento vertical dos blocos */
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 10px;
 }
 
 /* Cada bloco de benefício */
@@ -1152,7 +1124,8 @@ body::before {
     text-align: center !important;
     margin-bottom: 5px !important;
     font-size: 12px !important;   /* Tamanho da fonte da marca */
-    color: #ccc !important;       /* Cor cinza claro (opcional) */
+    color: #e60505 !important;       /* Cor cinza claro (opcional) */
+    font-weight: bold;
 }
 
 /* 4. O PREÇO (que é um <span>) */
@@ -1164,7 +1137,7 @@ body::before {
     /* Seu estilo bonitão */
     font-size: 20px !important;
     font-weight: 800 !important;
-    color: #ffffff !important;
+    color: #000000 !important;
     
     white-space: nowrap !important; /* Não quebra linha no R$ */
     margin-bottom: 10px !important;
@@ -1559,9 +1532,9 @@ body::before {
 /* 2. Container da Imagem (A área reservada para a foto) */
 .product-image-wrap {
     width: 100% !important;
-    height: 250px !important;      /* ALTURA FIXA: O segredo para alinhar tudo */
+    height: 320px !important;      /* ALTURA FIXA: O segredo para alinhar tudo */
     position: relative !important; /* Para o coração funcionar */
-    overflow: visible !important;  /* Deixa o coração flutuar */
+    overflow: vishiddenible !important;  /* Deixa o coração flutuar */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -2050,3 +2023,4 @@ body::before {
 .zap-text strong { font-size: 14px; }
 .zap-text span { font-size: 11px; color: #888; }
 .zap-arrow { color: #ccc; font-weight: bold; }
+
