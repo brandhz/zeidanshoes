@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia Olfativo | Zeidan Parfum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:title" content="Zeidan Parfum | Perfumes Importados & Decants">
+    <meta property="og:description" content="Encontre sua assinatura olfativa. Frascos lacrados e decants originais com envio para todo o Brasil.">
+    <meta property="og:image" content="https://seusite.com/capa-compartilhamento.jpg"> <meta property="og:url" content="https://seusite.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <link rel="shortcut icon" href="logopequena.png" type="image/x-icon">
+
+    <style>
+        /* Header Compacto */
+    .site-header .hero-inner { padding-top: auto !important; padding-bottom: 0px !important; }
+    .logo { max-width: 200px !important; }
+
+
+        /* CSS ESPECÍFICO DA PÁGINA GUIA */
+        body { background-color: #000000; color: #fff; }
+
+        .guide-hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #004b9c, #002750);
+        }
+        .guide-title {
+            font-size: 2.5rem;
+            color: #daa520;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .guide-subtitle {
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* --- PIRÂMIDE OLFATIVA --- */
+        .pyramid-section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .pyramid-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .pyramid-level {
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .pyramid-level:hover { transform: scale(1.02); }
+        
+        /* Cores dos Níveis */
+        .level-top { background: linear-gradient(45deg, #f0f0f0, #fbfbfb); color: #535353; }
+        .level-heart { background: linear-gradient(45deg, #35599b, #01236e); color: #ffffff; }
+        .level-base { background: linear-gradient(45deg, #efebe9, #d7ccc8); color: #5d4037; }
+
+        .level-title { font-weight: 800; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 5px; }
+        .level-time { font-size: 0.9rem; font-weight: bold; opacity: 0.8; margin-bottom: 10px; display: block; }
+        .level-desc { font-size: 0.95rem; line-height: 1.4; }
+
+        /* --- FAMÍLIAS OLFATIVAS (GRID) --- */
+        .families-section {
+            padding: 60px 20px;
+            background-color: #0a0a0a;
+        }
+        .families-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        .family-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        .family-card:hover {
+            border-color: #C5A059;
+            transform: translateY(-5px);
+            background: #222;
+        }
+        .family-icon {
+            font-size: 40px;
+            color: #C5A059;
+            margin-bottom: 20px;
+        }
+        .family-name {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif; /* Se tiver, senão usa a padrão */
+            letter-spacing: 0.1cap;
+            text-align: left !important;
+        }
+        .family-desc {
+            color: #bbb;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify !important;
+        }
+        .note-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            color: #C5A059;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Botão Voltar */
+        .back-btn-container {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .btn-gold {
+            background: #C5A059;
+            color: #000;
+            padding: 10px 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .btn-gold:hover { background: #fff; box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); }
+    </style>
+  </head>
+  <body>
+
+    <div class="top-bar">
+    <div class="top-bar-inner">
+      <p class="top-message">
+        ENTRE EM CONTATO COM A NOSSA EQUIPE PARA ENCOMENDAR O SEU PERFUME - (31) 99166-8430
+      </p>
+    </div>
+  </div>
+
+  <header class="site-header" style="border-bottom: none; padding: 5px 0; background-color: transparent;">
+        <div class="hero-inner" style="justify-content: center; display: flex; align-items: center;">
+            <a href="index.html" style="display: block;">
+                <img src="logo.png" alt="ZEIDAN PARFUM" class="logo" style="max-width: 200px; height: auto; display: block;" />
+            </a>
+        </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+    <section class="guide-hero">
+        <h1 class="guide-title">Entenda seu Perfume</h1>
+        <p class="guide-subtitle">
+            Você sabe por que alguns perfumes duram mais? Ou por que perfumes doces são melhores no frio? 
+            Descubra os segredos da perfumaria.
+        </p>
+    </section>
+
+    <section class="pyramid-section">
+        <h2 style="text-align: center; color: #fff; margin-top: 0px; margin-bottom: 10px; font-size: 1.5rem; letter-spacing: 0.1cap;">A Pirâmide Olfativa</h2>
+        <p style="text-align: center; color: #c2c2c2; font-size: 0.9rem;">Como o perfume evolui na sua pele ao longo do tempo.</p>
+        
+        <div class="pyramid-container">
+            <div class="pyramid-level level-top">
+                <div class="level-title">1. Notas de Topo (Saída)</div>
+                <span class="level-time">⏱️ Primeiros 15 a 30 minutos</span>
+                <p class="level-desc">
+                    É a primeira impressão. Geralmente são notas frescas, cítricas e voláteis que evaporam rápido. 
+                    É o cheiro que você sente assim que borrifa.
+                </p>
+            </div>
+            
+            <div class="pyramid-level level-heart">
+                <div class="level-title">2. Notas de Coração (Corpo)</div>
+                <span class="level-time">⏱️ Dura de 2 a 4 horas</span>
+                <p class="level-desc">
+                    É a alma do perfume. Aparecem depois que o frescor inicial passa. 
+                    Geralmente são flores, especiarias leves ou frutas mais densas.
+                </p>
+            </div>
+
+            <div class="pyramid-level level-base">
+                <div class="level-title">3. Notas de Fundo (Base)</div>
+                <span class="level-time">⏱️ Dura de 5 até 12 horas+</span>
+                <p class="level-desc">
+                    É o que fixa e deixa rastro. São notas pesadas e oleosas que grudam na pele, 
+                    como madeiras, baunilha, âmbar, couro e almíscar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="families-section">
+        <h2 style="text-align: center; color: #fff; margin-top: 0px; margin-bottom: 10px; font-size: 1.5rem; letter-spacing: 0.1cap;">Guia de Famílias & Notas</h2>
+        <p style="text-align: center; color: #888; margin-bottom: 30px;">Descubra qual combina com sua personalidade.</p>
+
+        <div class="families-grid">
+            
+            <div class="family-card">
+                <div class="family-icon"><i class="fa-regular fa-sun"></i></div>
+                <h3 class="family-name">Cítricos & Frescos</h3>
+                <p class="family-desc">
+                    Energia pura. São perfumes leves, ideais para o calor, academia ou trabalho. 
+                    Trazem sensação de limpeza e banho tomado.
+                </p>
+                <div>
+                    <span class="note-tag">Limão Siciliano</span>
+                    <span class="note-tag">Bergamota</span>
+                    <span class="note-tag">Laranja</span>
+                    <span class="note-tag">Notas Oceânicas</span>
+                </div>
+            </div>
+
+            <div class="family-card">
+                <div class="family-icon"><i class="fa-solid fa-tree"></i></div>
+                <h3 class="family-name">Amadeirados</h3>
+                <p class="family-desc">
+                    Sinônimo de elegância e masculinidade clássica. Passam seriedade, confiança e maturidade. 
+                    Perfeitos para escritório ou encontros formais.
+                </p>
+                <div>
+                    <span class="note-tag">Cedro</span>
+                    <span class="note-tag">Sândalo</span>
+                    <span class="note-tag">Vetiver</span>
+                    <span class="note-tag">Oud</span>
+                </div>
+            </div>
+
+            <div class="family-card">
+                <div class="family-icon"><i class="fa-solid fa-fire"></i></div>
+                <h3 class="family-name">Orientais (Doces)</h3>
+                <p class="family-desc">
+                    Sedução e mistério. São perfumes quentes, intensos e com alta fixação. 
+                    Ideais para a noite, encontros românticos e dias frios.
+                </p>
+                <div>
+                    <span class="note-tag">Baunilha</span>
+                    <span class="note-tag">Fava Tonka</span>
+                    <span class="note-tag">Âmbar</span>
+                    <span class="note-tag">Canela</span>
+                </div>
+            </div>
+
+            <div class="family-card">
+                <div class="family-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h3 class="family-name">Aromáticos (Fougère)</h3>
+                <p class="family-desc">
+                    O clássico "cheiro de homem". Uma mistura de ervas e frescor que agrada todo mundo. 
+                    É o tipo de perfume "coringa" que serve para tudo.
+                </p>
+                <div>
+                    <span class="note-tag">Lavanda</span>
+                    <span class="note-tag">Hortelã</span>
+                    <span class="note-tag">Sálvia</span>
+                    <span class="note-tag">Alecrim</span>
+                </div>
+            </div>
+
+            <div class="family-card">
+                <div class="family-icon"><i class="fa-solid fa-spa"></i></div>
+                <h3 class="family-name">Florais</h3>
+                <p class="family-desc">
+                    Podem ser românticos (rosas) ou sensuais (jasmim). Não são exclusivos femininos! 
+                    Muitos perfumes árabes masculinos usam rosas negras para dar luxo.
+                </p>
+                <div>
+                    <span class="note-tag">Jasmim</span>
+                    <span class="note-tag">Rosa</span>
+                    <span class="note-tag">Flor de Laranjeira</span>
+                    <span class="note-tag">Íris</span>
+                </div>
+            </div>
+
+            <div class="family-card">
+                <div class="family-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3 class="family-name">Couro</h3>
+                <p class="family-desc">
+                    Notas secas que lembram jaqueta de couro, fumaça ou o interior de um carro de luxo. 
+                    São perfumes de personalidade muito forte e marcante.
+                </p>
+                <div>
+                    <span class="note-tag">Couro</span>
+                    <span class="note-tag">Camurça</span>
+                    <span class="note-tag">Tabaco</span>
+                    <span class="note-tag">Bétula</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="back-btn-container">
+    <a href="consultor.html" class="btn-quiz-gold" style="text-decoration: none; padding: 15px 40px; border-radius: 30px; font-weight: bold; background: #C5A059; color: #000; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        DESCOBRIR MEU PERFUME IDEAL
+    </a>
+</div>
+    </section>
+
+    <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="https://instagram.com/zeidanparfum" target="_blank" class="footer-instagram">
+        <img src="instagram.png" alt="Instagram" class="footer-instagram-img">
+      </a>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4 class="footer-title">MENU</h4>
+          <a href="index.html" class="footer-link">Início</a>
+          <a href="contato.html" class="footer-link">Contato</a>
+        </div>
+      </div>
+      <div class="payment-bar-container">
+        <div class="payment-text">FORMAS DE PAGAMENTO</div>
+        <div class="payment-icons">
+          <img src="mastercard.png" alt="Mastercard">
+          <img src="visa.png" alt="Visa">
+          <img src="amex.png" alt="Amex">
+          <img src="elo.png" alt="Elo">
+          <img src="pix.png" alt="Pix">
+        </div>
+        <div class="security-badge-css">
+          <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
+          <div class="security-text-css"><span>SITE</span> <strong>100% SEGURO</strong></div>
+        </div>
+      </div>
+      <p class="footer-copy">Copyright ZEIDAN PARFUM - 2025. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  </body>
+</html>

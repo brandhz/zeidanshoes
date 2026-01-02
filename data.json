@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nome": "Nike Dunk Low Panda",
+    "marca": "Nike",
+    "preco": "R$ 699,90",
+    "genero": "Unissex",
+    "imagem": "img/nike-dunk-panda.jpg", 
+    "tamanhos_disponiveis": [38, 39, 40, 41, 42],
+    "destaque": true
+  }
+]

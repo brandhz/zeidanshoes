@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeidan Parfum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:title" content="Zeidan Parfum | Perfumes Importados & Decants">
+    <meta property="og:description" content="Encontre sua assinatura olfativa. Frascos lacrados e decants originais com envio para todo o Brasil.">
+    <meta property="og:image" content="https://seusite.com/capa-compartilhamento.jpg"> <meta property="og:url" content="https://seusite.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <link rel="shortcut icon" href="logopequena.png" type="image/x-icon">
+
+    <style>
+  /* --- ESTILO PARA CELULAR (Telas menores que 768px) --- */
+  @media (max-width: 768px) {
+    
+    /* Transforma os Benefícios (Pix/Cartão) em Carrossel */
+    .benefits-container {
+      display: flex !important;
+      flex-wrap: nowrap !important;       /* Impede de quebrar linha */
+      overflow-x: auto;                   /* Permite rolar para o lado */
+      gap: 15px;                          /* Espaço entre os cartões */
+      padding: 10px 20px;                 /* Margem interna */
+      justify-content: flex-start !important; /* Começa da esquerda */
+      scroll-snap-type: x mandatory;      /* Efeito de "travar" no cartão */
+      -webkit-overflow-scrolling: touch;  /* Rolagem macia no iPhone */
+    }
+
+    /* Define o tamanho de cada cartão de benefício */
+    .benefit-item {
+      flex: 0 0 85%;        /* Ocupa 85% da largura da tela */
+      scroll-snap-align: center; /* Centraliza ao parar */
+      margin-bottom: 0 !important; /* Remove margem de baixo se tiver */
+      background: rgba(255,255,255,0.05); /* Fundo sutil (opcional) */
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #333; /* Borda fina para destacar */
+    }
+    
+    /* Esconde a barra de rolagem feia */
+    .benefits-container::-webkit-scrollbar { display: none; }
+  }
+
+  /* =========================================
+   1. GLOBAL: ALINHAMENTO PERFEITO DOS CARDS
+   (Aplica na Vitrine E no Histórico)
+   ========================================= */
+
+/* Faz o cartão ocupar toda a altura disponível e organiza em coluna */
+.product-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important; /* Estica o card até a altura do vizinho mais alto */
+}
+
+/* O conteúdo de texto cresce para ocupar o buraco vazio */
+.product-link-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Texto começa no topo */
+}
+
+/* A imagem não pode encolher */
+.product-image-wrap {
+    flex-shrink: 0;
+}
+
+/* O botão sempre vai para o fundo (chão do prédio) */
+.product-actions {
+    margin-top: auto !important; 
+    width: 100%;
+}
+
+/* =========================================
+   2. AJUSTES ESPECÍFICOS DO HISTÓRICO (CORRIGIDO)
+   ========================================= */
+
+/* 1. O Container Pai (Segura o Título e o Carrossel) */
+#historico-section {
+    width: 100%;
+    max-width: 1200px !important; /* Trava a largura igual ao resto do site */
+    margin-left: auto !important; /* Centraliza na tela */
+    margin-right: auto !important; /* Centraliza na tela */
+    padding: 0 10px !important;   /* Margem de segurança nas laterais */
+    box-sizing: border-box;
+}
+
+/* 2. O Carrossel de Produtos */
+#historicoGrid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 8px; /* Espaço entre cards */
+    
+    /* ZERAMOS o padding lateral aqui, pois o container pai já tem! */
+    padding: 10px 0 20px 0 !important; 
+    
+    align-items: stretch !important; 
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start !important;
+    
+    padding-right: 0 !important; 
+}
+
+/* 3. Cards */
+#historicoGrid .product-card {
+    min-width: 160px;
+    max-width: 180px;
+    height: auto !important; 
+    align-self: stretch !important; 
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+/* 4. Elemento Fantasma (Respiro na direita) */
+#historicoGrid::after {
+    content: "";
+    display: block;
+    min-width: 5px; 
+    height: 1px;    
+    flex: 0 0 auto;
+}
+
+/* 5. Scrollbar */
+#historicoGrid::-webkit-scrollbar { height: 4px; }
+#historicoGrid::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 10px; }
+#historicoGrid::-webkit-scrollbar-thumb { background: #737373; border-radius: 10px; }
+
+/* 6. Título (Zera o padding extra para alinhar com a caixa) */
+#historico-section .section-title {
+    padding-left: 0 !important;
+    margin-bottom: 15px;
+}
+</style>
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="top-bar-inner">
+        <div class="top-message">
+          ENTRE EM CONTATO COM A NOSSA EQUIPE PARA ENCOMENDAR O SEU PERFUME - (31) 99166-8430/(31) 97178-9632
+        </div>
+      </div>
+    </header>
+
+    <section id="topo" class="hero">
+      <div class="hero-inner">
+        <div class="hero-top">
+          <div class="hero-bar">
+            
+            <div class="search-wrap">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="O que você está buscando?"
+              />
+              <button class="search-btn" type="button">🔍</button>
+            </div>
+
+            <nav class="main-nav">
+              <button id="homeLink" class="nav-button" type="button">Início</button>
+              <button id="brandsToggle" class="nav-button" type="button">Marcas</button>
+              <a href="guia.html" class="nav-button nav-link" style="color: #ffffff; text-align: center;">Guia</a>
+              
+              <div class="brand-panel" id="brandPanel">
+                <div class="brand-panel-inner">
+                  <div class="brand-panel-header"></div>
+                  <div id="brandColumns" class="brand-columns"></div>
+                </div>
+              </div>
+
+              <a href="contato.html" class="nav-button nav-link">Contato</a>
+            </nav>
+          </div>
+
+          <div class="quiz-bar-centered">
+            <a href="consultor.html" class="btn-quiz-gold">
+               <i class="fa-solid fa-wand-magic-sparkles"></i>
+               ENCONTRE O SEU PERFUME
+            </a>
+          </div>
+
+          <div class="logo-wrap">
+            <img src="logo.png" alt="ZEIDAN PARFUM" class="logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="benefits-section">
+  <div class="benefits-container">
+    
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <i class="fa-regular fa-credit-card"></i>
+      </div>
+      <div class="benefit-info">
+        <h3>PARCELE SEM JUROS!</h3>
+        <p>Todo o site em até 3x sem juros no cartão.</p>
+      </div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <i class="fa-brands fa-pix"></i>
+      </div>
+      <div class="benefit-info">
+        <h3>DESCONTO NO PIX!</h3>
+        <p>Ganhe mais 5% de desconto pagando via Pix.</p>
+      </div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div class="benefit-info">
+        <h3>SITE SEGURO!</h3>
+        <p>Seus dados estão protegidos e criptografados.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </div>
+</section>
+
+    <main id="inicio" class="page-content">
+      <section id="marcas" class="product-section">
+        <div class="section-title">Categorias</div>
+
+      </section>
+
+      <section class="category-filters">
+  <div class="category-inner">
+    <button class="category-btn active" data-cat="TODAS">Todos</button>
+    
+    <button class="category-btn" data-cat="MASCULINO">Masculino</button>
+    <button class="category-btn" data-cat="FEMININO">Feminino</button>
+    <button class="category-btn" data-cat="UNISSEX">Unissex</button>
+  <div style="width: 100%; height: 5px;"></div>
+    <button class="category-btn" data-cat="ARABE">Árabe</button>
+    <button class="category-btn" data-cat="DESIGNER">Designer</button>
+    <button class="category-btn" data-cat="NICHO">Nicho</button>
+  </div>
+</section>
+
+      <section id="produtos" class="product-section">
+        <h2 class="section-title">Perfumes</h2>
+        <div id="perfumeGrid" class="product-grid"></div>
+      </section>
+
+      <section id="historico-section" class="product-section">
+        <h2 class="section-title" style="font-size: 15px; margin-bottom: 20px;">
+            <i class="fa-solid fa-clock-rotate-left"></i> Vistos Recentemente
+        </h2>
+        <div id="historicoGrid" class="product-grid"></div>
+    </section>
+    </main>
+
+    <div id="imageModal" class="image-modal">
+      <div class="image-modal-backdrop"></div>
+      <div class="image-modal-content">
+        <button id="imageModalClose" class="image-modal-close" type="button">
+          ✕
+        </button>
+        <img id="imageModalImg" src="" alt="" />
+      </div>
+    </div>
+
+<div class="cart-floating-btn" onclick="toggleCart()">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span id="cart-count">0</span>
+</div>
+
+<div id="cart-modal" class="cart-modal-overlay">
+  <div class="cart-modal-content">
+    
+    <div class="cart-header">
+      <h3>Minha Sacola</h3>
+      <button onclick="toggleCart()" class="close-cart">✕</button>
+    </div>
+    
+    <div id="cart-items" class="cart-items-container">
+      <p class="empty-msg">Sua sacola está vazia 🛍️</p>
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-total" style="display: flex; justify-content: space-between; margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+    <span style="font-size: 16px; font-weight: 600;">Subtotal:</span>
+    <span id="cart-total-value" style="font-size: 18px; font-weight: 800; color: #000;">R$ 0,00</span>
+</div>
+      <button onclick="finalizarNoZap()" class="btn-whatsapp-checkout">
+        <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido
+      </button>
+      <button onclick="toggleCart()" class="btn-continue">Continuar Comprando</button>
+    </div> </div> </div> <div class="whatsapp-widget">
+    <div class="whatsapp-btn" onclick="toggleZapMenu()">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="pulse-ring"></span>
+    </div>
+
+    <div class="whatsapp-menu" id="zapMenu">
+        <div class="zap-header">
+            <div class="zap-profile">
+                <img src="logo.png" alt="Zeidan" style="background: #000548; padding: 2px; border-radius: 50%;">
+            </div>
+            <div class="zap-info">
+                <strong>Atendimento Zeidan</strong>
+                <span>Normalmente responde na hora</span>
+            </div>
+            <button onclick="toggleZapMenu()" class="zap-close">×</button>
+        </div>
+        <div class="zap-body">
+            <p class="zap-welcome">Olá! Como podemos te ajudar hoje?</p>
+            
+            <a href="https://wa.me/5531991668430?text=Olá! Vim pelo site e gostaria de tirar dúvidas sobre perfumes." target="_blank" class="zap-option">
+                <div class="zap-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="zap-text">
+                    <strong>Falar com Vendas</strong>
+                    <span>Encomendas e Catálogo</span>
+                </div>
+                <div class="zap-arrow">›</div>
+            </a>
+
+            <a href="https://wa.me/5531971789632?text=Olá! Preciso de suporte sobre meu pedido." target="_blank" class="zap-option">
+                <div class="zap-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="zap-text">
+                    <strong>Suporte / Dúvidas</strong>
+                    <span>Acompanhar pedido</span>
+                </div>
+                <div class="zap-arrow">›</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Se o navegador suportar, desliga a restauração automática de scroll
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    } else {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    }
+</script>
+
+<script src="script.js"></script>
+
+    <footer class="site-footer">
+      
+      <div class="footer-inner">
+        <a
+          href="https://instagram.com/zeidanparfum"
+          target="_blank"
+          class="footer-instagram"
+        >
+          <img
+            src="instagram.png"
+            alt="Instagram"
+            class="footer-instagram-img"
+          />
+        </a>
+
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4 class="footer-title">MENU</h4>
+            <a href="index.html" class="footer-link">Início</a>
+            <a href="contato.html" class="footer-link">Contato</a>
+          </div>
+        </div>
+</div> 
+  
+      <section class="reviews-section">
+    <div class="section-title" style="margin-bottom: 30px;">
+        <i class="fa-solid fa-star" style="color:#FFD700"></i> QUEM COMPRA, RECOMENDA
+    </div>
+
+    <div class="reviews-wrapper">
+        <div class="reviews-track">
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Gabriel M.</span>
+                    <span class="review-city">Belo Horizonte, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"O Lattafa Asad é top demais! Fixação monstra, durou o dia todo. Atendimento top no Zap."</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Ana Clara S.</span>
+                    <span class="review-city">Contagem, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Chegou super rápido e muito bem embalado. O perfume é original mesmo, podem confiar!"</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Rodrigo F.</span>
+                    <span class="review-city">Betim, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Melhor preço que achei. O site é fácil de encomendar e os meninos me ajudaram a escolher."</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Fernanda L.</span>
+                    <span class="review-city">Betim, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Amei o Club de Nuit! Já virei cliente fiel da Zeidan."</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Lucas P.</span>
+                    <span class="review-city">Contagem, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Entrega relâmpago. Veio com brindes e tudo certinho. Recomendo demais!"</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Gabriel M.</span>
+                    <span class="review-city">Belo Horizonte, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"O Lattafa Asad é idêntico ao Sauvage! Fixação monstra, durou o dia todo. Atendimento top no Zap."</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Ana Clara S.</span>
+                    <span class="review-city">Contagem, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Chegou super rápido e muito bem embalado. O perfume é original mesmo, podem confiar!"</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Rodrigo F.</span>
+                    <span class="review-city">Betim, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Melhor preço que achei. O site é fácil de encomendar e os meninos me ajudaram a escolher."</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Fernanda L.</span>
+                    <span class="review-city">Betim, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Amei o Club de Nuit! Já virei cliente fiel da Zeidan."</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">Lucas P.</span>
+                    <span class="review-city">Contagem, MG</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Entrega relâmpago. Veio com brindes e tudo certinho. Recomendo demais!"</p>
+                <div class="review-verified"><i class="fa-solid fa-check-circle"></i> Compra Verificada</div>
+            </div>
+        </div> </div> </section> <div class="payment-bar-container">
+
+    <div class="payment-text">FORMAS DE PAGAMENTO</div>
+
+    <div class="payment-icons">
+        <img src="mastercard.png" alt="Mastercard">
+        <img src="visa.png" alt="Visa">
+        <img src="amex.png" alt="Amex">
+        <img src="elo.png" alt="Elo">
+        <img src="pix.png" alt="Pix">
+    </div>
+
+    <div class="security-badge-css">
+        <div class="lock-icon">
+            <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="security-text-css">
+            <span>SITE</span>
+            <strong>100% SEGURO</strong>
+        </div>
+    </div>
+
+</div>
+
+<p class="footer-copy">
+    Copyright ZEIDAN PARFUM - 2025. Todos os direitos reservados.
+</p>
+
+</footer> </body>
+</html>

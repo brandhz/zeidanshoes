@@ -1,0 +1,2052 @@
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+
+  /* --- COR DE FUNDO (Reserva de segurança) --- */
+  background-color: #041739;
+
+  /* --- IMAGEM DE FUNDO --- */
+  /* Aqui colocamos o nome exato que você salvou no GitHub */
+  background-image: url('background.png');
+
+  /* --- CONFIGURAÇÕES VISUAIS --- */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  background-size: cover;       /* Estica para cobrir a tela inteira */
+  background-position: 10% center;  /* Centraliza a imagem horizontalmente e verticalmente */
+  background-attachment: fixed; /* Efeito Parallax: o fundo fica fixo ao rolar */
+
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Títulos gerais (Categorias, Perfumes, etc) CENTRALIZADOS */
+h1, h2, h3, h4, .section-title {
+  text-align: center !important;
+  width: 100%;
+  display: block;
+  margin: 20px auto 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+/* Remove sublinhados gerais de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================
+   BARRA VERMELHA (Topo)
+   ========================================= */
+.top-bar {
+  background-color: #c34733;
+  color: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  text-align: center;
+}
+
+/* =========================================
+   CABEÇALHO FLUTUANTE (Busca + Menu)
+   ========================================= */
+.hero-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30px;
+  z-index: 1000;
+  background: transparent;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Busca */
+.search-wrap {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#searchInput {
+  flex: 1;
+  border: none;
+  padding: 0 16px;
+  font-size: 14px;
+  outline: none;
+  color: #041739;
+}
+
+.search-btn {
+  border: none;
+  background: transparent;
+  width: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Menu de Navegação */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background: rgba(4, 23, 57, 0.85);
+  padding: 6px 24px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.main-nav .nav-button,
+.main-nav a {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.main-nav .nav-button:hover,
+.main-nav a:hover {
+  opacity: 1;
+}
+
+/* =========================================
+   PAINEL DE MARCAS
+   ========================================= */
+.brand-panel {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+}
+
+.brand-panel.open {
+  display: block;
+}
+
+.brand-columns {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 900px;
+  background: #0f1f3c;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  z-index: 1001;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 32px;
+}
+
+.brand-columns ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brand-columns li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.brand-columns li:hover {
+  color: #fff;
+}
+
+/* =========================================
+   LOGO E CONTEÚDO
+   ========================================= */
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Container Principal dos Filtros */
+.category-filters {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza o bloco na tela */
+  margin-top: 20px;
+  margin-bottom: 40px; /* Um pouco mais de espaço antes dos produtos */
+  padding: 0 20px; /* Margem de segurança nas laterais para celular */
+}
+
+/* O "Miolo" que segura os botões */
+.category-inner {
+  display: flex;
+  flex-wrap: wrap;       /* Permite quebrar linha se não couber */
+  justify-content: center; /* AQUI ESTÁ A MÁGICA: Centraliza os botões */
+  align-items: center;
+  gap: 12px;             /* ESPAÇAMENTO ENTRE OS BOTÕES */
+  max-width: 800px;      /* Segura eles agrupados para não espalhar demais no PC */
+}
+
+/* Estilo dos Botões (Ajuste fino) */
+.category-btn {
+  padding: 8px 20px;     /* Botões um pouco mais largos ficam mais bonitos */
+  margin: 0;             /* Remove margens antigas, o 'gap' controla agora */
+  border-radius: 30px;   /* Bem redondinho (Pílula) */
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  /* Cores Padrão (Fundo transparente e borda) */
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.category-btn:hover {
+  border-color: #fff;
+  color: #fff;
+  transform: translateY(-2px); /* Efeito leve ao passar o mouse */
+}
+
+/* Botão Ativo (O Branco Cheio) */
+.category-btn.active {
+  background-color: #ffffff;
+  color: #041739; /* Azul escuro do seu tema */
+  border-color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* Brilho chique */
+}
+
+/* =========================================
+   GRID DE PRODUTOS
+   ========================================= */
+.product-grid,
+.search-results .product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 60px;
+}
+
+/* Card - Correção de Links e Cores */
+.product-card {
+  background: rgba(3, 12, 40, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s;
+  min-height: 280px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  background: rgba(3, 12, 40, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Link que envolve o card (se houver) */
+.product-link, 
+.product-card a {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+}
+
+/* Imagem Produto */
+.product-image-wrap {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.product-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Infos Produto - Correção de Cores */
+.product-name {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff !important; /* Força Branco */
+  text-decoration: none !important; /* Remove sublinhado */
+  min-height: 34px;
+  line-height: 1.3;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  opacity: 1; /* Aumentei opacidade */
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8) !important; /* Força cor clara */
+}
+
+/* Classe específica para marca, caso exista */
+.product-brand, .brand-name {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: none !important;
+}
+
+.product-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* =========================================
+   BOTÃO ENCOMENDAR (Correção Definitiva)
+   ========================================= */
+.product-btn {
+  /* Layout Flexbox Obrigatório */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  
+  /* Dimensões Fixas */
+  width: 100%;
+  height: 42px !important; /* Altura fixa */
+  padding: 0 !important;   /* Remove qualquer enchimento */
+  margin-top: auto;        /* Empurra para o final do card */
+
+  /* Visual */
+  background: linear-gradient(90deg, #6be276, #4cae56);
+  color: #ffffff !important;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(107, 226, 118, 0.25);
+  
+  /* Texto */
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none !important;
+  
+  /* Truque para centralização vertical exata */
+  line-height: 1 !important; 
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+.site-footer {
+  background-color: #020a1a;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.footer-instagram img, 
+.footer-instagram-img {
+  width: 24px !important; 
+  height: 24px !important;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-link {
+  color: #888;
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+.footer-copy {
+  color: #444;
+  font-size: 11px;
+  margin-top: 24px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile e Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-bar {
+    top: 25px;
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .main-nav {
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .brand-columns {
+    display: grid;
+    width: 95vw;
+    grid-template-columns: 1fr 1fr !important;
+    padding: 20px 15px;
+    max-height: 70vh;
+    overflow-y: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* Bloco 1 (A-C): Fica na Esquerda, Topo */
+  .brand-columns ul:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* Bloco 2 (D-L): Forçamos para a Esquerda, Embaixo */
+  .brand-columns ul:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Bloco 3 (M-R): Forçamos para a Direita, Topo */
+  .brand-columns ul:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* Bloco 4 (S-Z): Fica na Direita, Embaixo */
+  .brand-columns ul:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .product-grid,
+  .search-results .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+    padding: 0 12px 40px;
+  }
+
+  .product-card {
+    min-height: auto;
+    padding: 10px;
+  }
+
+  .product-image-wrap {
+    height: 120px;
+  }
+
+  .product-name {
+    font-size: 11px;
+    min-height: 28px;
+  }
+  
+  .product-btn {
+    font-size: 10px;
+    padding: 8px 0;
+  }
+}
+
+/* Modal de Zoom */
+.image-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+.image-modal.open { display: flex; }
+.image-modal-content img { max-width: 90vw; max-height: 80vh; border-radius: 8px; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+.image-modal-close { position: absolute; top: 20px; right: 20px; color: #fff; font-size: 30px; background: none; border: none; cursor: pointer; }
+
+/* =========================================
+   CORREÇÃO PÁGINA DE PRODUTO (produto.html)
+   ========================================= */
+
+/* 1. Container Principal */
+.product-detail {
+  max-width: 1000px;
+  margin: 140px auto 60px; /* Espaço para não bater no menu */
+  padding: 0 20px;
+}
+
+/* 2. Grid (Imagem Esquerda | Texto Direita) */
+.product-detail-inner {
+  display: grid !important;
+  grid-template-columns: 1fr 1.2fr !important; /* Divide a tela */
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* 3. Coluna da Imagem */
+.product-detail-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product-detail-image img {
+  width: 100%;
+  max-width: 400px; /* Impede que fique gigante */
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+/* 4. Coluna de Texto */
+.product-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left !important; /* Força alinhamento à esquerda */
+}
+
+/* Títulos e Textos */
+.product-detail-title {
+  text-align: left !important;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0cap;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 15px;
+  margin-top: 0;
+}
+
+.product-detail-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #6be276; /* Verde destaque */
+  text-align: left !important;
+}
+
+.product-detail-description,
+.product-detail-notes {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  text-align: center !important;
+}
+
+/* 5. Arrumar os Botões (Tirar o estilo "barra gigante") */
+.product-detail-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: flex-start !important; /* Alinha à esquerda */
+}
+
+/* Botão Encomendar (Estilo Pílula) */
+#btnEncomendar, 
+.product-detail-actions button {
+  /* Tamanho e Forma */
+  width: auto !important;
+  min-width: 220px; /* Tamanho mínimo aceitável */
+  max-width: 300px;
+  height: 46px !important;
+  border-radius: 30px !important;
+  
+  /* Flexbox para centralizar texto e icone */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  /* Cores */
+  background: linear-gradient(90deg, #6be276, #4cae56) !important;
+  color: #fff !important;
+  border: none !important;
+  
+  /* Texto */
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(107, 226, 118, 0.3);
+}
+
+#btnEncomendar:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* 6. ESCONDER O BOTÃO COMPRAR */
+#btnComprar,
+.btn-comprar,
+button[onclick*="Comprar"] {
+  display: none !important;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Celular)
+   ========================================= */
+@media (max-width: 768px) {
+  .product-detail-inner {
+    display: flex !important;
+    flex-direction: column; /* Um embaixo do outro */
+    gap: 30px;
+  }
+
+  .product-detail-image img {
+    max-width: 280px; /* Menor no celular */
+  }
+
+  .product-detail-title,
+  .product-detail-price,
+  .product-detail-content {
+    text-align: center !important; /* Centraliza tudo no celular */
+  }
+  
+  .product-detail-actions {
+    justify-content: center !important; /* Centraliza botão no celular */
+  }
+}
+
+/* =========================================
+   AJUSTES FINAIS DE ESPAÇAMENTO E BOTÕES
+   ========================================= */
+
+/* 1. REMOVER O GIGANTESCO GAP DO TOPO */
+/* Puxa a Logo para cima, logo abaixo do menu fixo */
+.logo-wrap {
+  margin-top: 160px !important; /* Reduzido de 120/140px para 90px */
+  margin-bottom: 0 !important; /* Reduz espaço entre logo e conteúdo */
+}
+
+/* Garante que o menu fixo fique colado na barra vermelha */
+/* Estado Inicial (No Topo - Transparente e Limpo) */
+.hero-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  padding: 15px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  /* Começa Transparente */
+  background-color: transparent;
+  backdrop-filter: blur(0px); /* Sem blur inicial */
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  
+  /* Animação suave para a transição */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estado "Rolando" (Ativado pelo JavaScript) */
+.hero-bar.scrolled {
+  background-color: rgba(4, 23, 57, 0.98); /* Azul Escuro Forte */
+  backdrop-filter: blur(12px);
+  
+  /* --- A CORREÇÃO MÁGICA --- */
+  top: 0 !important; /* Força a barra a ir para o topo da tela */
+  padding-top: 15px !important; /* Garante que o texto não fique colado na borda do celular */
+  /* ------------------------- */
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Aproxima o Produto da Logo */
+.product-detail {
+  margin-top: 10px !important; /* Reduzido drasticamente */
+  padding-top: 0 !important;
+}
+
+/* =========================================
+   SUMIR COM O BOTÃO "COMPRAR" (Força Bruta)
+   ========================================= */
+
+/* Esta regra diz: "Dentro das ações, pegue o SEGUNDO item e esconda" */
+.product-detail-actions button:nth-child(2),
+.product-detail-actions a:nth-child(2),
+.product-detail-actions > :nth-child(2) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Garante que o botão de Encomendar fique sozinho e alinhado */
+.product-detail-actions {
+  justify-content: flex-start !important; /* Alinha à esquerda */
+}
+
+/* =========================================
+   FORÇA BRUTA: CENTRALIZAR IMAGEM MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* 1. Garante que o Grid vire uma coluna única */
+  .product-detail-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* 2. O container da imagem ocupa a largura total */
+  .product-detail-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important; /* Mudamos para block para usar margin auto */
+    text-align: center !important; /* Centraliza conteúdo inline */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 3. A imagem em si: Margens automáticas nas laterais */
+  .product-detail-image img {
+    display: block !important; /* Comporta-se como bloco */
+    margin-left: auto !important;  /* Empurra da esquerda */
+    margin-right: auto !important; /* Empurra da direita */
+    max-width: 80% !important; /* Tamanho seguro */
+  }
+}
+
+/* =========================================
+   PÁGINA DE CONTATO (RESTAURAÇÃO)
+   ========================================= */
+
+/* Centraliza a caixa na tela */
+.contact-main {
+  min-height: 80vh; /* Altura mínima para centralizar verticalmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 60px; /* Compensação para o menu fixo */
+}
+
+/* A "Caixinha" (Card) */
+.contact-card {
+  background: rgba(4, 23, 57, 0.85); /* Fundo escuro semi-transparente */
+  backdrop-filter: blur(12px);       /* Efeito de vidro borrado */
+  padding: 40px;
+  border-radius: 24px;               /* Bordas arredondadas */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+  
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); /* Sombra para dar destaque */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Título */
+.contact-card h1, 
+.contact-title {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Texto descritivo */
+.contact-card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Botão do WhatsApp */
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+  width: 100%;
+  height: 52px;
+  
+  background: linear-gradient(90deg, #25D366, #128C7E); /* Verde WhatsApp */
+  color: white !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 30px;
+  text-decoration: none !important;
+  letter-spacing: 0.1em;
+  
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.contact-btn::before {
+  content: "💬"; /* Ícone simples caso não tenha imagem */
+  font-size: 18px;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+/* Link "Voltar" */
+.contact-back {
+  margin-top: 15px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+
+.contact-back:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* =========================================
+   AJUSTE DE POSIÇÃO NO MOBILE (SEM MUDAR FONTE)
+   ========================================= */
+@media (max-width: 600px) {
+  
+  /* 1. Empurra a barra de busca para baixo */
+  .hero-bar {
+    /* 65px deve ser suficiente para limpar as 3 linhas de texto */
+    top: 65px !important; 
+    
+    background: transparent; /* Garante que não tenha fundo branco tapando */
+    padding: 5px 10px !important;
+  }
+
+  /* 2. Empurra a Logo mais para baixo ainda */
+  /* Como a busca desceu, a logo precisa descer também para não bater nela */
+  .logo-wrap {
+    margin-top: 150px !important; 
+  }
+}
+
+/* =========================================
+   BARRA DE BENEFÍCIOS (Trust Bar - Alinhado)
+   ========================================= */
+.benefits-section {
+  background-color: rgba(2, 10, 26, 0.95); 
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 20px;
+  
+  /* Posição no topo com ajuste de margem */
+  margin-top: 20px;
+  margin-bottom: 40px;
+  
+  width: 100%;
+}
+
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Garante alinhamento vertical dos blocos */
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* Cada bloco de benefício */
+.benefit-item {
+  display: flex;
+  align-items: center; /* Centraliza ícone e texto verticalmente */
+  gap: 15px;
+  max-width: 280px;
+  flex: 1;
+}
+
+/* O Círculo do Ícone */
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  
+  /* AJUSTE FINO: Empurra o emoji um pouco para baixo para centralizar visualmente */
+  padding-top: 3px; 
+}
+
+/* Container dos Textos (Novo Flex para controle) */
+.benefit-info {
+  display: flex;
+  flex-direction: column; /* Um embaixo do outro */
+  justify-content: center; /* Centraliza o bloco de texto verticalmente */
+  gap: 4px; /* Espaço preciso entre título e parágrafo */
+}
+
+/* Títulos */
+.benefit-info h3 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  text-align: left !important;
+  letter-spacing: 0.05em;
+  margin: 0; /* Remove margem para o 'gap' controlar */
+}
+
+/* Parágrafos */
+.benefit-info p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7) !important;
+  line-height: 1.4;
+  margin: 0; /* Remove margem */
+  text-align: left !important;
+}
+
+/* RESPONSIVIDADE (Celular/Tablet) */
+@media (max-width: 900px) {
+  .benefits-container {
+    justify-content: center;
+    align-items: flex-start; /* No mobile, alinha no topo */
+  }
+  
+  .benefit-item {
+    min-width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefit-item {
+    min-width: 100%;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+  }
+  
+  .benefits-section {
+    padding: 10px 20px 10px;
+  }
+}
+
+/* =========================================
+   CORREÇÃO DO CARROSSEL NO CELULAR
+   Impede que a página inteira arraste para o lado
+   ========================================= */
+html, body {
+    max-width: 100vw;       /* A largura máxima é a largura da tela */
+    overflow-x: hidden;     /* Esconde tudo que tentar vazar para os lados */
+    position: relative;     /* Ajuda a manter tudo no lugar */
+}
+
+/* Garante que os containers dos carrosséis não estiquem a página */
+.benefits-container, 
+#lista-sugestoes {
+    flex-wrap: nowrap; /* Não quebra linha */
+    justify-content: center;
+    overflow-x: auto; /* Permite o scroll lateral */
+    padding-bottom: 10px;
+
+    /* --- O SEGREDO PARA ESCONDER A BARRA --- */
+    scrollbar-width: none; /* Padrão moderno (Firefox, etc) */
+    -ms-overflow-style: none;  /* IE e Edge antigo */
+}
+
+/* Mantém este para Chrome e Safari */
+#lista-sugestoes::-webkit-scrollbar { display: none; 
+}
+
+
+/* =========================================
+   FUNDO COM BLUR (EFEITO VIDRO)
+   ========================================= */
+
+/* 1. Removemos a imagem do corpo principal para ela não aparecer duplicada */
+body {
+    background-image: none !important; 
+    position: relative; /* Necessário para o truque funcionar */
+    background-color: #0b0f19; /* Cor de fundo escura de segurança */
+}
+
+/* 2. Criamos o elemento "fantasma" que vai ter a imagem borrada */
+body::before {
+    content: "";
+    position: fixed; /* Fica fixo na tela, não rola junto */
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    
+    /* === COLE AQUI O LINK DA SUA IMAGEM DE FUNDO ATUAL === */
+    background-image: url('background.png');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* AQUI É A MÁGICA DO BLUR */
+    filter: blur(3px); /* Aumente esse número se quiser mais borrado */
+    
+    /* Aumentamos um pouquinho a imagem para as bordas borradas não aparecerem */
+    transform: scale(1.1); 
+    
+    z-index: -999; /* Garante que fique atrás de absolutamente tudo */
+    opacity: 0.8; /* Se quiser deixar um pouco mais escuro, diminua para 0.6 */
+}
+
+/* ==================================================
+   ESPAÇAMENTO ENTRE FOTO E NOME (FIXO GERAL)
+   ================================================== */
+
+/* 1. Para a VITRINE (Página Inicial) */
+.product-card img, 
+.product-item img {
+    margin-bottom: 15px !important; /* Empurra o texto para baixo */
+}
+
+.product-card h3, 
+.product-title {
+    margin-top: 10px !important;    /* Garante um respiro extra no título */
+    padding-top: 5px !important;
+}
+
+/* 2. Para a PÁGINA DO PRODUTO (Detalhes) */
+.product-detail-image img,
+#produtoImagem {
+    display: block !important; 
+    margin-bottom: 20px !important; /* Aumentei bastante para garantir */
+    padding-bottom: 0 !important;
+    width: 100%;
+    height: auto;
+}
+
+.product-detail-title {
+    margin-top: 20px !important;
+    display: block !important; /* Garante que o margin funcione */
+}
+
+/* ==================================================
+   PADRONIZAÇÃO DAS IMAGENS NA VITRINE (HOME)
+   Atualizado: Com margem no topo e centralizado
+   ================================================== */
+
+.product-card img, 
+.product-grid .product-item img {
+    /* 1. Formato Quadrado e Ajuste de Imagem */
+    aspect-ratio: 1 / 1 !important;
+    object-fit: contain !important;
+    background-color: #ffffff !important;
+    
+    /* 2. Acabamento (Bordas e Sombra) */
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    
+    /* 3. O PULO DO GATO: Margem no Topo e Centralização */
+    margin-top: 20px !important;      /* <--- AQUI: Empurra a imagem para baixo */
+    margin-bottom: 25px !important;   /* Mantém o espaço para o texto embaixo */
+    
+    /* 4. Deixar um pouquinho menor que o card para criar uma moldura azul */
+    width:1000px !important;            /* Ocupa 92% da largura do card */
+    margin-left: auto !important;     /* Centraliza na esquerda */
+    margin-right: auto !important;    /* Centraliza na direita */
+    
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+/* ==================================================
+   CORREÇÃO FINAL: ALVO NA CLASSE ".PRODUCT-META"
+   ================================================== */
+
+/* 1. O Link que abraça tudo */
+.product-link {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-decoration: none !important; /* Remove sublinhado se tiver */
+}
+
+/* 2. O VILÃO: A caixa que segura a Marca e o Preço */
+.product-meta {
+    display: flex !important;
+    flex-direction: column !important; /* OBRIGA a empilhar (Marca em cima, Preço embaixo) */
+    align-items: center !important;    /* Centraliza tudo */
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 5px !important;
+}
+
+/* 3. A MARCA (que é um <span>) */
+.product-brand {
+    display: block !important;    /* Força o span a se comportar como bloco */
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 5px !important;
+    font-size: 12px !important;   /* Tamanho da fonte da marca */
+    color: #ccc !important;       /* Cor cinza claro (opcional) */
+}
+
+/* 4. O PREÇO (que é um <span>) */
+.product-price {
+    display: block !important;    /* Força o span a se comportar como bloco */
+    width: 100% !important;
+    text-align: center !important;
+    
+    /* Seu estilo bonitão */
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    
+    white-space: nowrap !important; /* Não quebra linha no R$ */
+    margin-bottom: 10px !important;
+}
+
+/* 5. Ajuste no Nome do Produto */
+.product-name {
+    text-align: center !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* ==================================================
+   BARRA DE PAGAMENTO (FINAL - PNG E SEM FUNDO)
+   ================================================== */
+
+.payment-bar-container {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    padding: 15px 0 !important;
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
+    
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+/* Texto */
+.payment-text {
+    color: #bbb !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
+
+/* Área dos Ícones */
+.payment-icons {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin: 0 !important;
+}
+
+/* Estilo das Imagens (PNGs) */
+.payment-icons img {
+    height: 25px !important; /* Tamanho ideal */
+    width: auto !important;
+    display: block !important;
+    border: none !important;
+    
+    /* SEM FUNDO NENHUM */
+    background: none !important; 
+    padding: 0 !important;
+    border-radius: 0 !important;
+    
+    filter: none !important; /* Cores originais */
+}
+
+/* Como o Elo tem preto e o fundo do site é escuro, 
+   vamos dar um brilho branco APENAS nas bordas para ele não sumir */
+.payment-icons img {
+    filter: drop-shadow(0px 0px 1px rgba(255,255,255,0.5)) !important;
+}
+
+/* Selo de Segurança */
+.security-badge-css {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    background: rgba(255,255,255,0.05) !important;
+}
+
+.lock-icon i {
+    color: #FFD700 !important; /* Dourado */
+    font-size: 14px !important;
+}
+
+.security-text-css {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1 !important;
+    text-align: left !important;
+}
+
+.security-text-css span {
+    color: #fff !important;
+    font-size: 8px !important;
+    display: block !important;
+}
+
+.security-text-css strong {
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    display: block !important;
+}
+
+/* Garante que suas imagens locais fiquem pequenas e alinhadas */
+.payment-icons img {
+    height:13px !important;
+    width: auto !important;
+    display: block !important;
+    background: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* --- CELULAR --- */
+@media (max-width: 768px) {
+    .payment-bar-container {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+}
+
+/* =========================================
+   AJUSTE FINO DOS BOTÕES PARA CELULAR PEQUENO
+   ========================================= */
+
+/* 1. Ajuste Geral (Isso vale para todos) */
+.category-filters {
+  padding: 0 10px; /* Reduz a margem lateral da tela */
+}
+
+.category-inner {
+  gap: 8px; /* Diminui o espaço entre os botões (antes era 12px) */
+}
+
+.category-btn {
+  /* Diminui o "gordinho" do botão para caber mais na linha */
+  padding: 8px 14px; 
+  font-size: 11px; /* Letra um pouquinho menor */
+}
+
+/* 2. A MÁGICA PARA TELAS PEQUENAS (Menor que 390px) */
+@media (max-width: 390px) {
+  .category-inner {
+    gap: 6px; /* Espaço bem justinho */
+    justify-content: center;
+  }
+
+  .category-btn {
+    padding: 7px 10px; /* Botão mais compacto */
+    font-size: 10px;   /* Fonte ajustada para não quebrar linha */
+    
+    /* TRUQUE OPCIONAL: Faz o botão esticar para preencher buracos */
+    /* flex-grow: 1; */ 
+    /* text-align: center; */
+  }
+}
+/* ==================================================
+   CORREÇÃO DA BARRA DE PESQUISA (DESKTOP - TRAVADA)
+   ================================================== */
+
+@media (min-width: 1024px) {
+    .hero-bar {
+        position: fixed !important; /* Mágica: Trava na tela */
+        
+        /* AJUSTE ESTE NÚMERO: É a altura da sua barra vermelha */
+        top: 40px !important; 
+        
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 900 !important; /* Garante que fique na frente do conteúdo, mas atrás de menus suspensos */
+        
+        display: flex !important;
+        justify-content: center !important;
+        margin-top: 0 !important; /* Removemos a margem pois o 'top' já cuida disso */
+        
+        /* Opcional: Se o texto do site estiver passando por trás da lupa, ative a cor de fundo */
+        /* background-color: #ffffff !important; */ 
+        /* padding: 10px 0 !important; */
+    }
+
+    .search-wrap {
+        width: 50% !important;
+        max-width: 600px !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    }
+}
+/* =========================================
+   ESTILO DO CARRINHO DE COMPRAS
+   ========================================= */
+
+/* Botão Flutuante */
+.cart-floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366; /* Verde do WhatsApp */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.cart-floating-btn:hover { transform: scale(1.1); }
+
+/* Bolinha com número de itens */
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fundo Escuro do Modal */
+.cart-modal-overlay {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+    justify-content: flex-end; /* Abre do lado direito */
+}
+
+/* A Janela Branca */
+.cart-modal-content {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.cart-items-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-remove-btn {
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-whatsapp-checkout {
+    background: #25D366;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-continue {
+    background: transparent;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Botão Dourado - Estilo Luxo (Corrigido) */
+.btn-quiz-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #c5a028 100%) !important; /* !important força o dourado */
+    color: #050b14 !important; /* Texto escuro para dar leitura */
+    font-weight: 800; /* Texto bem grosso */
+    text-transform: uppercase;
+    font-size: 11px; /* Letra levemente menor para caber a frase longa */
+    padding: 10px 25px;
+    border-radius: 50px; /* Bem redondo */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Brilho dourado em volta */
+    border: 1px solid #ffe680; /* Borda clarinha para destacar */
+    transition: all 0.3s ease;
+    white-space: nowrap; /* OBRIGATÓRIO: Impede o texto de quebrar linha */
+    letter-spacing: 0.5px;
+    height: 40px; /* Altura fixa para alinhar */
+}
+
+.btn-quiz-gold:hover {
+    transform: scale(1.05); /* Cresce um pouco */
+    background: #fff !important; /* Fica branco no hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    color: #000 !important;
+}
+
+/* Nova caixa para centralizar o botão abaixo do menu */
+.quiz-bar-centered {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza no meio da tela */
+    margin-top: 115px;        /* Espaço para não grudar no menu "Contato" */
+    margin-bottom: -150px;
+}
+
+/* Atualização do botão (REMOVE a margem lateral antiga) */
+.btn-quiz-gold {
+    margin-left: 0 !important; /* Zera a margem esquerda */
+    /* Mantenha o resto do CSS do botão que já estava lá (background, color, etc) */
+}
+
+/* =========================================
+   CARD DE PRODUTO (CORREÇÃO TOTAL)
+   ========================================= */
+
+/* 1. O Cartão (A moldura do produto) */
+.product-card {
+  background: rgba(3, 12, 40, 0.9); /* Fundo azul escuro */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s;
+  
+  /* SEGURANÇA: Impede que o card estique */
+  width: 100%; 
+  overflow: hidden; /* Corta qualquer coisa que tente sair da borda */
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  background: rgba(3, 12, 40, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* 2. Container da Imagem (A área reservada para a foto) */
+.product-image-wrap {
+    width: 100% !important;
+    height: 250px !important;      /* ALTURA FIXA: O segredo para alinhar tudo */
+    position: relative !important; /* Para o coração funcionar */
+    overflow: visible !important;  /* Deixa o coração flutuar */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    background: transparent !important; /* REMOVE O FUNDO BRANCO QUADRADO */
+    margin: 0 auto 10px auto !important;
+    padding: 0 !important;
+    border-radius: 0 !important;   /* Tira a borda do quadrado branco */
+}
+
+/* 3. A Imagem do Perfume (Controlada) */
+.product-image {
+    max-width: 100% !important;    /* Nunca passa da largura do card */
+    max-height: 100% !important;   /* Nunca passa da altura de 250px */
+    width: auto !important;        /* Mantém a proporção correta */
+    height: auto !important;
+    
+    object-fit: contain !important; /* Encaixa a imagem sem cortar nada */
+    display: block !important;
+    margin: 0 auto !important;
+    
+    /* Remove sombras ou fundos da própria imagem */
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+/* 4. O Botão de Favoritos (Coração) */
+.wishlist-btn {
+    position: absolute !important;
+    top: 5px !important;           /* No topo */
+    right: 5px !important;         /* Na direita */
+    width: 32px !important;
+    height: 32px !important;
+    
+    background: rgba(255, 255, 255, 0.9) !important; /* Fundo branco leve */
+    border: 1px solid #ccc !important;
+    border-radius: 50% !important;
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 50 !important;        /* Garante que fique em cima da foto */
+    cursor: pointer;
+    color: #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+}
+
+.wishlist-btn.active {
+    color: #ff4757 !important;
+    border-color: #ff4757 !important;
+}
+
+/* 5. Ajuste para Celular (Para a imagem não ficar muito pequena) */
+@media (max-width: 600px) {
+    .product-image-wrap {
+        height: 150px !important; /* Altura menor no celular */
+    }
+}
+
+/* ============================================================
+   AJUSTE DE LUXO PARA DESKTOP (CORRIGE O "QUADRADO SOLTO")
+   ============================================================ */
+@media (min-width: 900px) {
+    
+    /* 1. O Truque da Margem Negativa */
+    /* Como o card tem padding (enchimento), a gente usa margem negativa 
+       para puxar a imagem até a borda, criando o efeito "borda a borda" */
+    .product-image-wrap {
+        width: calc(100% + 26px) !important;  /* Compensa o padding do card */
+        margin: -13px -13px 15px -13px !important; /* Puxa para as bordas (Cima, Dir, Baixo, Esq) */
+        
+        height: 210px !important; /* Um pouco mais alto no PC para impor presença */
+        background-color: #ffffff !important; /* Fundo branco total */
+        
+        /* Centralização */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* 2. Ajuste da Imagem dentro do branco */
+    .product-image {
+        padding: 20px !important; /* Dá um respiro para o vidro do perfume não bater na borda */
+        max-height: 90% !important; /* Garante que não fique gigante */
+        width: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* 3. Ajuste do Coração no Desktop */
+    .wishlist-btn {
+        top: 10px !important;
+        right: 10px !important;
+        background: #f5f5f5 !important; /* Um cinza bem clarinho para destacar no branco */
+    }
+    
+    .wishlist-btn:hover {
+        background: #fff !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    }
+}
+
+/* 1. Tira o espaço de cima do NOME */
+.product-name {
+    margin-top: 0 !important; /* Zera a margem de cima (antes devia ter uns 10px) */
+    padding-top: 0px !important; /* Um pequeno respiro interno, se precisar */
+}
+
+/* 3. Tira o espaço de baixo da IMAGEM (Versão Mobile) */
+@media (max-width: 899px) {
+    .product-image-wrap {
+        margin-bottom: 5px !important; /* Reduzido de 10px para 5px */
+    }
+}
+
+/* =========================================
+   CARROSSEL INFINITO DE REVIEWS
+   ========================================= */
+.reviews-section {
+    width: 100%;
+    padding: 0px 0 15px; /* Espaço em cima e embaixo */
+    background: transparent;
+    overflow: hidden; /* Esconde o que sai da tela */
+    position: relative;
+}
+
+/* O Container que segura o trilho */
+.reviews-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Degradê nas pontas para suavizar a entrada/saída */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* O Trilho que anda sozinho */
+.reviews-track {
+    display: flex;
+    gap: 20px; /* Espaço entre os cards */
+    width: max-content; /* Largura baseada no conteúdo */
+    animation: scrollReviews 40s linear infinite; /* Animação lenta e contínua */
+}
+
+/* Pausa a animação quando passa o mouse (para ler) */
+.reviews-track:hover {
+    animation-play-state: paused;
+}
+
+/* O Card de Depoimento */
+.review-card {
+    width: 300px; /* Largura fixa */
+    background: rgba(255, 255, 255, 0.05); /* Vidro escuro */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0; /* Impede de amassar */
+    transition: transform 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Cabeçalho do Card (Nome e Cidade) */
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-name {
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+}
+
+.review-city {
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+}
+
+/* Estrelas */
+.review-stars {
+    color: #FFD700; /* Dourado */
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Texto */
+.review-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    font-style: italic;
+    min-height: 54px; /* Altura mínima para alinhar */
+}
+
+/* Selo de Verificado */
+.review-verified {
+    font-size: 10px;
+    color: #6be276; /* Verde sucesso */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto; /* Empurra para o fundo */
+}
+
+/* A ANIMAÇÃO (O Segredo do Infinito) */
+@keyframes scrollReviews {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+    /* Move -50% porque duplicamos o conteúdo. 
+       Quando chega na metade, ele volta pro 0 instantaneamente e ninguém percebe. */
+}
+
+/* Mobile: Acelera um pouquinho e diminui card */
+@media (max-width: 600px) {
+    .review-card { width: 260px; }
+    .reviews-track { animation-duration: 30s; }
+}
+
+/* =========================================
+   GALERIA PREMIUM (AJUSTE FINO MOBILE)
+   ========================================= */
+
+/* Container da Galeria */
+.product-gallery {
+    width: 100%;
+    max-width: 450px; /* Trava a largura para não estourar em tablets */
+    margin: 0 auto 20px auto;
+}
+
+/* 1. FOTO PRINCIPAL (QUADRADO LIMPO) */
+.main-image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Mantém formato quadrado (1:1) */
+    background-color: #fff;
+    border-radius: 12px;
+    /* Sombra suave para destacar do fundo azul */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta a imagem sem cortar */
+    border-radius: 20px !important;
+    padding: 0 !important;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+/* 2. MINIATURAS (CRISPS & CLEAN) */
+.thumbnails-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 5px 2px;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: center; /* Centraliza as miniaturas se forem poucas */
+}
+
+.thumbnails-track {
+    display: flex;
+    gap: 10px;
+}
+
+.thumb-item {
+    width: 65px; /* Tamanho bom para dedo */
+    height: 65px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff; /* Fundo branco sólido (importante no seu site escuro) */
+    
+    /* Estado normal: sem borda, sombra leve */
+    border: 2px solid transparent; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 1; /* REMOVIDA A TRANSPARÊNCIA: Fica nítido */
+}
+
+.thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 3px; /* Espaço mínimo */
+}
+
+/* 3. MINIATURA SELECIONADA (PREMIUM) */
+.thumb-item.active {
+    /* Borda Dourada Metálica (Mais bonita que amarelo liso) */
+    border: 2px solid #C5A059; 
+    transform: scale(0.98); /* Leve clique visual */
+    box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.2); /* Aura dourada */
+}
+
+/* AJUSTE ESPECÍFICO PARA CELULARES PEQUENOS */
+@media (max-width: 400px) {
+    .main-image-container {
+        border-radius: 8px; /* Cantos um pouco menos redondos em telas pequenas */
+    }
+    .thumb-item {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* ==================================================
+   CORREÇÃO FINAL: CENTRALIZAR E PREENCHER (SEM CORTAR)
+   ================================================== */
+#main-product-img {
+    /* 1. Posicionamento para centralizar */
+    position: absolute !important;
+    inset: 0 !important;       /* Cola em todas as bordas (Cima, Baixo, Esq, Dir) */
+    margin: auto !important;   /* A mágica que centraliza imagem absoluta */
+    
+    /* 2. Tamanho */
+    width: 100% !important;    /* Ocupa toda a largura */
+    height: 100% !important;   /* Ocupa toda a altura */
+    padding: 0 !important;     /* Sem borda interna */
+    
+    /* 3. Comportamento da Imagem */
+    object-fit: contain !important; /* Garante que a imagem apareça INTEIRA */
+    background-color: #ffffff !important; /* Fundo branco para mesclar se sobrar espaço */
+    
+    /* 4. Zoom Leve (Opcional: remove se achar que cortou) */
+    transform: scale(1.02) !important; /* Aumenta 2% só para garantir bordas */
+
+}
+
+/* ==================================================
+   CORREÇÃO: CENTRALIZAR MINIATURAS (THUMBNAILS)
+   ================================================== */
+
+/* 1. O Quadradinho (Container) */
+.thumb-item {
+    display: flex !important;           /* Ativa o modo flexível */
+    justify-content: center !important; /* Centraliza na Horizontal (Esquerda/Direita) */
+    align-items: center !important;     /* Centraliza na Vertical (Cima/Baixo) */
+    
+    padding: 0 !important;              /* Remove espaços extras do container */
+    background-color: #fff !important;  /* Garante fundo branco */
+    overflow: hidden !important;        /* Corta o que sobrar */
+}
+
+/* 2. A Imagem dentro do Quadradinho */
+.thumb-item img {
+    width: 100% !important;             /* Tenta ocupar a largura toda */
+    height: 100% !important;            /* Tenta ocupar a altura toda */
+    
+    object-fit: contain !important;     /* O SEGREDO: Encaixa a imagem no centro sem esticar */
+    
+    margin: 0 !important;               /* Remove margens que empurram a imagem */
+    padding: 3px !important;            /* Um pequeno respiro para não colar na borda */
+    
+    /* Remove sombras ou bordas da própria imagem se tiver */
+    box-shadow: none !important;        
+    border: none !important;
+}
+
+/* =========================================
+   SCROLL REVEAL (ANIMAÇÃO AO ROLAR)
+   ========================================= */
+
+/* Estado Inicial: Invisível e um pouco para baixo */
+.product-card {
+    opacity: 0;
+    transform: translateY(30px); /* Empurra para baixo */
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; /* Avisa o navegador para otimizar */
+}
+
+/* Estado Final: Visível e na posição certa */
+.product-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* WIDGET WHATSAPP */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 9999;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Botão Flutuante */
+.whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s;
+    position: relative;
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+
+/* Animação de Pulse (Chamando atenção) */
+.pulse-ring {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 2px solid #25d366;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* O Menu (Escondido por padrão) */
+.whatsapp-menu {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 300px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: none; /* JS vai mudar isso */
+    transform-origin: bottom right;
+    animation: zapOpen 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+@keyframes zapOpen { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Cabeçalho do Menu */
+.zap-header {
+    background: #075e54; /* Cor oficial WhatsApp Business */
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+.zap-profile img { width: 45px; height: 45px; object-fit: contain; }
+.zap-info { display: flex; flex-direction: column; }
+.zap-info strong { font-size: 16px; }
+.zap-info span { font-size: 12px; opacity: 0.8; }
+.zap-close {
+    position: absolute; top: 10px; right: 10px;
+    background: none; border: none; color: #fff; font-size: 20px; cursor: pointer;
+}
+
+/* Corpo do Menu */
+.zap-body { padding: 15px; background: #f0f2f5; }
+.zap-welcome { font-size: 13px; color: #555; margin-bottom: 15px; background: #fff; padding: 10px; border-radius: 0 10px 10px 10px; width: fit-content; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+
+/* Opções de Contato */
+.zap-option {
+    display: flex; align-items: center; gap: 15px;
+    background: #fff; padding: 15px;
+    border-radius: 10px; margin-bottom: 10px;
+    text-decoration: none; color: #333;
+    transition: 0.2s; border: 1px solid transparent;
+}
+.zap-option:hover { border-color: #25d366; transform: translateX(5px); }
+.zap-icon { width: 35px; height: 35px; background: #e6ffed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #25d366; font-size: 18px; }
+.zap-text { flex: 1; display: flex; flex-direction: column; }
+.zap-text strong { font-size: 14px; }
+.zap-text span { font-size: 11px; color: #888; }
+.zap-arrow { color: #ccc; font-weight: bold; }
