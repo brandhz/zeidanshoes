@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zeidan Parfum</title>
+    <title>Zeidan Shoes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
     <meta property="og:title" content="Zeidan Parfum | Perfumes Importados & Decants">
     <meta property="og:description" content="Encontre sua assinatura olfativa. Frascos lacrados e decants originais com envio para todo o Brasil.">
-    <meta property="og:image" content="https://seusite.com/capa-compartilhamento.jpg"> <meta property="og:url" content="https://seusite.com/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <link rel="shortcut icon" href="logopequena.png" type="image/x-icon">
@@ -178,6 +177,21 @@
         height: 160px !important; /* Menor no celular para não ocupar a tela toda */
     }
 }
+/* =========================================
+   CORREÇÃO: SACOLA NA FRENTE DE TUDO
+   ========================================= */
+
+/* Garante que a janela escura da sacola fique na frente dos botões */
+.cart-modal-overlay {
+    z-index: 2147483647 !important; /* O número máximo permitido pelo navegador */
+}
+
+/* Garante que o conteúdo branco da sacola também fique na frente */
+.cart-modal-content {
+    z-index: 2147483647 !important;
+    position: relative;
+}
+
 </style>
   </head>
   <body>
@@ -198,7 +212,7 @@
             <nav class="main-nav">
               <button id="homeLink" class="nav-button" type="button">Início</button>
               <button id="brandsToggle" class="nav-button" type="button">Marcas</button>
-                            
+
               <div class="brand-panel" id="brandPanel">
                 <div class="brand-panel-inner">
                   <div class="brand-panel-header"></div>
@@ -326,46 +340,8 @@
         <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido
       </button>
       <button onclick="toggleCart()" class="btn-continue">Continuar Comprando</button>
-    </div> </div> </div> <div class="whatsapp-widget">
-    <div class="whatsapp-btn" onclick="toggleZapMenu()">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span class="pulse-ring"></span>
-    </div>
+    </div> </div> </div> 
 
-    <div class="whatsapp-menu" id="zapMenu">
-        <div class="zap-header">
-            <div class="zap-profile">
-                <img src="logo.png" alt="Zeidan" style="background: #000548; padding: 2px; border-radius: 50%;">
-            </div>
-            <div class="zap-info">
-                <strong>Atendimento Zeidan</strong>
-                <span>Normalmente responde na hora</span>
-            </div>
-            <button onclick="toggleZapMenu()" class="zap-close">×</button>
-        </div>
-        <div class="zap-body">
-            <p class="zap-welcome">Olá! Como podemos te ajudar hoje?</p>
-            
-            <a href="https://wa.me/5531991668430?text=Olá! Vim pelo site e gostaria de tirar dúvidas sobre perfumes." target="_blank" class="zap-option">
-                <div class="zap-icon"><i class="fa-solid fa-bag-shopping"></i></div>
-                <div class="zap-text">
-                    <strong>Falar com Vendas</strong>
-                    <span>Encomendas e Catálogo</span>
-                </div>
-                <div class="zap-arrow">›</div>
-            </a>
-
-            <a href="https://wa.me/5531971789632?text=Olá! Preciso de suporte sobre meu pedido." target="_blank" class="zap-option">
-                <div class="zap-icon"><i class="fa-solid fa-headset"></i></div>
-                <div class="zap-text">
-                    <strong>Suporte / Dúvidas</strong>
-                    <span>Acompanhar pedido</span>
-                </div>
-                <div class="zap-arrow">›</div>
-            </a>
-        </div>
-    </div>
-</div>
 
 <script>
     // Se o navegador suportar, desliga a restauração automática de scroll
@@ -404,7 +380,7 @@
         </div>
 </div> 
 
-        </div> </div> </section> <div class="payment-bar-container">
+         </div> </div> </section> <div class="payment-bar-container">
 
     <div class="payment-text">FORMAS DE PAGAMENTO</div>
 
@@ -432,5 +408,219 @@
     Copyright ZEIDAN SHOES - 2026. Todos os direitos reservados.
 </p>
 
-</footer> </body>
+</footer> 
+
+<div id="widget-zap-pro" style="display: block !important;">
+    
+    <style>
+        /* Container flutuante */
+        #widget-zap-wrapper {
+            position: fixed !important;
+            bottom: 105px !important;
+            right: 30px !important;
+            z-index: 9999 !important; /* Z-index máximo */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        /* BOTÃO PULSANTE */
+        .zap-btn-pro {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            position: relative;
+            transition: transform 0.2s;
+        }
+        .zap-btn-pro:hover { transform: scale(1.05); }
+        
+        /* Animação de pulso */
+        .zap-pulse {
+            position: absolute; width: 100%; height: 100%;
+            border-radius: 50%; border: 2px solid #25D366;
+            animation: pulse-animation 2s infinite; opacity: 0;
+        }
+        @keyframes pulse-animation {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* O MENU (CAIXA DE ATENDIMENTO) */
+        #menu-zap-pro {
+            display: none; /* Começa escondido */
+            width: 300px;
+            background: #f0f2f5; /* Fundo cinza claro igual do Zap */
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none; /* Desliga cliques quando escondido */
+        }
+        
+        /* Classe para mostrar o menu com animação */
+        #menu-zap-pro.ativo {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* HEADER (CABEÇALHO VERDE ESCURO) */
+        .pro-header {
+            background: #095E54;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+        .pro-avatar {
+            width: 45px; height: 45px;
+            background: white; border-radius: 50%;
+            padding: 2px;
+            flex-shrink: 0;
+        }
+        .pro-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
+        
+        .pro-info h3 { margin: 0; font-size: 16px; font-weight: 700; line-height: 1.2; }
+        .pro-info p { margin: 0; font-size: 12px; opacity: 0.8; margin-top: 2px; }
+        
+        .pro-close {
+            position: absolute; top: 10px; right: 10px;
+            background: none; border: none; color: white;
+            font-size: 20px; cursor: pointer; opacity: 0.7;
+        }
+        .pro-close:hover { opacity: 1; }
+
+        /* CORPO (BODY) */
+        .pro-body { padding: 15px; }
+        
+        .pro-welcome {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 0 15px 15px 15px;
+            font-size: 13px; color: #333;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            width: fit-content;
+        }
+
+        /* BOTÕES DE OPÇÃO (Vendas / Suporte) */
+        .pro-option {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none; color: #111;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: background 0.2s, transform 0.1s;
+            cursor: pointer;
+        }
+        .pro-option:hover { background: #fafafa; transform: translateY(-2px); }
+        
+        .opt-icon {
+            width: 36px; height: 36px;
+            background: #dcf8c6; /* Verde clarinho do zap */
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #25D366; font-size: 16px; flex-shrink: 0;
+        }
+        .opt-text strong { display: block; font-size: 14px; margin-bottom: 2px; }
+        .opt-text span { font-size: 11px; color: #888; }
+        .opt-arrow { margin-left: auto; color: #ccc; font-weight: bold; }
+
+    </style>
+
+    <div id="widget-zap-wrapper">
+        
+        <div id="menu-zap-pro">
+            <div class="pro-header">
+                <div class="pro-avatar">
+                    <img src="logo.png" alt="Zeidan"> 
+                </div>
+                <div class="pro-info">
+                    <h3><font color="#ffffff">Atendimento Zeidan </font></h3>
+                    <p>Normalmente responde na hora</p>
+                </div>
+                <button class="pro-close" onclick="fecharZapPro()">×</button>
+            </div>
+            
+            <div class="pro-body">
+                <div class="pro-welcome">
+                    Olá! Como podemos te ajudar hoje?
+                </div>
+                
+                <div class="pro-option" onclick="irZapPro('vendas')">
+                    <div class="opt-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <div class="opt-text">
+                        <strong>Falar com Vendas</strong>
+                        <span>Encomendas e Catálogo</span>
+                    </div>
+                    <div class="opt-arrow">›</div>
+                </div>
+
+                <div class="pro-option" onclick="irZapPro('suporte')">
+                    <div class="opt-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="opt-text">
+                        <strong>Suporte / Dúvidas</strong>
+                        <span>Acompanhar pedido</span>
+                    </div>
+                    <div class="opt-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="zap-btn-pro" onclick="toggleZapPro()">
+            <div class="zap-pulse"></div>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleZapPro() {
+            var menu = document.getElementById('menu-zap-pro');
+            if (menu.classList.contains('ativo')) {
+                menu.classList.remove('ativo');
+                // Pequeno delay para esconder o display none depois da animação
+                setTimeout(() => { if(!menu.classList.contains('ativo')) menu.style.display = 'none'; }, 300);
+            } else {
+                menu.style.display = 'block';
+                // Pequeno delay para permitir que o navegador processe o display block antes de animar a opacidade
+                setTimeout(() => { menu.classList.add('ativo'); }, 10);
+            }
+        }
+
+        function fecharZapPro() {
+            var menu = document.getElementById('menu-zap-pro');
+            menu.classList.remove('ativo');
+            setTimeout(() => { menu.style.display = 'none'; }, 300);
+        }
+
+        function irZapPro(tipo) {
+            var num = "5531991668430";
+            var msg = "";
+            if(tipo === 'vendas') msg = "Olá Zeidan Shoes! Vim pelo site e gostaria saber mais sobre os tênis!";
+            if(tipo === 'suporte') msg = "Olá Zeidan Shoes! Preciso de suporte sobre meu pedido.";
+            window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), '_blank');
+        }
+    </script>
+</div>
+
+</body>
 </html>

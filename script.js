@@ -39,7 +39,7 @@ function detectarGenero(produto) {
 }
 
 /* =====================================================
-   LÓGICA DO CARRINHO
+   LÓGICA DO CARRINHO (ATUALIZADA COM COR)
    ===================================================== */
 let carrinho = JSON.parse(localStorage.getItem('carrinhoZeidan')) || [];
 
@@ -76,12 +76,14 @@ window.atualizarCarrinhoUI = function() {
 
         let nomeExibicao = item.produto || "Produto";
         let tamanhoHtml = item.tamanho ? `<span style="font-size:11px; background:#f0f0f0; padding:2px 6px; border-radius:4px; margin-left:5px; font-weight:bold; color:#333;">Tam: ${item.tamanho}</span>` : '';
+        let corHtml = item.cor ? `<div style="font-size:11px; color:#666;">Cor: ${item.cor}</div>` : '';
 
         html += `
             <div class="cart-item" style="display:flex; justify-content:space-between; align-items:center; padding:15px 0; border-bottom:1px solid #eee;">
                 <div style="flex:1; padding-right:10px;">
                     <div style="font-size:10px; color:#999; text-transform:uppercase; font-weight:700; margin-bottom:2px;">${item.marca}</div>
                     <div style="font-weight:600; font-size:13px; color:#000; line-height:1.3;">${nomeExibicao} ${tamanhoHtml}</div>
+                    ${corHtml}
                 </div>
                 <div style="text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:5px;">
                     <div style="font-weight:700; color:#333; font-size:14px;">${item.preco}</div>
@@ -94,8 +96,9 @@ window.atualizarCarrinhoUI = function() {
     if (totalDisplay) totalDisplay.innerText = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 };
 
-window.adicionarAoCarrinho = function(marca, produto, preco, botao, tamanho = null) {
-    carrinho.push({ marca, produto, preco, tamanho });
+window.adicionarAoCarrinho = function(marca, produto, preco, botao, tamanho, cor) {
+    const corFinal = cor || ""; 
+    carrinho.push({ marca, produto, preco, tamanho, cor: corFinal });
     atualizarCarrinhoUI();
     
     const cartIcon = document.querySelector('.cart-floating-btn i');
@@ -115,6 +118,11 @@ window.removerDoCarrinho = function(index) {
 window.toggleCart = function() {
     const modal = document.getElementById('cart-modal');
     const widgetZap = document.querySelector('.whatsapp-widget');
+    
+    // Fecha o menu zap se estiver aberto
+    const menuZap = document.getElementById('whatsappMenu');
+    if(menuZap && menuZap.style.display === 'block') menuZap.style.display = 'none';
+
     if (!modal) return;
     
     if (modal.style.display === 'flex') {
@@ -122,18 +130,27 @@ window.toggleCart = function() {
         if(widgetZap) widgetZap.style.display = 'block';
     } else {
         modal.style.display = 'flex';
-        if(widgetZap) widgetZap.style.display = 'none';
+        //if(widgetZap) widgetZap.style.display = 'none'; // Opcional: esconder o zap quando abre o carrinho
         atualizarCarrinhoUI();
     }
 };
 
 window.finalizarNoZap = function() {
     if (carrinho.length === 0) return alert("Sua sacola está vazia!");
-    let msg = "Olá Zeidan! Gostaria de verificar estes modelos:\n\n";
+    
+    let msg = "Olá Zeidan! Gostaria de fechar este pedido:\n\n";
     carrinho.forEach(item => {
-        let tam = item.tamanho ? ` (Tam: ${item.tamanho})` : "";
-        msg += `👟 *${item.produto}*${tam}\n   Valor: ${item.preco}\n\n`;
+        msg += `👟 *${item.produto}*\n`;
+        if(item.marca) msg += `   Marca: ${item.marca}\n`;
+        if(item.cor)   msg += `   🎨 Cor: ${item.cor}\n`;
+        if(item.tamanho) msg += `   📏 Tam: ${item.tamanho}\n`;
+        msg += `   💰 Valor: ${item.preco}\n`;
+        msg += `--------------------\n`;
     });
+    
+    let total = document.getElementById('cart-total-value')?.innerText || "";
+    if(total) msg += `\n*Total: ${total}*`;
+
     window.open(`https://wa.me/${window.WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 };
 
@@ -155,7 +172,7 @@ async function loadProducts() {
         } else {
             renderCards("TODAS", "", "TODAS");
         }
-        renderizarHistorico(); // Carrega o histórico
+        renderizarHistorico(); 
     }
     
     // 2. Se estiver na PÁGINA DE PRODUTO
@@ -171,7 +188,7 @@ async function loadProducts() {
 }
 
 /* =====================================================
-   RENDERIZAÇÃO DA HOME (VITRINE DUPLA)
+   RENDERIZAÇÃO DA HOME
    ===================================================== */
 function renderCards(selectedBrand, searchTerm, category) {
   const gridTenis = document.getElementById("grid-produtos") || document.getElementById("perfumeGrid");
@@ -230,7 +247,6 @@ function renderCards(selectedBrand, searchTerm, category) {
 
     const imgCapa = (p.Imagens && p.Imagens.length > 0) ? p.Imagens[0] : "img/placeholder.jpg";
 
-    /* === CORREÇÃO DA IMAGEM: SEM STYLE INLINE === */
     card.innerHTML = `
       <div class="product-image-wrap">
           <button class="wishlist-btn ${heartClass}" onclick="toggleFavorito('${p.Produto.replace(/'/g," ")}', this)"><i class="${heartIcon}"></i></button>
@@ -253,7 +269,6 @@ function renderCards(selectedBrand, searchTerm, category) {
     
     cardObserver.observe(card);
 
-    // Separa Sandálias
     const categoria = normalizeCat(p.Categoria || "");
     const nome = normalizeCat(p.Produto || "");
     const ehSandalia = categoria.includes("SANDALIA") || categoria.includes("CHINELO") || nome.includes("SANDALIA") || nome.includes("CHINELO") || nome.includes("YEEZY SLIDE");
@@ -291,25 +306,28 @@ window.toggleFavorito = function(nome, btn) {
 };
 
 /* =====================================================
-   DETALHES DO PRODUTO & GALERIA
+   DETALHES DO PRODUTO (CORRIGIDO)
    ===================================================== */
 function carregarDetalhesDoProduto(id) {
-    salvarVisita(id); // Salva no histórico
+    salvarVisita(id); 
     let p = todosProdutos.find(item => item.id_slug === id);
     if (!p) return;
 
+    // 1. Textos
     document.title = `${p.Produto} | Zeidan Shoes`;
     if(document.getElementById('produtoTitulo')) document.getElementById('produtoTitulo').innerText = p.Produto;
     if(document.getElementById('produtoMarca')) document.getElementById('produtoMarca').innerText = p.Marca;
     if(document.getElementById('produtoPreco')) document.getElementById('produtoPreco').innerText = p.Preco_Venda;
     if(document.getElementById('produtoDescricao')) document.getElementById('produtoDescricao').innerText = p.Descricao || "";
+    
     if(document.getElementById('produtoEstilo')) document.getElementById('produtoEstilo').innerText = p.Categoria || "Casual";
     if(document.getElementById('produtoGenero')) document.getElementById('produtoGenero').innerText = detectarGenero(p);
 
-    renderizarCores(p);
-    
-    montarGaleria(p);
+    // 2. Visuais
+    if(window.renderizarCores) window.renderizarCores(p);
+    if(window.montarGaleria) window.montarGaleria(p);
 
+    // 3. Tamanhos
     const sizeContainer = document.getElementById('size-container');
     const erroSize = document.getElementById('size-error');
     
@@ -322,68 +340,116 @@ function carregarDetalhesDoProduto(id) {
             btn.onclick = () => {
                 document.querySelectorAll('.size-option-btn').forEach(b => b.classList.remove('selected'));
                 btn.classList.add('selected');
-                tamanhoSelecionadoPeloUsuario = tam;
+                window.tamanhoSelecionadoPeloUsuario = tam; 
                 if(erroSize) erroSize.style.display = 'none';
             };
             sizeContainer.appendChild(btn);
         });
     }
 
-    const btnZap = document.getElementById('produtoWhatsapp');
-    if(btnZap) {
+    // 4. DESCOBRIR A COR ATUAL
+    let nomeCorAtual = "";
+    if (p.Cores_Relacionadas) {
+        const corEncontrada = p.Cores_Relacionadas.find(c => c.slug === p.id_slug);
+        if (corEncontrada) {
+            nomeCorAtual = corEncontrada.nome; 
+        }
+    }
+
+    // 5. BOTÕES
+    const btnZap = document.getElementById('btnZapDireto');
+    if (btnZap) {
         btnZap.onclick = function(e) {
             e.preventDefault();
-            if (p.Tamanhos && !tamanhoSelecionadoPeloUsuario) {
-                if(erroSize) { erroSize.style.display = 'block'; } else { alert("Selecione um tamanho!"); }
+            if (p.Tamanhos && p.Tamanhos.length > 0 && !window.tamanhoSelecionadoPeloUsuario) {
+                alert("⚠️ Por favor, selecione um tamanho.");
+                if(erroSize) erroSize.style.display = 'block';
                 return;
             }
-            adicionarAoCarrinho(p.Marca, p.Produto, p.Preco_Venda, this, tamanhoSelecionadoPeloUsuario);
+            let msg = `Olá Zeidan! Quero comprar o *${p.Produto}*`;
+            if (nomeCorAtual) msg += `\n🎨 Cor: ${nomeCorAtual}`; 
+            if (window.tamanhoSelecionadoPeloUsuario) msg += `\n📏 Tam: ${window.tamanhoSelecionadoPeloUsuario}`;
+            
+            let numero = window.WHATSAPP_NUMBER || "5531991668430";
+            window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, '_blank');
         };
     }
-    carregarSugestoes(p);
+
+    const btnCart = document.getElementById('btnAddCarrinho');
+    
+    const acaoAdicionar = function(botaoClicado) {
+        if (p.Tamanhos && p.Tamanhos.length > 0 && !window.tamanhoSelecionadoPeloUsuario) {
+            alert("⚠️ Selecione um tamanho para adicionar à sacola.");
+            if(erroSize) erroSize.style.display = 'block';
+            return;
+        }
+        if (window.adicionarAoCarrinho) {
+            window.adicionarAoCarrinho(
+                p.Marca, 
+                p.Produto, 
+                p.Preco_Venda, 
+                botaoClicado, 
+                window.tamanhoSelecionadoPeloUsuario,
+                nomeCorAtual 
+            );
+            if(window.toggleCart) window.toggleCart();
+        }
+    };
+
+    if (btnCart) {
+        btnCart.onclick = function(e) {
+            e.preventDefault();
+            acaoAdicionar(this);
+        };
+    } else {
+        const btnAntigo = document.getElementById('produtoWhatsapp');
+        if(btnAntigo) {
+            btnAntigo.innerHTML = 'ADICIONAR À SACOLA <i class="fa-solid fa-cart-shopping"></i>';
+            btnAntigo.onclick = function(e) {
+                e.preventDefault();
+                acaoAdicionar(this);
+            };
+        }
+    }
+    
+    if(window.carregarSugestoes) window.carregarSugestoes(p);
 }
 
+/* =====================================================
+   GALERIA COM SWIPE
+   ===================================================== */
 window.montarGaleria = function(produto) {
     const mainImg = document.getElementById('main-product-img');
     const track = document.getElementById('thumbnails-track');
     
     if (!mainImg || !track) return;
 
-    // Reseta eventos anteriores para não acumular
     const novoMainImg = mainImg.cloneNode(true);
     mainImg.parentNode.replaceChild(novoMainImg, mainImg);
-    const imgElement = document.getElementById('main-product-img'); // Pega o novo elemento
+    const imgElement = document.getElementById('main-product-img'); 
 
     track.innerHTML = '';
 
-    // Garante que sempre tenha array de imagens
     let lista = (produto.Imagens && produto.Imagens.length > 0) ? produto.Imagens : ["img/placeholder.jpg"];
-    
-    // Variável para controlar qual foto está aparecendo
     let indiceAtual = 0;
 
-    // 1. Função que atualiza a foto
     function atualizarFoto(index) {
-        // Garante que o índice não saia do limite (loop infinito)
         if (index < 0) index = lista.length - 1;
         if (index >= lista.length) index = 0;
         
-        indiceAtual = index; // Atualiza o índice global
-        imgElement.src = lista[indiceAtual]; // Troca a foto
+        indiceAtual = index; 
+        imgElement.src = lista[indiceAtual]; 
 
-        // Atualiza as bordas das miniaturas
         document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
         const ativo = document.getElementById(`thumb-idx-${indiceAtual}`);
         if(ativo) ativo.classList.add('active');
     }
 
-    // 2. Cria as miniaturas
     lista.forEach((src, i) => {
         let thumb = document.createElement("div");
         thumb.className = `thumb-item ${i === 0 ? 'active' : ''}`;
         thumb.id = `thumb-idx-${i}`;
         thumb.innerHTML = `<img src="${src}" style="width:100%; height:100%; object-fit:cover;">`;
-        
         thumb.onclick = (e) => { 
             e.stopPropagation(); 
             atualizarFoto(i); 
@@ -391,41 +457,23 @@ window.montarGaleria = function(produto) {
         track.appendChild(thumb);
     });
 
-    // Inicia com a primeira foto
     imgElement.src = lista[0];
 
-    // ==========================================================
-    // LÓGICA DE SWIPE (ROLAGEM DO DEDO)
-    // ==========================================================
+    // SWIPE
     let touchStartX = 0;
     let touchEndX = 0;
 
-    // Quando encosta o dedo
     imgElement.addEventListener('touchstart', function(e) {
         touchStartX = e.changedTouches[0].screenX;
     }, {passive: true});
 
-    // Quando solta o dedo
     imgElement.addEventListener('touchend', function(e) {
         touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
+        if (touchEndX < touchStartX - 50) atualizarFoto(indiceAtual + 1);
+        if (touchEndX > touchStartX + 50) atualizarFoto(indiceAtual - 1);
     }, {passive: true});
 
-    function handleSwipe() {
-        // Se arrastou mais de 50px para a esquerda ou direita
-        if (touchEndX < touchStartX - 50) {
-            // Arrastou para a Esquerda (Próxima foto)
-            atualizarFoto(indiceAtual + 1);
-        }
-        if (touchEndX > touchStartX + 50) {
-            // Arrastou para a Direita (Foto anterior)
-            atualizarFoto(indiceAtual - 1);
-        }
-    }
-
-    // Clique para Zoom (Mantendo sua lógica original)
     imgElement.addEventListener('click', () => {
-        // Pequeno delay para diferenciar clique de arraste
         if (Math.abs(touchEndX - touchStartX) < 10) { 
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("imageModalImg");
@@ -436,6 +484,39 @@ window.montarGaleria = function(produto) {
         }
     });
 };
+
+/* =====================================================
+   OUTRAS FUNÇÕES (SUGESTÕES, MARCAS, HISTÓRICO)
+   ===================================================== */
+function carregarSugestoes(produtoAtual) {
+    const listaSugestoes = document.getElementById("lista-sugestoes");
+    const boxSugestoes = document.getElementById("box-sugestoes");
+    if(!listaSugestoes || !boxSugestoes) return;
+    
+    listaSugestoes.innerHTML = "";
+    boxSugestoes.style.display = "none";
+
+    const relacionados = todosProdutos.filter(item => item.Marca === produtoAtual.Marca && item.id_slug !== produtoAtual.id_slug).slice(0, 5);
+
+    if (relacionados.length > 0) {
+        boxSugestoes.style.display = "block";
+        relacionados.forEach(sugestao => {
+            const linkHref = sugestao.id_slug ? `produto.html?id=${sugestao.id_slug}` : "#";
+            const imgCapa = (sugestao.Imagens && sugestao.Imagens.length > 0) ? sugestao.Imagens[0] : "img/placeholder.jpg";
+            const div = document.createElement('div');
+            div.style.cssText = "min-width:140px; margin-right:15px;";
+            div.innerHTML = `
+                <a href="${linkHref}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; align-items:center;">
+                    <div style="width:140px; height:140px; background:#f9f9f9; border-radius:10px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                        <img src="${imgCapa}" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div style="font-size:12px; font-weight:bold; margin-top:8px; text-align:center;">${sugestao.Produto}</div>
+                </a>
+            `;
+            listaSugestoes.appendChild(div);
+        });
+    }
+}
 
 function populateBrandColumns() {
   if(!brandColumns) return;
@@ -457,123 +538,6 @@ function populateBrandColumns() {
     });
     brandColumns.appendChild(ul);
   }
-}
-
-/* =====================================================
-   FUNÇÃO DE CORES (NOVO)
-   ===================================================== */
-function renderizarCores(produtoAtual) {
-    const boxCores = document.getElementById('box-cores');
-    const container = document.getElementById('color-container');
-    const nomeCorSpan = document.getElementById('nome-cor-selecionada');
-
-    // Se os elementos não existirem no HTML (ex: na Home), para a execução
-    if (!boxCores || !container) return;
-
-    container.innerHTML = ''; // Limpa para não duplicar
-
-    // Verifica se existe o array Cores_Relacionadas e se tem mais de 1 cor
-    if (!produtoAtual.Cores_Relacionadas || produtoAtual.Cores_Relacionadas.length <= 1) {
-        boxCores.style.display = 'none';
-        return;
-    }
-
-    // Mostra a caixa
-    boxCores.style.display = 'block';
-
-    // Loop para criar as bolinhas
-    produtoAtual.Cores_Relacionadas.forEach(cor => {
-        const divCor = document.createElement('div');
-        divCor.className = 'color-option-btn'; // Usa a classe CSS que criamos antes
-        
-        // Estilos diretos para garantir, caso o CSS falhe
-        divCor.style.backgroundColor = cor.hex;
-        divCor.title = cor.nome; 
-
-        // Se for branco, reforça a borda
-        if (cor.hex.toUpperCase() === '#FFFFFF' || cor.hex === '#fff') {
-            divCor.style.border = '1px solid #ccc';
-        }
-
-        // Verifica se é o produto atual (Pinta a borda ou marca como selected)
-        if (cor.slug === produtoAtual.id_slug) {
-            divCor.classList.add('selected'); // Adiciona classe CSS
-            if(nomeCorSpan) nomeCorSpan.innerText = cor.nome; // Atualiza o texto "Cores: Preto"
-        } 
-
-        // Ao clicar, muda de página
-        divCor.onclick = function() {
-            if (cor.slug !== produtoAtual.id_slug) {
-                // Redireciona para o ID da outra cor
-                window.location.href = `produto.html?id=${cor.slug}`;
-            }
-        };
-
-        container.appendChild(divCor);
-    });
-}
-
-// INICIALIZAR
-loadProducts();
-
-/* =====================================================
-   CORREÇÃO DO FILTRO DE CATEGORIAS
-   ===================================================== */
-if (categoryButtons && categoryButtons.length > 0) {
-    categoryButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            categoryButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            const categoriaSelecionada = btn.getAttribute("data-cat");
-            const termoBusca = searchInput ? searchInput.value : "";
-            renderCards("TODAS", termoBusca, categoriaSelecionada);
-        });
-    });
-}
-
-/* =====================================================
-   CORREÇÃO DO TOGGLE DE MARCAS
-   ===================================================== */
-if (brandsToggle && brandPanel) {
-    brandsToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        brandPanel.classList.toggle("open");
-    });
-    document.addEventListener("click", (e) => {
-        if (!brandPanel.contains(e.target) && e.target !== brandsToggle) {
-            brandPanel.classList.remove("open");
-        }
-    });
-}
-
-/* =====================================================
-   CORREÇÃO DO MODAL DE ZOOM (FECHAR)
-   ===================================================== */
-document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("imageModal");
-    const closeBtn = document.getElementById("imageModalClose");
-    const backdrop = document.querySelector(".image-modal-backdrop");
-
-    function fecharModal() {
-        if(modal) modal.style.display = "none";
-    }
-
-    if (closeBtn) closeBtn.onclick = (e) => { e.preventDefault(); fecharModal(); };
-    if (backdrop) backdrop.onclick = () => fecharModal();
-    if (modal) modal.onclick = (e) => { if (e.target === modal) fecharModal(); };
-});
-
-/* =====================================================
-   LÓGICA DOS VISTOS RECENTEMENTE (HISTÓRICO)
-   ===================================================== */
-function salvarVisita(id) {
-    if (!id) return;
-    let historico = JSON.parse(localStorage.getItem('zeidanHistorico')) || [];
-    historico = historico.filter(item => item !== id);
-    historico.unshift(id);
-    if (historico.length > 10) historico.pop();
-    localStorage.setItem('zeidanHistorico', JSON.stringify(historico));
 }
 
 function renderizarHistorico() {
@@ -609,12 +573,8 @@ function renderizarHistorico() {
                   <span class="product-price">${p.Preco_Venda}</span>
                 </div>
               </a>
-              <div class="product-actions">
-                <a href="${detalheHref}" class="product-btn">VER DETALHES</a>
-              </div>
             `;
             container.appendChild(card);
-            
             if (typeof cardObserver !== 'undefined') cardObserver.observe(card);
         }
     });
@@ -622,3 +582,118 @@ function renderizarHistorico() {
     if (produtosEncontrados === 0) secao.style.display = 'none';
     else secao.style.display = 'block';
 }
+
+function salvarVisita(id) {
+    if (!id) return;
+    let historico = JSON.parse(localStorage.getItem('zeidanHistorico')) || [];
+    historico = historico.filter(item => item !== id);
+    historico.unshift(id);
+    if (historico.length > 10) historico.pop();
+    localStorage.setItem('zeidanHistorico', JSON.stringify(historico));
+}
+
+/* =====================================================
+   FUNÇÃO DE CORES (NOVO)
+   ===================================================== */
+function renderizarCores(produtoAtual) {
+    const boxCores = document.getElementById('box-cores');
+    const container = document.getElementById('color-container');
+    const nomeCorSpan = document.getElementById('nome-cor-selecionada');
+
+    if (!boxCores || !container) return;
+    container.innerHTML = ''; 
+
+    if (!produtoAtual.Cores_Relacionadas || produtoAtual.Cores_Relacionadas.length <= 1) {
+        boxCores.style.display = 'none';
+        return;
+    }
+    boxCores.style.display = 'block';
+
+    produtoAtual.Cores_Relacionadas.forEach(cor => {
+        const divCor = document.createElement('div');
+        divCor.className = 'color-option-btn'; 
+        divCor.style.backgroundColor = cor.hex;
+        divCor.title = cor.nome; 
+        if (cor.hex.toUpperCase() === '#FFFFFF' || cor.hex === '#fff') {
+            divCor.style.border = '1px solid #ccc';
+        }
+        if (cor.slug === produtoAtual.id_slug) {
+            divCor.classList.add('selected'); 
+            if(nomeCorSpan) nomeCorSpan.innerText = cor.nome; 
+        } 
+        divCor.onclick = function() {
+            if (cor.slug !== produtoAtual.id_slug) window.location.href = `produto.html?id=${cor.slug}`;
+        };
+        container.appendChild(divCor);
+    });
+}
+
+/* =====================================================
+   WIDGET WHATSAPP
+   ===================================================== */
+window.toggleZap = function() {
+    const menu = document.getElementById('whatsappMenu');
+    if (!menu) return;
+    if (menu.style.display === 'block') menu.style.display = 'none';
+    else menu.style.display = 'block';
+};
+
+window.abrirZap = function(tipo) {
+    let numero = window.WHATSAPP_NUMBER;
+    let msg = "";
+    if (tipo === 'vendas') msg = "Olá Zeidan! Gostaria de ver o catálogo e tirar dúvidas.";
+    if (tipo === 'suporte') msg = "Olá! Preciso de suporte sobre um pedido.";
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, '_blank');
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btnZapFloat = document.querySelector('.whatsapp-btn');
+    const btnFechar = document.querySelector('.zap-close');
+    const menuZap = document.getElementById('whatsappMenu');
+
+    if (btnZapFloat) btnZapFloat.onclick = window.toggleZap;
+    if (btnFechar) btnFechar.onclick = window.toggleZap;
+    
+    // Fechar ao clicar fora
+    document.addEventListener('click', function(event) {
+        const widget = document.querySelector('.whatsapp-widget');
+        if (widget && !widget.contains(event.target) && menuZap && menuZap.style.display === 'block') {
+             menuZap.style.display = 'none';
+        }
+    });
+
+    // Filtros e Categorias
+    if (categoryButtons && categoryButtons.length > 0) {
+        categoryButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                categoryButtons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                renderCards("TODAS", searchInput ? searchInput.value : "", btn.getAttribute("data-cat"));
+            });
+        });
+    }
+    
+    // Menu Marcas
+    if (brandsToggle && brandPanel) {
+        brandsToggle.addEventListener("click", (e) => {
+            e.stopPropagation(); e.preventDefault();
+            brandPanel.classList.toggle("open");
+        });
+        document.addEventListener("click", (e) => {
+            if (!brandPanel.contains(e.target) && e.target !== brandsToggle) brandPanel.classList.remove("open");
+        });
+    }
+
+    // Modal Imagem (Fechar)
+    const modal = document.getElementById("imageModal");
+    const closeBtn = document.getElementById("imageModalClose");
+    const backdrop = document.querySelector(".image-modal-backdrop");
+    function fecharModal() { if(modal) modal.style.display = "none"; }
+    if (closeBtn) closeBtn.onclick = (e) => { e.preventDefault(); fecharModal(); };
+    if (backdrop) backdrop.onclick = () => fecharModal();
+    if (modal) modal.onclick = (e) => { if (e.target === modal) fecharModal(); };
+});
+
+// INICIALIZAR
+loadProducts();
+

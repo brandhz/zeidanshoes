@@ -3,7 +3,7 @@
     "id_slug": "nike-dunk-low-panda",
     "Marca": "NIKE",
     "Produto": "Dunk Low Panda",
-    "Preco_Venda": "R$ 259,90",
+    "Preco_Venda": "R$ 199,90",
     "Gênero": "Unissex",
     "Imagens": ["img/dunk-panda.jpg",
   "img/dunk-panda-1.jpg"
@@ -15,6 +15,11 @@
     
     "Cores_Relacionadas": [
       { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
         "slug": "nike-dunk-low-azul-claro", 
         "hex": "#0687e3", 
         "nome": "Azul Claro/Branco" 
@@ -23,6 +28,11 @@
         "slug": "nike-dunk-low-green", 
         "hex": "#5e5836", 
         "nome": "Verde Musgo/Creme" 
+      },
+      { 
+        "slug": "nike-dunk-low-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
       }
     ]
   },
@@ -30,7 +40,7 @@
     "id_slug": "nike-dunk-low-azul-claro", 
     "Marca": "NIKE",
     "Produto": "Dunk Low Light Blue",
-    "Preco_Venda": "R$ 259,90",
+    "Preco_Venda": "R$ 199,90",
     "Gênero":"Unissex",
     "Imagens": [
       "img/dunk-azul-claro.jpg",
@@ -44,6 +54,11 @@
 
     "Cores_Relacionadas": [
       { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
         "slug": "nike-dunk-low-panda", 
         "hex": "#000000", 
         "nome": "Preto/Branco" 
@@ -52,6 +67,11 @@
         "slug": "nike-dunk-low-green", 
         "hex": "#5e5836", 
         "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
       }
     ]
   },  
@@ -59,7 +79,7 @@
     "id_slug": "nike-dunk-low-green", 
     "Marca": "NIKE",
     "Produto": "Dunk Low Military Green",
-    "Preco_Venda": "R$ 259,90",
+    "Preco_Venda": "R$ 199,90",
     "Gênero":"Feminino",
     "Imagens": [
       "img/dunk-verde.jpg",
@@ -73,6 +93,11 @@
 
     "Cores_Relacionadas": [
       { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
         "slug": "nike-dunk-low-panda", 
         "hex": "#000000", 
         "nome": "Preto/Branco" 
@@ -81,9 +106,259 @@
         "slug": "nike-dunk-low-azul-claro", 
         "hex": "#0687e3", 
         "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
       }
     ]
   }, 
+  {
+    "id_slug": "nike-dunk-low-brown", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low Brown",
+    "Preco_Venda": "R$ 199,90",
+    "Gênero":"Feminino",
+    "Imagens": [
+      "img/dunk-marrom.jpg",
+      "img/dunk-marrom-1.jpg",
+      "img/dunk-marrom-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Dunk Low Brown tem sobreposições em marrom, criando um visual neutro, sofisticado e cheio de estilo. Tem um design versátil que combina com looks casuais, streetwear e até mais arrumados, sendo perfeito para quem quer um sneaker atemporal e que combina com vários estilos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-adizero-pro-evo-branco", 
+    "Marca": "ADIDAS",
+    "Produto": "Adizero Pro Evo 1",
+    "Preco_Venda": "R$ 349,90",
+    "Gênero":"Feminino",
+    "Imagens": [
+      "img/adizero-branco.jpg",
+      "img/adizero-branco-1.jpg",
+      "img/adizero-branco-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Adizero Pro Evo 1 branco é um tênis de corrida com visual minimalista e futurista, todo em branco, que passa uma pegada clean e tecnológica perfeita para quem curte estética de performance. Com linhas finas e silhueta aerodinâmica, ele fica incrível em looks esportivos e casuais, combinando facilmente com peças neutras ou coloridas para um visual moderno e estiloso.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-adizero-pro-evo-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "adidas-adizero-pro-evo-azul", 
+        "hex": "#7cbcfa", 
+        "nome": "Azul Claro" 
+      },
+      { 
+         "slug": "adidas-adizero-pro-evo-cinza", 
+        "hex": "#bfbfbf", 
+        "nome": "Cinza/Prata" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-adizero-pro-evo-azul", 
+    "Marca": "ADIDAS",
+    "Produto": "Adizero Pro Evo 1",
+    "Preco_Venda": "R$ 349,90",
+    "Gênero":"Feminino",
+    "Imagens": [
+      "img/adizero-azul.jpg",
+      "img/adizero-azul-1.jpg",
+      "img/adizero-azul-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Adizero Pro Evo 1 é um tênis de corrida com visual minimalista e futurista, esse na cor azul, que passa uma pegada clean e tecnológica perfeita para quem curte estética de performance. Com linhas finas e silhueta aerodinâmica, ele fica incrível em looks esportivos e casuais, combinando facilmente com peças neutras ou coloridas para um visual moderno e estiloso.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-adizero-pro-evo-azul", 
+        "hex": "#7cbcfa", 
+        "nome": "Azul Claro" 
+      },
+      { 
+        "slug": "adidas-adizero-pro-evo-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "adidas-adizero-pro-evo-cinza", 
+        "hex": "#bfbfbf", 
+        "nome": "Cinza/Prata" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-adizero-pro-evo-cinza", 
+    "Marca": "ADIDAS",
+    "Produto": "Adizero Pro Evo 1",
+    "Preco_Venda": "R$ 349,90",
+    "Gênero":"Feminino",
+    "Imagens": [
+      "img/adizero-cinza.jpg",
+      "img/adizero-cinza-1.jpg",
+      "img/adizero-cinza-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Adizero Pro Evo 1 é um tênis de corrida com visual minimalista e futurista, esse na cor cinza, que passa uma pegada clean e tecnológica perfeita para quem curte estética de performance. Com linhas finas e silhueta aerodinâmica, ele fica incrível em looks esportivos e casuais, combinando facilmente com peças neutras ou coloridas para um visual moderno e estiloso.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-adizero-pro-evo-cinza", 
+        "hex": "#bfbfbf", 
+        "nome": "Cinza/Prata" 
+      },
+      { 
+        "slug": "adidas-adizero-pro-evo-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "adidas-adizero-pro-evo-azul", 
+        "hex": "#7cbcfa", 
+        "nome": "Azul Claro" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-verde-e-creme", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Gênero":"Masculino",
+    "Imagens": [
+      "img/9060-creme-verde.jpg",
+      "img/9060-creme-verde-1.jpg",
+      "img/9060-creme-verde-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [38, 39, 40, 41, 42, 43], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+       "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-cinza-claro", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Gênero":"Feminino",
+    "Imagens": [
+      "img/9060-bcp.jpg",
+      "img/9060-bcp1.jpg",
+      "img/9060-bcp2.jpg",
+      "img/9060-bcp3.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-verde-e-creme", 
+        "hex":  "#003f32", 
+        "nome": "Creme/Verde"  
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme"
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-creme", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Gênero":"Feminino",
+    "Imagens": [
+      "img/9060-creme.jpg",
+      "img/9060-creme-1.jpg",
+      "img/9060-creme-2.jpg",
+      "img/9060-creme-3.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      }
+    ]
+  },
   {
     "id_slug": "yeezy-slide-onyx",
     "Marca": "Adidas / Yeezy",

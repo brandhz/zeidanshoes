@@ -20,7 +20,7 @@ h1, h2, h3, h4, .section-title {
   display: block;
   margin: 20px auto 15px;
   text-transform: uppercase;
-  letter-spacing: 0.1cap;
+  letter-spacing: 0cap;
   opacity: 0.9;
   font-size: 30px;
   color: #000000
@@ -308,7 +308,7 @@ a {
 
 /* Classe específica para marca, caso exista */
 .product-brand, .brand-name {
-    color: color: #666 !important;
+    color: #666 !important;
     text-decoration: none !important;
 }
 
