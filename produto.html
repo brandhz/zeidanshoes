@@ -15,6 +15,7 @@
         flex-wrap: wrap;
         gap: 8px;
         margin-top: 10px;
+        justify-content: center;
     }
     .size-option-btn {
         width: 42px;
@@ -43,6 +44,51 @@
         display: none;
         font-weight: 600;
     }
+    /* Seletor de Cores */
+.color-selector-wrap {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    justify-content: center;
+}
+
+.color-option-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Faz ficar redondo */
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.color-option-btn:hover {
+    transform: scale(1.1);
+    border-color: #999;
+}
+
+/* Estilo para a cor que está selecionada atualmente */
+.color-option-btn.selected {
+    border: 2px solid #000;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 2px #fff inset; /* Efeito de anel */
+}
+
+/* Tooltip opcional (mostra o nome da cor ao passar o mouse) */
+.color-option-btn:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+}
   </style>
 </head>
 <body>
@@ -80,6 +126,12 @@
           <h1 id="produtoTitulo" class="product-detail-title">Carregando...</h1>
           <p id="produtoMarca" class="product-detail-brand"></p>
           <p id="produtoPreco" class="product-detail-price"></p>
+
+      <div id="box-cores" style="margin: 20px 0; display: none;">
+        <div class="selector-label" style="font-size:12px; color:#888; text-transform:uppercase; font-weight:700;">Cores Disponíveis:</div>
+          <div id="color-container" class="color-selector-wrap">
+        </div>
+      </div>
           
           <div style="margin: 20px 0;">
              <div class="selector-label" style="font-size:12px; color:#888; text-transform:uppercase; font-weight:700;">Selecione o Tamanho:</div>

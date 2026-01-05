@@ -4,17 +4,86 @@
     "Marca": "NIKE",
     "Produto": "Dunk Low Panda",
     "Preco_Venda": "R$ 259,90",
-    "Preco_Original": "R$ 1.199,90",
     "Gênero": "Unissex",
+    "Imagens": ["img/dunk-panda.jpg",
+  "img/dunk-panda-1.jpg"
+],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+    "Descricao": "O Nike Dunk Low Panda é um clássico em preto e branco, com cabedal em couro e design clean que combina com tudo. É um tênis versátil, perfeito para looks casuais, streetwear e até mais arrumados, sem perder o estilo urbano.",
+    "Destaque": true,
+    
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-dunk-low-azul-claro", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low Light Blue",
+    "Preco_Venda": "R$ 259,90",
+    "Gênero":"Unissex",
     "Imagens": [
-      "img/dunk-panda.jpg",
-      "img/dunk-panda-1.jpg"
+      "img/dunk-azul-claro.jpg",
+      "img/dunk-azul-claro-1.jpg",
+      "img/dunk-azul-claro-2.jpg"
     ],
     "Categoria": "Tênis",
-    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
-    "Descricao": "O ícone do streetwear. Design bicolor clássico em preto e branco que combina com absolutamente tudo. Couro premium e conforto para o dia todo.",
-    "Destaque": true
-  },
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Nike Dunk Low Light Blue é um clássico moderno, com cabedal em couro em tons claros (como branco ou cinza claro) e detalhes em azul claro, criando um visual limpo, fresco e cheio de estilo. Seu design combina perfeitamente com looks casuais, streetwear e até mais arrumados, sendo um sneaker versátil que funciona bem em várias ocasiões do dia a dia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      }
+    ]
+  },  
+  {
+    "id_slug": "nike-dunk-low-green", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low Military Green",
+    "Preco_Venda": "R$ 259,90",
+    "Gênero":"Feminino",
+    "Imagens": [
+      "img/dunk-verde.jpg",
+      "img/dunk-verde-1.jpg",
+      "img/dunk-verde-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Dunk Low Military Green é um clássico com cabedal em couro em tons terrosos, dominado por um verde musgo elegante e combinações com bege, creme ou marrom claro, trazendo um visual sofisticado e natural. É perfeito para looks casuais, streetwear e até mais arrumados, com um ar moderno e atemporal que combina com várias ocasiões do dia a dia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      }
+    ]
+  }, 
   {
     "id_slug": "yeezy-slide-onyx",
     "Marca": "Adidas / Yeezy",

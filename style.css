@@ -234,7 +234,7 @@ a {
 /* =========================================
    GRID DE PRODUTOS
    ========================================= */
-.product-grid,
+.product-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; padding: 0 16px 60px; }
 .search-results .product-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -258,14 +258,10 @@ a {
   min-height: 280px;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Sombra maior ao passar mouse */
-  border-color: #000; /* Borda preta ao passar o mouse */
-}
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-color: #000; }
 
 /* Link que envolve o card (se houver) */
-.product-link, 
+.product-link
 .product-card a {
   text-decoration: none !important;
   color: inherit !important;
@@ -273,14 +269,21 @@ a {
 }
 
 .product-image-wrap {
-    height: 320px !important; /* Aumentei bastante para caber a foto em pé */
     width: 100% !important;
-    overflow: hidden; /* Garante que não vaze nada */
+    height: 300px !important; /* Altura fixa vertical */
+    position: relative !important; /* Mantém o coração DENTRO */
+    overflow: hidden !important;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 8px;
+    background: transparent !important; /* Remove fundo branco extra */
 }
 
-/* Ajuste fino para a foto ficar centralizada */
 .product-image {
-    object-position: center center !important; 
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Preenche tudo */
+    object-position: center center !important;
+    display: block;
 }
 
 /* Infos Produto - Correção de Cores */
@@ -1067,31 +1070,28 @@ body::before {
 
 /* ==================================================
    PADRONIZAÇÃO DAS IMAGENS NA VITRINE (HOME)
-   Atualizado: Com margem no topo e centralizado
    ================================================== */
 
 .product-card img, 
 .product-grid .product-item img {
-    /* 1. Formato Quadrado e Ajuste de Imagem */
+    /* 1. Garante que seja um quadrado perfeito */
     aspect-ratio: 1 / 1 !important;
-    object-fit: contain !important;
+
+    /* 2. A MÁGICA: COVER preenche tudo (corta as sobras se precisar) */
+    object-fit: cover !important; 
+    
+    /* 3. Largura total */
+    width: 100% !important;
+    height: 100% !important;
+
+    /* 4. Removemos o padding e margens que estavam afastando a foto */
+    padding: 0 !important; 
+    margin: 0 !important; 
+    
+    /* 5. Acabamento */
     background-color: #ffffff !important;
-    
-    /* 2. Acabamento (Bordas e Sombra) */
-    border-radius: 12px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
-    
-    /* 3. O PULO DO GATO: Margem no Topo e Centralização */
-    margin-top: 20px !important;      /* <--- AQUI: Empurra a imagem para baixo */
-    margin-bottom: 25px !important;   /* Mantém o espaço para o texto embaixo */
-    
-    /* 4. Deixar um pouquinho menor que o card para criar uma moldura azul */
-    width:1000px !important;            /* Ocupa 92% da largura do card */
-    margin-left: auto !important;     /* Centraliza na esquerda */
-    margin-right: auto !important;    /* Centraliza na direita */
-    
-    padding: 10px !important;
-    box-sizing: border-box !important;
+    border-radius: 12px 12px 0 0 !important; /* Arredonda só em cima, ou use 12px para tudo */
+    box-shadow: none !important; /* Remove sombra interna se tiver */
     display: block !important;
 }
 /* ==================================================
@@ -1531,35 +1531,35 @@ body::before {
 
 /* 2. Container da Imagem (A área reservada para a foto) */
 .product-image-wrap {
-    width: 100% !important;
-    height: 320px !important;      /* ALTURA FIXA: O segredo para alinhar tudo */
-    position: relative !important; /* Para o coração funcionar */
-    overflow: vishiddenible !important;  /* Deixa o coração flutuar */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    width: 100%;
+    height: 320px;      /* ALTURA FIXA: O segredo para alinhar tudo */
+    position: relative; /* Para o coração funcionar */
+    overflow: hidden;  /* Deixa o coração flutuar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    background: transparent !important; /* REMOVE O FUNDO BRANCO QUADRADO */
-    margin: 0 auto 10px auto !important;
-    padding: 0 !important;
+    background: transparent; /* REMOVE O FUNDO BRANCO QUADRADO */
+    margin: 0 auto 10px auto;
+    padding: 0;
     border-radius: 0 !important;   /* Tira a borda do quadrado branco */
 }
 
 /* 3. A Imagem do Perfume (Controlada) */
 .product-image {
-    max-width: 100% !important;    /* Nunca passa da largura do card */
-    max-height: 100% !important;   /* Nunca passa da altura de 250px */
-    width: auto !important;        /* Mantém a proporção correta */
-    height: auto !important;
+    max-width: 100% ;    /* Nunca passa da largura do card */
+    max-height: 100%;   /* Nunca passa da altura de 250px */
+    width: auto;        /* Mantém a proporção correta */
+    height: auto;
     
-    object-fit: contain !important; /* Encaixa a imagem sem cortar nada */
-    display: block !important;
-    margin: 0 auto !important;
+    object-fit: cover; /* Encaixa a imagem sem cortar nada */
+    display: block;
+    margin: 0 auto;
     
     /* Remove sombras ou fundos da própria imagem */
-    box-shadow: none !important;
-    background: transparent !important;
-    border-radius: 0 !important;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
 }
 
 /* 4. O Botão de Favoritos (Coração) */
@@ -1651,202 +1651,26 @@ body::before {
 }
 
 /* =========================================
-   CARROSSEL INFINITO DE REVIEWS
-   ========================================= */
-.reviews-section {
-    width: 100%;
-    padding: 0px 0 15px; /* Espaço em cima e embaixo */
-    background: transparent;
-    overflow: hidden; /* Esconde o que sai da tela */
-    position: relative;
-}
-
-/* O Container que segura o trilho */
-.reviews-wrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    /* Degradê nas pontas para suavizar a entrada/saída */
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-/* O Trilho que anda sozinho */
-.reviews-track {
-    display: flex;
-    gap: 20px; /* Espaço entre os cards */
-    width: max-content; /* Largura baseada no conteúdo */
-    animation: scrollReviews 40s linear infinite; /* Animação lenta e contínua */
-}
-
-/* Pausa a animação quando passa o mouse (para ler) */
-.reviews-track:hover {
-    animation-play-state: paused;
-}
-
-/* O Card de Depoimento */
-.review-card {
-    width: 300px; /* Largura fixa */
-    background: rgba(255, 255, 255, 0.05); /* Vidro escuro */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex-shrink: 0; /* Impede de amassar */
-    transition: transform 0.3s;
-}
-
-.review-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Cabeçalho do Card (Nome e Cidade) */
-.review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.review-name {
-    font-weight: bold;
-    color: #fff;
-    font-size: 14px;
-}
-
-.review-city {
-    font-size: 10px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-}
-
-/* Estrelas */
-.review-stars {
-    color: #FFD700; /* Dourado */
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
-/* Texto */
-.review-text {
-    font-size: 12px;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.5;
-    font-style: italic;
-    min-height: 54px; /* Altura mínima para alinhar */
-}
-
-/* Selo de Verificado */
-.review-verified {
-    font-size: 10px;
-    color: #6be276; /* Verde sucesso */
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: auto; /* Empurra para o fundo */
-}
-
-/* A ANIMAÇÃO (O Segredo do Infinito) */
-@keyframes scrollReviews {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } 
-    /* Move -50% porque duplicamos o conteúdo. 
-       Quando chega na metade, ele volta pro 0 instantaneamente e ninguém percebe. */
-}
-
-/* Mobile: Acelera um pouquinho e diminui card */
-@media (max-width: 600px) {
-    .review-card { width: 260px; }
-    .reviews-track { animation-duration: 30s; }
-}
-
-/* =========================================
    GALERIA PREMIUM (AJUSTE FINO MOBILE)
    ========================================= */
 
-/* Container da Galeria */
-.product-gallery {
-    width: 100%;
-    max-width: 450px; /* Trava a largura para não estourar em tablets */
-    margin: 0 auto 20px auto;
-}
+/* Galeria */
+.product-gallery { width: 100%; }
+.main-image-container { position: relative; width: 100%; padding-bottom: 100%; background: #fff; border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+#main-product-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
 
-/* 1. FOTO PRINCIPAL (QUADRADO LIMPO) */
-.main-image-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%; /* Mantém formato quadrado (1:1) */
-    background-color: #fff;
-    border-radius: 12px;
-    /* Sombra suave para destacar do fundo azul */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
-    margin-bottom: 12px;
-    overflow: hidden;
-}
+.thumbnails-scroll-container { width: 100%; overflow-x: auto; padding: 5px 0; justify-content: center;}
+.thumbnails-track { display: flex; gap: 10px; justify-content: center;}
+.thumb-item { width: 70px; height: 70px; flex-shrink: 0; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; cursor: pointer; }
+.thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+.thumb-item.active { border-color: #000; }
 
-.main-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ajusta a imagem sem cortar */
-    border-radius: 20px !important;
-    padding: 0 !important;
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
-}
-
-/* 2. MINIATURAS (CRISPS & CLEAN) */
-.thumbnails-scroll-container {
-    width: 100%;
-    overflow-x: auto;
-    padding: 5px 2px;
-    scrollbar-width: none;
-    display: flex;
-    justify-content: center; /* Centraliza as miniaturas se forem poucas */
-}
-
-.thumbnails-track {
-    display: flex;
-    gap: 10px;
-}
-
-.thumb-item {
-    width: 65px; /* Tamanho bom para dedo */
-    height: 65px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #fff; /* Fundo branco sólido (importante no seu site escuro) */
-    
-    /* Estado normal: sem borda, sombra leve */
-    border: 2px solid transparent; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    opacity: 1; /* REMOVIDA A TRANSPARÊNCIA: Fica nítido */
-}
-
-.thumb-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 3px; /* Espaço mínimo */
-}
-
-/* 3. MINIATURA SELECIONADA (PREMIUM) */
-.thumb-item.active {
-    /* Borda Dourada Metálica (Mais bonita que amarelo liso) */
-    border: 2px solid #C5A059; 
-    transform: scale(0.98); /* Leve clique visual */
-    box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.2); /* Aura dourada */
-}
+.product-detail-content { text-align: left; }
+.product-detail-title { font-size: 28px; font-weight: 700; margin-bottom: 0px; }
+.product-detail-price { font-size: 45px; color: #e60505; font-weight: bold; margin-bottom: 5px; }
+.product-detail-actions { display: flex; gap: 10px; margin-top: 20px; }
+#btnEncomendar { background: #25d366; color: #fff; padding: 15px 30px; border-radius: 30px; border: none; font-weight: bold; cursor: pointer; }
+#btnComprar { display: none; }
 
 /* AJUSTE ESPECÍFICO PARA CELULARES PEQUENOS */
 @media (max-width: 400px) {
@@ -2024,3 +1848,9 @@ body::before {
 .zap-text span { font-size: 11px; color: #888; }
 .zap-arrow { color: #ccc; font-weight: bold; }
 
+/* FORÇA BRUTA: Obriga os cards a aparecerem mesmo se o JS falhar */
+.product-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
