@@ -18,8 +18,8 @@
         justify-content: center;
     }
     .size-option-btn {
-        width: 42px;
-        height: 42px;
+        width: 25px;
+        height: 18px;
         background: #fff;
         border: 1px solid #ddd;
         border-radius: 8px;
@@ -29,9 +29,9 @@
         color: #333;
         transition: all 0.2s;
     }
-    .size-option-btn:hover { border-color: #000; }
+    .size-option-btn:hover { border-color: #4cae56; }
     .size-option-btn.selected {
-        background-color: #000;
+        background-color: #4cae56;
         color: #fff;
         border-color: #000;
         transform: scale(1.1);
@@ -60,6 +60,7 @@
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
     position: relative;
+    text-align: center;
 }
 
 .color-option-btn:hover {
@@ -69,7 +70,7 @@
 
 /* Estilo para a cor que está selecionada atualmente */
 .color-option-btn.selected {
-    border: 2px solid #000;
+    border: 2px solid #4cae56;
     transform: scale(1.15);
     box-shadow: 0 0 0 2px #fff inset; /* Efeito de anel */
 }
@@ -81,7 +82,7 @@
     bottom: 120%;
     left: 50%;
     transform: translateX(-50%);
-    background: #000;
+    background: #4cae56;
     color: #fff;
     padding: 4px 8px;
     border-radius: 4px;
@@ -94,7 +95,7 @@
 <body>
   <header class="site-header">
     <div class="hero-inner">
-      <div class="logo-wrap">
+      <div class="logo-wrap" style="flex; justify-content: center;margin-top: 60px; margin-bottom: 30px;"
         <a href="index.html">
             <img src="logo.png" alt="ZEIDAN SHOES" class="logo" />
         </a>
@@ -109,31 +110,128 @@
   <main class="page-content">
     
     <section class="product-detail">
-      <div class="product-detail-inner">
+      <div class="product-detail-image">
+    
+    <style>
+        /* --- ESTILO PADRÃO (PC/DESKTOP) --- */
+        .product-gallery { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 0 auto 20px auto; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+        }
+        .main-image-container { 
+            position: relative; 
+            width: 100%; 
+            padding-bottom: 100%; /* Mantém quadrado no PC */
+            background: #fff; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            border: 1px solid #eee; 
+        }
+        .main-img { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 90%; 
+            height: 90%; 
+            object-fit: contain; 
+        }
         
-        <div class="product-detail-image">
-          <div class="product-gallery">
-              <div class="main-image-container">
-                  <img id="main-product-img" src="" alt="Carregando..." class="main-img">
-              </div>
-              <div class="thumbnails-scroll-container">
-                  <div class="thumbnails-track" id="thumbnails-track"></div>
-              </div>
-          </div>
+        /* Miniaturas */
+        .thumbnails-scroll-container { 
+            width: 100%; 
+            overflow-x: auto; 
+            padding: 5px 0; 
+            display: flex; 
+            justify-content: center; 
+        }
+        .thumbnails-track { display: flex; gap: 10px; }
+        .thumb-item { 
+            width: 60px; 
+            height: 60px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            flex-shrink: 0; 
+        }
+        .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+        .thumb-item.active { border-color: #000; }
+
+        /* --- CORREÇÃO MOBILE (CELULAR) --- */
+        @media (max-width: 768px) {
+            
+            /* 1. Força a div a sair das margens laterais */
+            .product-detail-image {
+                margin-left: -20px !important; /* Compensa o padding do site */
+                margin-right: -20px !important;
+                width: calc(100% + 40px) !important;
+            }
+
+            .product-gallery {
+                margin-bottom: 0 !important;
+                gap: 5px !important;
+            }
+
+            /* 2. Container da imagem: Reseta altura e fundo */
+            .main-image-container {
+                padding-bottom: 0 !important; /* Remove quadrado forçado */
+                height: auto !important;      /* Altura automática baseada na imagem */
+                min-height: 300px !important; /* Garante altura mínima para não sumir */
+                border: none !important;
+                border-radius: 0 !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* 3. A Imagem: Gigante e solta */
+            .main-img {
+                position: relative !important; /* Remove posição absoluta */
+                transform: none !important;
+                top: auto !important;
+                left: auto !important;
+                
+                width: 100% !important;       /* Largura total */
+                height: auto !important;      /* Altura proporcional */
+                object-fit: contain !important; 
+                display: block !important;    /* Garante visibilidade */
+            }
+            
+            /* Ajuste das thumbs no mobile para ficarem centralizadas */
+            .thumbnails-scroll-container {
+                background: #fff;
+                padding: 10px 0;
+            }
+        }
+    </style>
+
+    <div class="product-gallery">
+        <div class="main-image-container">
+            <img id="main-product-img" src="" alt="Produto" class="main-img">
         </div>
+
+        <div class="thumbnails-scroll-container">
+            <div class="thumbnails-track" id="thumbnails-track"></div>
+        </div>
+    </div>
+</div>
 
         <div class="product-detail-content">
           <h1 id="produtoTitulo" class="product-detail-title">Carregando...</h1>
           <p id="produtoMarca" class="product-detail-brand"></p>
           <p id="produtoPreco" class="product-detail-price"></p>
 
-      <div id="box-cores" style="margin: 20px 0; display: none;">
+      <div id="box-cores" style="margin: 10px 0; display: none;">
         <div class="selector-label" style="font-size:12px; color:#888; text-transform:uppercase; font-weight:700;">Cores Disponíveis:</div>
           <div id="color-container" class="color-selector-wrap">
         </div>
       </div>
           
-          <div style="margin: 20px 0;">
+          <div style="margin: 10px 0;">
              <div class="selector-label" style="font-size:12px; color:#888; text-transform:uppercase; font-weight:700;">Selecione o Tamanho:</div>
              <div id="size-container" class="size-selector-wrap">
                  </div>
@@ -161,10 +259,20 @@
       </div>
     </section>
 
-    <section id="box-sugestoes" style="display: none; max-width:1200px; margin:40px auto; padding:0 20px;">
-        <h3 class="product-detail-subtitle" style="text-align: center; margin-bottom: 20px; color:#333;">Veja Também</h3>
-        <div id="lista-sugestoes" style="display:flex; gap:15px; overflow-x:auto; padding-bottom:15px;"></div>
+    <section class="banner-section">
+        <img src="img/nb9060.webp" alt="Banner New Balance" class="full-width-banner">
+        <div class="banner-text">
+            <div class="banner-text align-left">
+            <div style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">NEW BALANCE 9060</div>
+            <p style="color:#FFF">Estilo, pra quem tem.</p>
+        </div>
+      </section>
+
+    <section id="box-sugestoes" style="display: flex; flex-direction: column; max-width:1200px; margin: 40px auto; padding: 0;">
+        <h3 class="product-detail-subtitle" style="text-align: center; margin-bottom: 20px; color:#333; padding: 0 20px;">Veja Também</h3>
+        <div id="lista-sugestoes" style="display: flex; gap:0px; overflow-x: auto; padding: 0 20px 15px 20px; justify-content: flex-start;"></div>
     </section>
+    
 
   </main>
 
@@ -188,7 +296,7 @@
         <button onclick="toggleCart()" class="close-cart">✕</button>
       </div>
       <div id="cart-items" class="cart-items-container">
-        <p class="empty-msg">Sua sacola está vazia 🛍️</p>
+        <p class="empty-msg" style="align-items: center !important; display: flex; ">Sua sacola está vazia</p>
       </div>
       <div class="cart-footer">
         <div class="cart-total" style="display: flex; justify-content: space-between; margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 15px;">
