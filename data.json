@@ -28,11 +28,6 @@
         "slug": "nike-dunk-low-green", 
         "hex": "#5e5836", 
         "nome": "Verde Musgo/Creme" 
-      },
-      { 
-        "slug": "nike-dunk-low-brown", 
-        "hex": "#4e2916", 
-        "nome": "Marrom/Creme" 
       }
     ]
   },
@@ -67,11 +62,6 @@
         "slug": "nike-dunk-low-green", 
         "hex": "#5e5836", 
         "nome": "Verde Musgo/Creme"
-      },
-      { 
-        "slug": "nike-dunk-low-brown", 
-        "hex": "#4e2916", 
-        "nome": "Marrom/Creme" 
       }
     ]
   },  
@@ -106,18 +96,13 @@
         "slug": "nike-dunk-low-azul-claro", 
         "hex": "#0687e3", 
         "nome": "Azul Claro/Branco" 
-      },
-      { 
-        "slug": "nike-dunk-low-brown", 
-        "hex": "#4e2916", 
-        "nome": "Marrom/Creme" 
       }
     ]
   }, 
   {
-    "id_slug": "nike-dunk-low-brown", 
+    "id_slug": "nike-air-force-brown", 
     "Marca": "NIKE",
-    "Produto": "Dunk Low Brown",
+    "Produto": "Air Force 1 Brown",
     "Preco_Venda": "R$ 199,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -132,24 +117,24 @@
 
     "Cores_Relacionadas": [
       { 
-        "slug": "nike-dunk-low-brown", 
+        "slug": "nike-air-force-brown", 
         "hex": "#4e2916", 
         "nome": "Marrom/Creme" 
       },
       { 
-        "slug": "nike-dunk-low-panda", 
-        "hex": "#000000", 
-        "nome": "Preto/Branco" 
+        "slug": "", 
+        "hex": "#", 
+        "nome": "" 
       },
       { 
-        "slug": "nike-dunk-low-azul-claro", 
-        "hex": "#0687e3", 
-        "nome": "Azul Claro/Branco" 
+        "slug": "", 
+        "hex": "#", 
+        "nome": "" 
       },
       { 
-        "slug": "nike-dunk-low-green", 
-        "hex": "#5e5836", 
-        "nome": "Verde Musgo/Creme"
+        "slug": "", 
+        "hex": "#", 
+        "nome": ""
       }
     ]
   },

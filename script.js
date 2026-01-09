@@ -19,29 +19,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadProducts() {
     try {
-        // Força carregamento novo com timestamp
+        // 1. Carrega os dados
         const response = await fetch("data.json?" + new Date().getTime());
         allProducts = await response.json();
-        console.log("Products loaded:", allProducts.length);
+        console.log("Produtos carregados:", allProducts.length);
 
-        // --- AQUI ESTÁ A CORREÇÃO ---
-        // Preenche o painel de marcas assim que os dados chegarem
-        populateBrandColumns(); 
+        // 2. Preenche o menu de marcas
+        if (typeof populateBrandColumns === 'function') populateBrandColumns();
 
-        // LÓGICA DE ROTEAMENTO
+        // 3. SEMPRE monta a Home Page (os carrosséis), mesmo que a gente não vá mostrar ela agora.
+        // Isso garante que se o cliente clicar em "Início", os produtos estarão lá.
+        initHomePage(); 
+
+        // 4. LÓGICA DE ROTEAMENTO (Decide qual tela mostrar)
         const params = new URLSearchParams(window.location.search);
         const productId = params.get('id');
 
         if (productId) {
+            // --- CENÁRIO A: PÁGINA DE PRODUTO ---
+            // Esconde a home e mostra o produto
+            const homeView = document.getElementById('vitrine-home');
+            if(homeView) homeView.style.display = 'none';
+            
             initProductDetails(productId);
+            
         } else {
-            initHomePage();
+            // --- CENÁRIO B: HOME OU FILTRO ---
+            
+            // Verifica se veio de um clique na marca
+            const marcaSalva = localStorage.getItem("marcaSelecionada");
+
+            if (marcaSalva) {
+                console.log(">>> APLICANDO FILTRO DE MARCA:", marcaSalva);
+                
+                // Limpa o gatilho para não filtrar de novo se der F5
+                localStorage.removeItem("marcaSelecionada"); 
+                
+                // Muda a tela para o Grid de Busca com a marca selecionada
+                if (typeof window.renderGrid === 'function') {
+                    window.renderGrid(marcaSalva, "", "TODAS");
+                }
+            } else {
+                // Se não tem filtro, garante que a Home apareça
+                if (window.showHomeView) window.showHomeView();
+            }
         }
 
     } catch (error) {
-        console.error("Critical Error loading data.json:", error);
-        const grid = document.getElementById('grid-produtos');
-        if(grid) grid.innerHTML = "<p style='padding:20px; text-align:center'>Erro ao carregar produtos. Tente recarregar a página.</p>";
+        console.error("Erro Crítico no loadProducts:", error);
     }
 }
 
@@ -186,7 +211,7 @@ function renderRail(container, filterValue, filterType = 'marca') {
    3. PRODUCT DETAILS LOGIC
    ===================================================== */
 function initProductDetails(id) {
-    // Find product by Slug or ID
+    // 1. ACHA O PRODUTO
     const product = allProducts.find(p => p.id_slug == id);
     
     if (!product) {
@@ -194,45 +219,64 @@ function initProductDetails(id) {
         return;
     }
 
-    // Save to History
+    // --- CORREÇÃO DE VISIBILIDADE ---
+    // Força a seção de detalhes a aparecer
+    const detailSection = document.querySelector('.product-detail');
+    if (detailSection) {
+        detailSection.style.display = 'block'; 
+        detailSection.classList.add('visible'); 
+    }
+
+    // Esconde a Home e Busca para não duplicar tela
+    const home = document.getElementById('vitrine-home');
+    if(home) home.style.display = 'none';
+    const search = document.getElementById('vitrine-busca');
+    if(search) search.style.display = 'none';
+
+    // 2. SALVA NO HISTÓRICO
     saveHistory(product.id_slug);
 
-    // Fill Text Elements
+    // 3. PREENCHE OS TEXTOS
     const setRes = (id1, id2, value) => {
         const el = document.getElementById(id1) || document.getElementById(id2);
         if (el) el.innerText = value;
     };
 
     setRes('produtoTitulo', 'product-detail-name', product.Produto);
+    
+    // --- AQUI ESTÁ A MUDANÇA ---
+    // Apenas preenche o texto, SEM adicionar clique ou sublinhado
     setRes('produtoMarca', 'product-detail-brand', product.Marca);
+    
+    // Removi o bloco "brandEl.onclick" que existia aqui antes.
+    // Agora é só texto puro.
+    // ---------------------------
+
     setRes('produtoPreco', 'product-detail-price', product.Preco_Venda);
     setRes('produtoDescricao', 'product-detail-desc', product.Descricao || "");
     
-    // Fill Specs (Estilo/Genero)
     setRes('produtoEstilo', 'product-detail-style', product.Categoria || "-");
     setRes('produtoGenero', 'product-detail-gender', product.Genero || product.genero || "Unissex");
 
-    // Init Interactive Modules
+    // 4. INICIA GALERIA E CORES
     initGallery(product);
     renderColors(product);
-    renderSizes(product); // <--- AGORA VAI CHAMAR COM O ID CORRETO
+    renderSizes(product); 
     renderSuggestions(product);
 
-    // Setup "Add to Cart" Button on Details Page
+    // 5. CONFIGURA BOTÃO DE COMPRAR
     const btnPlace = document.getElementById('produtoWhatsapp') || document.getElementById('btn-adicionar-carrinho');
     
     if (btnPlace) {
         const newBtn = btnPlace.cloneNode(true);
-        btnPlace.parentNode.replaceChild(newBtn, btnPlace);
+        if(btnPlace.parentNode) btnPlace.parentNode.replaceChild(newBtn, btnPlace);
         
         newBtn.onclick = (e) => {
             e.preventDefault();
             
-            // Validation: Size
+            // Validação de Tamanho
             if (!userSelectedSize && product.Tamanhos) {
-                // CORREÇÃO: Busca o ID 'size-error' que está no seu HTML
                 const errorMsg = document.getElementById('size-error');
-                
                 if (errorMsg) {
                     errorMsg.style.display = 'block';
                     errorMsg.innerText = "Por favor, selecione um tamanho!";
@@ -324,14 +368,13 @@ function renderColors(product) {
 /* =====================================================
    4. SEARCH & GRID VIEW LOGIC
    ===================================================== */
-// Função chamada ao Pesquisar
+// Função chamada ao Pesquisar ou Filtrar
 window.renderGrid = function(brandFilter, searchTerm, categoryFilter) {
     const homeView = document.getElementById('vitrine-home');
     const searchView = document.getElementById('vitrine-busca');
     const grid = document.getElementById('grid-produtos');
     const headerContainer = document.querySelector('#vitrine-busca .section-header');
     
-    // --- O PULO DO GATO ESTÁ AQUI ---
     // 1. Esconde a Home
     if(homeView) homeView.style.display = 'none';
     
@@ -341,8 +384,7 @@ window.renderGrid = function(brandFilter, searchTerm, categoryFilter) {
 
     const productDetail = document.querySelector('.product-detail');
     if(productDetail) productDetail.style.display = 'none';
-    // -------------------------------
-
+    
     // 3. Mostra a tela de Busca/Grid
     if(searchView) searchView.style.display = 'block';
 
@@ -360,7 +402,7 @@ window.renderGrid = function(brandFilter, searchTerm, categoryFilter) {
         return matchBrand && matchSearch;
     });
 
-    // 5. Atualiza Título
+    // 5. Atualiza Título e Botão de Voltar (AQUI ESTÁ A CORREÇÃO)
     if (headerContainer) {
         let titleText = "Todos os Produtos";
         if(search) titleText = `Resultados para "${search}"`;
@@ -368,8 +410,9 @@ window.renderGrid = function(brandFilter, searchTerm, categoryFilter) {
 
         headerContainer.innerHTML = `
             <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
-                <h2 class="section-title" id="titulo-busca" style="font-weight: 700; font-size: 35px; display: flex; padding: 0 0; margin-top: 0; margin-left: -20px !important;">${titleText}</h2>
-                <a href="#" onclick="voltarParaHome()" class="see-all-link" style="font-size: 14px; color: #555; display: flex; padding: 0 0; margin-top: -20px; margin-left: -20px !important;">← Voltar para Home</a>
+                <h2 class="section-title" id="titulo-busca" style="font-weight: 700; font-size: 35px; margin: 0;">${titleText}</h2>
+                
+                <a href="#" onclick="window.showHomeView(); return false;" class="see-all-link" style="font-size: 14px; color: #555; text-decoration: none;">← Voltar para Home</a>
             </div>
         `;
     }
@@ -382,11 +425,14 @@ window.renderGrid = function(brandFilter, searchTerm, categoryFilter) {
             return;
         }
         results.forEach(p => {
-            const card = createProductCard(p);
-            card.style.width = "100%";
-            card.style.minWidth = "0";
-            card.style.maxWidth = "none";
-            grid.appendChild(card);
+            if (typeof createProductCard === 'function') {
+                const card = createProductCard(p);
+                // Reseta larguras para ficar bonito no grid
+                card.style.width = "100%";
+                card.style.minWidth = "0";
+                card.style.maxWidth = "none";
+                grid.appendChild(card);
+            }
         });
     }
 

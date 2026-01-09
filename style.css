@@ -216,7 +216,7 @@ a {
     font-weight: 400;
     white-space: nowrap;
     text-align: right;
-    padding-left: 20px;
+    padding-left: 0px;
     justify-content: center;
 }
 .see-all-link:hover { text-decoration: underline; color: #000; }
@@ -228,6 +228,8 @@ a {
     overflow-x: auto;
     overflow-y: hidden;
     gap: 15px; /* Espaço entre os cards */
+    cursor: grab;
+    cursor: -webkit-grab;
     
     /* Margem interna: Topo, Direita, Baixo, Esquerda */
     padding: 10px 20px 40px 20px !important; 
@@ -241,6 +243,13 @@ a {
     /* Centraliza na tela */
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.horizontal-scroll-container.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    scroll-snap-type: none !important; /* Desliga o imã temporariamente */
+    scroll-behavior: auto !important;
 }
 
 /* Esconde a barra de rolagem visualmente */
@@ -265,6 +274,8 @@ a {
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra leve para destacar do fundo */
     position: relative; /* Para o link funcionar sobre ele */
+    user-select: none; 
+    -webkit-user-select: none;
 }
 
 /* 4. O Botão de Favoritos (Coração) */
@@ -611,7 +622,15 @@ a {
   font-size: 50px;
   font-weight: 700;
   color: #4cae56; /* Verde destaque */
-  text-align: center !important;
+  text-align: left !important;
+}
+
+.product-detail-installments {
+    margin-top: -5px !important; /* Puxa para cima */
+    font-size: 16px !important;  /* Ajuste o tamanho conforme preferir */
+    color: #888 !important;      /* Cor cinza */
+    font-weight: normal !important;
+    line-height: 1.2 !important;
 }
 
 .product-detail-description,
