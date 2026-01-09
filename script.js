@@ -955,3 +955,71 @@ sliders.forEach(slider => {
     slider.scrollLeft = scrollLeft - walk;
   });
 });
+
+/* =====================================================
+   LÓGICA DE COMPARTILHAMENTO (BLINDADA CONTRA HTTP)
+   ===================================================== */
+const btnShare = document.getElementById('btnCompartilhar');
+
+if (btnShare) {
+    btnShare.addEventListener('click', async () => {
+        const shareData = {
+            title: document.title, // Pega o título da página automático
+            text: 'Dá uma olhada nesse produto que achei:',
+            url: window.location.href
+        };
+
+        // 1. TENTA O COMPARTILHAMENTO NATIVO (Celular)
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (err) {
+                console.log('Compartilhamento cancelado ou erro:', err);
+            }
+        } 
+        // 2. SE FOR PC OU NÃO TIVER SHARE, TENTA COPIAR
+        else {
+            copiarLinkResiliente(window.location.href);
+        }
+    });
+}
+
+// Função Auxiliar que copia mesmo sem HTTPS
+function copiarLinkResiliente(texto) {
+    // Tenta o método moderno (só funciona em HTTPS)
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto)
+            .then(() => alert("Link copiado para a área de transferência!"))
+            .catch(() => tentarMetodoAntigo(texto)); // Se falhar, vai pro antigo
+    } else {
+        // Se estiver em HTTP, vai direto pro antigo
+        tentarMetodoAntigo(texto);
+    }
+}
+
+function tentarMetodoAntigo(texto) {
+    // Cria um campo de texto invisível temporário
+    const textArea = document.createElement("textarea");
+    textArea.value = texto;
+    
+    // Garante que não vai bagunçar a tela
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    textArea.style.top = "0";
+    document.body.appendChild(textArea);
+    
+    // Seleciona e copia
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        const msg = successful ? 'Link copiado!' : 'Não foi possível copiar o link.';
+        alert(msg);
+    } catch (err) {
+        alert('Opa, não consegui copiar o link. Tente copiar manualmente da barra de endereço.');
+    }
+    
+    // Limpa a bagunça
+    document.body.removeChild(textArea);
+}
