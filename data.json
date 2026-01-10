@@ -934,5 +934,290 @@
         "nome": "Branco" 
       }    
     ]
+  },
+  {
+    "id_slug": "converse-all-star-plataforma", 
+    "Marca": "CONVERSE",
+    "Produto": "All-Star Plataforma",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/allstar.jpeg",
+      "img/allstar1.jpeg",
+      "img/allstar2.jpeg",
+      "img/allstar3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O All Star plataforma mantém o visual clássico do Chuck Taylor, com cabedal em lona e biqueira de borracha, mas ganha um solado mais alto que deixa o tênis muito mais estiloso e marcante. É perfeito para quem quer alguns centímetros a mais sem abrir mão daquele look urbano, descolado e versátil que combina com vestidos, jeans, saias e peças mais fashion.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "converse-allstar", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "mizuno-space-3", 
+    "Marca": "MIZUNO",
+    "Produto": "Space 3",
+    "Preco_Venda": "R$ 149,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/space.jpeg",
+      "img/space1.jpeg",
+      "img/space2.jpeg",
+      "img/space3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Mizuno Space 3 tem visual de running moderno, com cabedal em mesh respirável e aplicações sintéticas que deixam o tênis esportivo e bem atual. A silhueta é leve e versátil, funcionando tanto para corrida e caminhada quanto para o dia a dia, compondo facilmente looks esportivos e casuais com pegada confortável.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "mizuno-space-3", 
+        "hex": "#ffffe4", 
+        "nome": "Off-White" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "on-cloudtilt-black-asphalt", 
+    "Marca": "ON RUNNING",
+    "Produto": "Cloudtilt Black Asphalt",
+    "Preco_Venda": "R$ 329,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/cloudtiltba.jpeg",
+      "img/cloudtiltba1.jpeg",
+      "img/cloudtiltba2.jpeg",
+      "img/cloudtiltba3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O On Cloudtilt Black Asphalt é um sneaker lifestyle com visual futurista e minimalista, todo em preto com detalhes grafite que passam uma estética clean e tecnológica. A silhueta é baixa, com cabedal em mesh estruturado e solado cheio de recortes e “clouds”, deixando o tênis moderno e perfeito para looks urbanos, do esportivo ao casual arrumado.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "on-cloudtilt-black-asphalt", 
+        "hex": "#2b2b2b", 
+        "nome": "Preto Asphalt" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "on-surfer-max", 
+    "Marca": "ON RUNNING",
+    "Produto": "Cloudsurfer Max",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/surfer.jpeg",
+      "img/surfer1.jpeg",
+      "img/surfer2.jpeg",
+      "img/surfer3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O On Cloudsurfer Max tem visual de running premium com pegada moderna, misturando cabedal em mesh estruturado com linhas fluidas e solado alto cheio de recortes e “nuvens” aparentes, que dão um look tecnológico. É aquele tipo de tênis que entrega cara de performance, mas também funciona muito bem em looks casuais urbanos, com vibe de sneaker de marca gringa que chama atenção pelo design robusto e futurista no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "on-surfer-max", 
+        "hex": "#161616", 
+        "nome": "Preto" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "new-balance-530-turbo-preto", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 530 TURBO",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/530.jpeg",
+      "img/5301.jpeg",
+      "img/5302.jpeg",
+      "img/5303.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39, 40], 
+    "Descricao": "O New Balance 530 Turbo é uma versão estilosa do clássico 530, com visual retrô de running dos anos 90 e um toque mais moderno e dinâmico nas cores e nos detalhes. Ele mistura cabedal respirável, sobreposições sintéticas e sola robusta, criando um sneaker urbano perfeito para quem curte tendência “dad shoe” com cara de sneaker de grife para o dia a dia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-530-turbo-preto", 
+        "hex": "#161616", 
+        "nome": "Preto" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "converse-all-star-jeans", 
+    "Marca": "CONVERSE",
+    "Produto": "All-Star Jeans",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/alljeans.jpeg",
+      "img/alljeans1.jpeg",
+      "img/alljeans2.jpeg",
+      "img/alljeans3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O All Star jeans traz o clássico design do Chuck Taylor, mas com cabedal em tecido denim que lembra calça jeans, dando um ar mais descolado e fashion ao modelo tradicional. É perfeito para quem quer um tênis versátil com carinha casual e urbana, que combina muito bem com looks básicos, streetwear e produções com jeans sobre jeans.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "converse-all-star-jeans", 
+        "hex": "#191C27", 
+        "nome": "Jeans" 
+      }    
+    ]
+  },
+{
+    "id_slug": "nike-pegasus-40-rosé", 
+    "Marca": "NIKE",
+    "Produto": "Pegasus 40",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/pegasusrose.jpeg",
+      "img/pegasusrose1.jpeg",
+      "img/pegasusrose2.jpeg",
+      "img/pegasusrose3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O Nike Pegasus 40 tem visual de running moderno, com cabedal em mesh respirável e linhas bem dinâmicas que passam aquela sensação de leveza e velocidade. É um tênis versátil, com cara esportiva mas design limpo, que funciona tanto para corrida quanto para usar no dia a dia em looks casuais e esportivos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-pegasus-40-rosé", 
+        "hex": "#ddb2a2", 
+        "nome": "Rosé" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "adidas-supernova-café", 
+    "Marca": "ADIDAS",
+    "Produto": "Supernova",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/supernova.jpeg",
+      "img/supernova1.jpeg",
+      "img/supernova2.jpeg",
+      "img/supernova3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Supernova é um tênis de corrida com visual moderno e bem limpo, cabedal em mesh e linhas suaves que passam uma estética de conforto e desempenho ao mesmo tempo. É perfeito para quem quer aquele look esportivo e descontraído, funcionando tanto em treinos quanto no dia a dia com roupas casuais e athleisure.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-supernova-marrom", 
+        "hex": "#6F4E37", 
+        "nome": "Café" 
+      },
+       { 
+        "slug": "adidas-supernova-off-rosé", 
+        "hex": "#ffffe4", 
+        "nome": "Off-White/Rosé" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "adidas-supernova-off-rosé", 
+    "Marca": "ADIDAS",
+    "Produto": "Supernova",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/supernovar.jpeg",
+      "img/supernovar1.jpeg",
+      "img/supernovar2.jpeg",
+      "img/supernovar3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Supernova é um tênis de corrida com visual moderno e bem limpo, cabedal em mesh e linhas suaves que passam uma estética de conforto e desempenho ao mesmo tempo. É perfeito para quem quer aquele look esportivo e descontraído, funcionando tanto em treinos quanto no dia a dia com roupas casuais e athleisure.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-supernova-off-rosé", 
+        "hex": "#ffffe4", 
+        "nome": "Off-White/Rosé" 
+      }, 
+      { 
+        "slug": "adidas-supernova-marrom", 
+        "hex": "#6F4E37", 
+        "nome": "Café" 
+      }    
+    ]
+  },
+  {
+    "id_slug": "vans-sk8-low-marrom", 
+    "Marca": "VANS",
+    "Produto": "SK8 Low",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/sk8.jpeg",
+      "img/sk81.jpeg",
+      "img/sk82.jpeg",
+      "img/sk83.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Vans Sk8 Low é a versão de cano baixo do clássico Sk8-Hi, mantendo o mesmo visual de skate com a sidestripe icônica da marca. Ele combina cabedal em lona e camurça com aquele estilo urbano atemporal, perfeito para looks casuais e streetwear que pedem um tênis versátil e estiloso.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "vans-sk8-low-marrom", 
+        "hex": "#6e4a3e", 
+        "nome": "Marrom" 
+      }
+    ]
+  },
+  {
+    "id_slug": "air-jordan-mid-rosa", 
+    "Marca": "AIR JORDAN",
+    "Produto": "Air Jordan 1 Mid",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/jordanrosa.webp",
+      "img/jordanrosa1.webp",
+      "img/jordanrosa2.webp",
+      "img/jordanrosa3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O Jordan Mid é o clássico Air Jordan 1 em versão de cano médio, com aquele visual de basquete retrô que virou símbolo do streetwear e da cultura sneaker. Ele tem painéis em couro, Swoosh lateral e logo Wings no tornozelo, criando um tênis muito estiloso que funciona tanto em looks casuais quanto em produções mais montadas, sempre com bastante atitude.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "air-jordan-mid-rosa", 
+        "hex": "#db95c0", 
+        "nome": "Rosa" 
+      }
+    ]
   }
 ]
