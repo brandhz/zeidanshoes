@@ -31,6 +31,7 @@
       font-size: 15px;
       line-height: 1.6;
       margin-bottom: 20px;
+      margin-top: 20px;
       text-align: justify;
     }
 
@@ -94,6 +95,23 @@
         font-size: 14px;
       }
     }
+
+    .banner-section {
+      width: 100%;
+      margin-bottom: 0px !;
+      text-align: center;
+      border-radius: 8px;
+      overflow: hidden; /* Arredonda cantos da imagem */
+    }
+
+    .banner-section-img {
+      width: 100%;       /* Ocupa a largura disponível */
+      margin-top: -15px;
+      margin-bottom: -15px;
+      height: auto;      /* Altura ajusta sozinha */
+      display: flex;
+      z-index: -1;
+    }
   </style>
 </head>
 
@@ -106,18 +124,22 @@
           <img src="logo.png" alt="ZEIDAN SHOES" class="logo" style="max-width: 200px;" />
         </a>
       </div>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Início</a>
-        <a href="contato.html" class="nav-link">Contato</a>
+      <nav class="main-nav" style="z-index: 1;">
+        <a href="index.html" class="footer-link">Início</a>
+        <a href="contato.html" class="footer-link">Contato</a>
+        <a href="guia-medidas.html" class="nav-link">Medidas</a>
+        <a href="troca.html" class="nav-link">Trocas e Devoluções</a>
       </nav>
     </div>
   </header>
 
-  <main class="page-content">
-    <div class="guide-container">
-      
-      <h1 class="guide-title">Guia de medidas</h1>
+  <section class="banner-section-img"">
+        <img src="img/guia.jpg" alt="Banner Guia" class="banner-section-img" >
+      </section>
 
+  <main class="page-content">
+
+    <div class="guide-container">
       <p class="guide-text">
         As medidas a seguir são referente a medida em centímetros da palmilha dos calçados!
       </p>

@@ -33,8 +33,7 @@
       max-width: 100%;   /* Nunca ultrapassa a tela */
       height: auto;      /* Altura ajusta sozinha */
       display: block;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra leve pra ficar chique */
-      filter: brightness(0.9);
+      margin-top: -15px;
     }
 
     .policy-alert {
@@ -72,6 +71,12 @@
         margin-top: 20px;
       }
     }
+    @media (min-width: 900px) {
+      .banner-section-img {
+        width: 100% !important;
+        height: 10%;
+      }
+    }
   </style>
 </head>
 
@@ -84,21 +89,22 @@
           <img src="logo.png" alt="ZEIDAN SHOES" class="logo" style="max-width: 200px;" />
         </a>
       </div>
-      <nav class="main-nav">
+      <nav class="main-nav" style="z-index: 1; align-items: center !important;">
         <a href="index.html" class="footer-link">Início</a>
-        <a href="contato.html" class="footer-link">Contato</a>
-        <a href="guia-medidas.html" class="nav-link">Guia de Medidas</a>
+        <a href="guia-medidas.html" class="nav-link">Medidas</a>
         <a href="troca.html" class="nav-link">Trocas e Devoluções</a>
+        <a href="contato.html" class="footer-link">Contato</a>
       </nav>
     </div>
   </header>
 
   <main class="page-content">
-    <div class="policy-container">
-      
-      <section class="banner-section-wrap">
+
+      <section class="banner-section-img">
         <img src="img/troca.jpg" alt="Banner Troca" class="banner-section-img">
-    </section>
+      </section>
+
+    <div class="policy-container">
 
       <p class="policy-alert">PRODUTOS NA BLACK FRIDAY NÃO TERÃO DEVOLUÇÃO!</p>
 

@@ -309,6 +309,45 @@ body.viewing-product #box-sugestoes {
     }
 }
 </style>
+<style>
+    /* 1. ESTILO (CSS) - Faz ficarem lado a lado */
+    .gender-section-banner {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 0px;
+    }
+
+    .gender-banner-item {
+        width: 50%; /* Divide a tela no meio */
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+        margin-bottom: 15px;
+        margin-top: -40px;
+    }
+
+    .gender-banner-item:hover {
+        transform: scale(1.02); /* Efeito de zoom leve ao passar o mouse */
+    }
+
+    .gender-banner-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ajuste para celular: Mantém lado a lado mas reduz margens */
+    @media (max-width: 768px) {
+        .gender-section-banner {
+            margin: 10px 0;
+            padding: 0 !important;
+            width: 100%;
+        }  
+    }
+
+   
+</style>
   </head>
   <body>
     <section id="topo" class="hero">
@@ -328,8 +367,9 @@ body.viewing-product #box-sugestoes {
             <nav class="main-nav">
               <button id="homeLink" class="nav-button" type="button">Início</button>
               <button id="brandsToggle" class="nav-button" type="button">Marcas</button>
+              <a href="guia-medidas.html" class="nav-link">Medidas</a>
 
-              <div class="brand-panel" id="brandPanel">
+              <div class="brand-panel" id="brandPanel" style="text-align: justify;">
                 <div class="brand-panel-inner">
                   <div class="brand-panel-header"></div>
                   <div id="brandColumns" class="brand-columns"></div>
@@ -389,6 +429,16 @@ body.viewing-product #box-sugestoes {
     <main id="inicio" class="page-content">
 
   <div id="vitrine-home">
+
+    <section class="gender-section-banner">
+    <div class="gender-banner-item" onclick="filtrarGeneroManual('FEMININO')">
+        <img src="img/fem.png" alt="Calçados Femininos">
+    </div>
+
+    <div class="gender-banner-item" onclick="filtrarGeneroManual('MASCULINO')">
+        <img src="img/mas.png" alt="Calçados Masculinos">
+    </div>
+    </section>
 
     <div class="wrapper-scroll scroll-arrastavel">
     </div>
@@ -478,7 +528,7 @@ body.viewing-product #box-sugestoes {
   <div id="vitrine-busca" style="display: none; padding-top: 0px;">
       <div class="section-header">
           <h2 class="section-title" id="titulo-busca">Resultados</h2>
-          <a href="#" onclick="voltarParaHome()" class="see-all-link" style="font-size: 14px; color: #555; display: flex; padding: 0 0; margin-top: -20px; margin-left: -20px !important;">Voltar para Home</a>
+          <a href="#" onclick="window.location.reload()" class="see-all-link" style="font-size: 14px; color: #555; display: flex; padding: 0 0; margin-top: -20px; margin-left: -20px !important;">Voltar para Home</a>
       </div>
       <div id="grid-produtos" class="product-grid"></div>
   </div>
@@ -801,8 +851,106 @@ body.viewing-product #box-sugestoes {
 </div>
 
 <script>
+    window.filtrarGeneroManual = function(generoAlvo) {
+        console.log("Tentando filtrar por:", generoAlvo);
+
+        // 1. MODO DETETIVE: Procura a lista de produtos em qualquer lugar
+        let listaProdutos = [];
+
+        if (typeof window.allProducts !== 'undefined' && window.allProducts.length > 0) {
+            listaProdutos = window.allProducts;
+        } else if (typeof allProducts !== 'undefined' && allProducts.length > 0) {
+            listaProdutos = allProducts;
+        } else if (typeof window.perfumes !== 'undefined' && window.perfumes.length > 0) {
+            listaProdutos = window.perfumes; // Caso esteja usando o script do Zeidan Parfum
+        } else if (typeof perfumes !== 'undefined' && perfumes.length > 0) {
+            listaProdutos = perfumes;
+        }
+
+        // 2. Se não achou nada, aí sim avisa
+        if (listaProdutos.length === 0) {
+            alert("Os produtos ainda estão carregando ou não foram encontrados. Aguarde alguns segundos e tente novamente.");
+            return;
+        }
+
+        // 3. Configura as telas
+        let homeView = document.getElementById('vitrine-home');
+        let searchView = document.getElementById('vitrine-busca');
+        let grid = document.getElementById('grid-produtos');
+        
+        // Tenta achar o grid pela classe se não achar pelo ID
+        if (!grid) grid = document.querySelector('.product-grid');
+
+        if (!searchView || !grid) {
+            alert("Erro Técnico: A área de 'vitrine-busca' não existe no HTML.");
+            return;
+        }
+
+        // 4. Troca de Tela
+        if (homeView) homeView.style.display = 'none';
+        
+        const historico = document.getElementById('historico-section');
+        if(historico) historico.style.display = 'none';
+        
+        const detalhes = document.querySelector('.product-detail');
+        if(detalhes) detalhes.style.display = 'none';
+
+        searchView.style.display = 'block';
+
+        // 5. Atualiza o Título
+        const headerContainer = searchView.querySelector('.section-header') || document.getElementById('titulo-busca');
+        if (headerContainer) {
+            headerContainer.innerHTML = `
+                <div style="text-align:center; margin-bottom:20px;">
+                    <h2 style="font-size: 24px; font-weight: 800; text-transform: uppercase;">
+                        Calçados ${generoAlvo === 'FEMININO' ? 'Femininos' : 'Masculinos'}
+                    </h2>
+                    <a href="#" onclick="window.location.reload(); return false;" style="color:#555; font-size:14px;">
+                        ← Voltar para Home
+                    </a>
+                </div>
+            `;
+        }
+
+        // 6. FILTRAGEM USANDO A LISTA QUE ENCONTRAMOS
+        const resultados = listaProdutos.filter(p => {
+            // Tenta achar o gênero em várias propriedades (Genero, genero, Gênero)
+            const g = (p.Genero || p.genero || p["Gênero"] || "UNISSEX").toUpperCase().trim();
+            
+            return g === generoAlvo || 
+                   g === "UNISSEX" || 
+                   g === "UNISEX" || 
+                   g.includes("COMPARTILHÁVEL");
+        });
+
+        // 7. Desenha os produtos
+        grid.innerHTML = ""; 
+        
+        if (resultados.length === 0) {
+            grid.innerHTML = `<div style="text-align:center; padding:50px; width:100%;">Nenhum modelo encontrado.</div>`;
+        } else {
+            resultados.forEach(p => {
+                // Tenta usar a função de criar card (global ou local)
+                if (typeof window.createProductCard === 'function') {
+                    const card = window.createProductCard(p);
+                    card.style.width = "100%";
+                    card.style.maxWidth = "none";
+                    grid.appendChild(card);
+                } else if (typeof createProductCard === 'function') {
+                    const card = createProductCard(p);
+                    card.style.width = "100%";
+                    card.style.maxWidth = "none";
+                    grid.appendChild(card);
+                }
+            });
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+
+<script>
 document.addEventListener("DOMContentLoaded", function() {
-    // SELECIONA O SEU GRID ESPECÍFICO
     const slider = document.getElementById('historico-grid');
 
     if(slider) {
@@ -810,38 +958,35 @@ document.addEventListener("DOMContentLoaded", function() {
         let startX;
         let scrollLeft;
 
-        // Quando clica
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
-            slider.classList.add('active'); // Ativa o cursor de "agarrando"
+            slider.classList.add('active');
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
         });
 
-        // Quando o mouse sai da área
         slider.addEventListener('mouseleave', () => {
             isDown = false;
             slider.classList.remove('active');
         });
 
-        // Quando solta o clique
         slider.addEventListener('mouseup', () => {
             isDown = false;
             slider.classList.remove('active');
         });
 
-        // Quando move o mouse
         slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return; // Se não estiver clicado, não faz nada
-            e.preventDefault();  // Evita selecionar texto/imagens
+            if (!isDown) return;
+            e.preventDefault();
             
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // Velocidade (aumente o 2 para rolar mais rápido)
+            const walk = (x - startX) * 2;
             slider.scrollLeft = scrollLeft - walk;
         });
     }
 });
 </script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const sliders = document.querySelectorAll('.horizontal-scroll-container');
@@ -854,7 +999,6 @@ document.addEventListener("DOMContentLoaded", function() {
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
-            // Pega a posição onde clicou
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
         });
@@ -870,11 +1014,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return; // Se não tiver clicado, para aqui
-            e.preventDefault();  // Evita selecionar texto
+            if (!isDown) return;
+            e.preventDefault();
             
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // Velocidade do arrasto (mude o 2 se quiser mais rápido)
+            const walk = (x - startX) * 2;
             slider.scrollLeft = scrollLeft - walk;
         });
     });

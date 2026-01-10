@@ -86,11 +86,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center !important;
   gap: 24px;
   background: #e60505;
   padding: 6px 24px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
+  white-space: nowrap;
 }
 
 .main-nav .nav-button,
@@ -98,7 +100,7 @@ a {
   background: none;
   border: none;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   cursor: pointer;
@@ -322,7 +324,7 @@ a {
     position: absolute;
     top: 0; left: 0;
     z-index: 1;
-    filter: brightness(0.7); 
+     filter: brightness(0.5);
 }
 
 .banner-text {

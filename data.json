@@ -1219,5 +1219,30 @@
         "nome": "Rosa" 
       }
     ]
+  },
+  {
+    "id_slug": "new-balance-530-branco", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 530",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/530b3.webp",
+      "img/530b1.webp",
+      "img/530b2.webp",
+      "img/530b.webp"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39], 
+    "Descricao": "O New Balance 530 é um sneaker com visual retrô de running, inspirado nos anos 90/2000, misturando cabedal em mesh e sintético com linhas esportivas e detalhes que lembram tênis de corrida antigos. Ele tem cara de tênis vintage, mas com acabamento moderno e versátil, perfeito para looks urbanos, streetwear e casuais que pedem um tênis estiloso e confortável no dia a dia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-530-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco" 
+      }    
+    ]
   }
 ]
