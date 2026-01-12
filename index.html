@@ -1,659 +1,338 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zeidan Shoes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
     <meta property="og:title" content="Zeidan Shoes | Seu estilo nos pés">
-    <meta property="og:description" content="O seu estilo está aqui. Os melhores calçados com envio para todo o Brasil.">
+    <meta property="og:description"
+        content="O seu estilo está aqui. Os melhores calçados com envio para todo o Brasil.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <link rel="shortcut icon" href="logopequena.png" type="image/x-icon">
 
     <style>
-  /* --- ESTILO PARA CELULAR (Telas menores que 768px) --- */
-  @media (max-width: 768px) {
-    
-    /* Transforma os Benefícios (Pix/Cartão) em Carrossel */
-    .benefits-container {
-      display: flex !important;
-      flex-wrap: nowrap !important;       /* Impede de quebrar linha */
-      overflow-x: auto;                   /* Permite rolar para o lado */
-      gap: 15px;                          /* Espaço entre os cartões */
-      padding: 10px 20px;                 /* Margem interna */
-      justify-content: flex-start !important; /* Começa da esquerda */
-      scroll-snap-type: x mandatory;      /* Efeito de "travar" no cartão */
-      -webkit-overflow-scrolling: touch;  /* Rolagem macia no iPhone */
-    }
+        @media (max-width: 768px) {
 
-    /* Define o tamanho de cada cartão de benefício */
-    .benefit-item {
-      flex: 0 0 85%;        /* Ocupa 85% da largura da tela */
-      scroll-snap-align: center; /* Centraliza ao parar */
-      margin-bottom: 0 !important; /* Remove margem de baixo se tiver */
-      background: rgba(255,255,255,0.05); /* Fundo sutil (opcional) */
-      border-radius: 10px;
-      padding: 20px;
-      border: 1px solid #333; /* Borda fina para destacar */
-    }
-    
-    /* Esconde a barra de rolagem feia */
-    .benefits-container::-webkit-scrollbar { display: none; }
-  }
+            .benefits-container {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto;
+                gap: 15px;
+                padding: 10px 20px;
+                justify-content: flex-start !important;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
 
-  /* =========================================
-   1. GLOBAL: ALINHAMENTO PERFEITO DOS CARDS
-   (Aplica na Vitrine E no Histórico)
+            .benefit-item {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+                margin-bottom: 0 !important;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                padding: 20px;
+                border: 1px solid #333;
+            }
+
+            .benefits-container::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        /* =========================================
+   ALINHAMENTO DOS CARDS
    ========================================= */
 
-/* Faz o cartão ocupar toda a altura disponível e organiza em coluna */
-.product-card {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    height: 100% !important; /* Estica o card até a altura do vizinho mais alto */
-    background: #e6e6e6 !important;
-    border-radius: 12px;
-    padding: 12px;
-    min-height: 420px; /* Altura mínima garantida */
-}
+        .product-card {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            height: 100% !important;
+            background: #e6e6e6 !important;
+            border-radius: 12px;
+            padding: 12px;
+            min-height: 420px;
+        }
 
-/* O conteúdo de texto cresce para ocupar o buraco vazio */
-.product-link-text {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Texto começa no topo */
-}
+        .product-link-text {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
-/* =================================================================
-   AQUI ESTÁ A CORREÇÃO DEFINITIVA DA IMAGEM
-   ================================================================= */
+        .product-image-wrap {
+            width: 100% !important;
+            height: 280px !important;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden !important;
+            margin-bottom: 10px !important;
+            padding: 0 !important;
+            border-radius: 8px;
+            background: transparent !important;
+        }
 
-/* A Caixa da Imagem: Altura FIXA e Recorte */
-.product-image-wrap {
-    width: 100% !important;
-    height: 280px !important; /* Altura fixa (nem muito alta, nem muito baixa) */
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden !important; /* Corta o que sobrar */
-    margin-bottom: 10px !important;
-    padding: 0 !important;
-    border-radius: 8px;
-    background: transparent !important;
-}
+        .product-image {
+            width: 100% !important;
+            height: 100% !important;
 
-/* A Imagem: Preenche tudo com Zoom (Cover) */
-.product-image {
-    width: 100% !important;
-    height: 100% !important;
-    
-    /* O SEGREDO: COVER dá zoom na foto para cobrir todo o espaço */
-    object-fit: cover !important; 
-    
-    /* Centraliza para cortar as bordas de cima/baixo igualmente */
-    object-position: center center !important;
-    
-    display: block !important;
-    border-radius: 8px;
-    margin: 0 !important;
-}
+            object-fit: cover !important;
 
-/* ================================================================= */
+            object-position: center center !important;
 
-/* O botão sempre vai para o fundo (chão do prédio) */
-.product-actions {
-    margin-top: auto !important; 
-    width: 100%;
-}
+            display: block !important;
+            border-radius: 8px;
+            margin: 0 !important;
+        }
 
-/* =========================================
-   2. AJUSTES ESPECÍFICOS DO HISTÓRICO (CORRIGIDO)
+        .product-actions {
+            margin-top: auto !important;
+            width: 100%;
+        }
+
+        /* =========================================
+   AJUSTES DO HISTÓRICO
    ========================================= */
 
-/* 1. O Container Pai (Segura o Título e o Carrossel) */
-#historico-section {
-    width: 100%;
-    max-width: 1200px !important; /* Trava a largura igual ao resto do site */
-    margin-left: auto !important; /* Centraliza na tela */
-    margin-right: auto !important; /* Centraliza na tela */
-    padding: 0 20px !important;   /* Margem de segurança nas laterais */
-    box-sizing: border-box;
-}
+        #historico-section {
+            width: 100%;
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding: 0 20px !important;
+            box-sizing: border-box;
+        }
 
-/* --- CORREÇÃO DO SCROLL HORIZONTAL (HISTÓRICO) --- */
-#historico-grid {
-    display: flex !important;           /* Força layout lado a lado */
-    flex-wrap: nowrap !important;       /* PROIBE quebrar linha (empilhar) */
-    overflow-x: auto !important;        /* Ativa a barra de rolagem horizontal */
-    overflow-y: hidden;                 /* Esconde rolagem vertical */
-    gap: 15px;                          /* Espaço entre os produtos */
-    padding: 10px 5px;                  /* Espacinho interno */
-    justify-content: flex-start !important; /* Começa da esquerda */
-    cursor: grab;
-    cursor: -webkit-grab;
-}
+        #historico-grid {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            overflow-x: auto !important;
+            overflow-y: hidden;
+            gap: 15px;
+            padding: 10px 5px;
+            justify-content: flex-start !important;
+            cursor: grab;
+            cursor: -webkit-grab;
+        }
 
-#historico-grid.active {
-    cursor: grabbing; /* Mostra a mãozinha fechada "segurando" */
-    cursor: -webkit-grabbing;
-}
-    
-    /* Rolagem suave no celular */
-    -webkit-overflow-scrolling: touch;  
-    scroll-snap-type: x mandatory;      
-}
+        #historico-grid.active {
+            cursor: grabbing;
+            cursor: -webkit-grabbing;
+        }
 
-/* Força os cards a terem um tamanho fixo dentro do histórico */
-#historico-grid .product-card {
-    flex: 0 0 auto !important;          /* Não deixa o card esticar nem encolher */
-    width: 250px !important;            /* Largura fixa */
-    min-width: 180px !important;        /* Garante que não esmague */
-    max-width: 180px !important;
-    margin: 0 !important;
-    scroll-snap-align: start !important;           /* Alinha certinho ao rolar */
-}
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        }
 
-/* Esconde a barra de rolagem feia (Opcional) */
-#historico-grid::-webkit-scrollbar {
-    height: 4px;
-}
-#historico-grid::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-/* 4. Elemento Fantasma (Respiro na direita) */
-#historicoGrid::after {
-    content: "";
-    display: block;
-    min-width: 5px; 
-    height: 1px;    
-    flex: 0 0 auto;
-}
+        #historico-grid .product-card {
+            flex: 0 0 auto !important;
+            width: 250px !important;
+            min-width: 180px !important;
+            max-width: 180px !important;
+            margin: 0 !important;
+            scroll-snap-align: start !important;
+        }
 
-/* 5. Scrollbar */
-#historicoGrid::-webkit-scrollbar { height: 4px; }
-#historicoGrid::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 10px; }
-/* 6. Título (Zera o padding extra para alinhar com a caixa) */
-#historico-section .section-title {
-    padding-left: 0 !important;
-    margin-bottom: 15px;
-}
+        #historico-grid::-webkit-scrollbar {
+            height: 4px;
+        }
 
-/* Ajuste Mobile para a Imagem */
-@media (max-width: 600px) {
-    .product-image-wrap {
-        height: 160px !important; /* Menor no celular para não ocupar a tela toda */
-    }
-}
-/* =========================================
-   CORREÇÃO: SACOLA NA FRENTE DE TUDO
+        #historico-grid::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+
+        #historicoGrid::after {
+            content: "";
+            display: block;
+            min-width: 5px;
+            height: 1px;
+            flex: 0 0 auto;
+        }
+
+        #historicoGrid::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        #historicoGrid::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        #historico-section .section-title {
+            padding-left: 0 !important;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .product-image-wrap {
+                height: 160px !important;
+            }
+        }
+
+        .cart-modal-overlay {
+            z-index: 2147483647 !important;
+        }
+
+        .cart-modal-content {
+            z-index: 2147483647 !important;
+            position: relative;
+        }
+
+        /* =========================================
+   BUSCA
    ========================================= */
 
-/* Garante que a janela escura da sacola fique na frente dos botões */
-.cart-modal-overlay {
-    z-index: 2147483647 !important; /* O número máximo permitido pelo navegador */
-}
+        #grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-/* Garante que o conteúdo branco da sacola também fique na frente */
-.cart-modal-content {
-    z-index: 2147483647 !important;
-    position: relative;
-}
-/* =========================================
-   CORREÇÃO DA PÁGINA DE BUSCA
-   ========================================= */
+        #grid-produtos .product-card {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            margin: 0 !important;
+        }
 
-/* 1. O Container dos Produtos (A Grade) */
-#grid-produtos {
-    display: grid;
-    /* Cria 2 colunas de tamanho igual no celular */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; /* Espaço entre os cards */
-    padding: 10px; /* Margem interna para não colar na borda */
-    width: 100%;
-    box-sizing: border-box; /* Garante que o padding não estoure a largura */
-}
-#grid-produtos .product-card {
-    width: 100% !important;      /* Ocupa 100% da coluna */
-    min-width: 0 !important;     /* Remove trava de largura mínima */
-    max-width: none !important;  /* Remove trava de largura máxima */
-    margin: 0 !important;        /* Remove margens externas */
-}
+        #grid-produtos .product-card img {
+            width: 100% !important;
+            height: auto !important;
+        }
 
-/* Garante que a imagem dentro do card encolha junto */
-#grid-produtos .product-card img {
-    width: 100% !important;
-    height: auto !important;
-}
-/* 2. O Título da Busca (Para não cortar) */
-#titulo-busca {
-    font-size: 1.2rem; /* Tamanho bom para celular */
-    text-align: left !important;
-    margin: 20px 0;
-    padding: 0 10px;
-    width: 100%;
-    box-sizing: border-box;
-    white-space: normal !important; 
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
+        #titulo-busca {
+            font-size: 1.2rem;
+            text-align: left !important;
+            margin: 20px 0;
+            padding: 0 10px;
+            width: 100%;
+            box-sizing: border-box;
+            white-space: normal !important;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
 
-/* 3. Ajuste para Telas Maiores (PC) */
-@media (min-width: 768px) {
-    #grid-produtos {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
-        padding: 20px;
-    }
-}
-/* =====================================================
-   CORREÇÃO FINAL: ALINHAMENTO E BOTÕES
+        @media (min-width: 768px) {
+            #grid-produtos {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+                padding: 20px;
+            }
+        }
+
+        /* =====================================================
+   ALINHAMENTO E BOTÕES
    ===================================================== */
 
-/* 1. Consertar Botões Flutuantes (Zap e Carrinho) sumindo/desconfigurando */
-.cart-floating-btn, 
-.whatsapp-widget, 
-.btn-whatsapp-checkout {
-    z-index: 99999 !important; /* Garante que fiquem ACIMA de tudo */
-    position: fixed !important; /* Garante que fiquem presos na tela */
-}
+        .cart-floating-btn,
+        .whatsapp-widget,
+        .btn-whatsapp-checkout {
+            z-index: 99999 !important;
+            position: fixed !important;
+        }
 
-/* 2. Alinhamento Perfeito dos Cards (Resolve o problema do S23 Ultra) */
-#grid-produtos .product-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Faz o card ocupar toda a altura da linha */
-    justify-content: space-between; /* Empurra o botão para o fundo */
-}
+        #grid-produtos .product-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
 
-#grid-produtos .product-link-text {
-    flex-grow: 1; /* Faz o texto ocupar o espaço vazio */
-    display: flex;
-    flex-direction: column;
-}
+        #grid-produtos .product-link-text {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* Força o título a ter sempre altura de 2 linhas, mesmo que seja curto */
-#grid-produtos .product-name {
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limita a 2 linhas */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-height: 48px; /* Altura fixa para 2 linhas de texto (ajuste se precisar) */
-    line-height: 1.2;
-    margin-bottom: 8px;
-}
-/* Garante que as sugestões apareçam mesmo no "Modo Focado" */
-body.viewing-product #box-sugestoes {
-    display: block !important;
-}
-/* =========================================
+        #grid-produtos .product-name {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 48px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        body.viewing-product #box-sugestoes {
+            display: block !important;
+        }
+
+        /* =========================================
    ESTILO DAS LOGOS DENTRO DOS BANNERS
    ========================================= */
-.banner-brand-logo {
-    display: block;       /* Garante que fique em uma linha separada */
-    max-width: 80px;      /* Tamanho máximo da logo (ajuste se achar pequeno/grande) */
-    height: auto;         /* Mantém a proporção correta */
-    margin: 0 auto; /* Espaço em cima (15px) e centraliza (auto nas laterais) */
-}
-
-/* Ajuste para telas menores, se precisar que fique menorzinha no celular */
-@media (max-width: 768px) {
-    .banner-brand-logo {
-        max-width: 60px;
-        margin-top: -30px;
-    }
-}
-</style>
-<style>
-    /* 1. ESTILO (CSS) - Faz ficarem lado a lado */
-    .gender-section-banner {
-        display: flex;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 0px;
-    }
-
-    .gender-banner-item {
-        width: 50%; /* Divide a tela no meio */
-        cursor: pointer;
-        overflow: hidden;
-        transition: transform 0.2s ease;
-        margin-bottom: 15px;
-        margin-top: -40px;
-    }
-
-    .gender-banner-item:hover {
-        transform: scale(1.02); /* Efeito de zoom leve ao passar o mouse */
-    }
-
-    .gender-banner-item img {
-        width: 100%;
-        height: auto;
-    }
-
-    /* Ajuste para celular: Mantém lado a lado mas reduz margens */
-    @media (max-width: 768px) {
-        .gender-section-banner {
-            margin: 10px 0;
-            padding: 0 !important;
-            width: 100%;
-        }  
-    }
-
-   
-</style>
-  </head>
-  <body>
-    <section id="topo" class="hero">
-      <div class="hero-inner">
-        <div class="hero-top">
-          <div class="hero-bar">
-            
-            <div class="search-wrap">
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="O que você está buscando?"
-              />
-              <button class="search-btn" type="button">🔍</button>
-            </div>
-
-            <nav class="main-nav">
-              <button id="homeLink" class="nav-button" type="button">Início</button>
-              <button id="brandsToggle" class="nav-button" type="button">Marcas</button>
-              <a href="guia-medidas.html" class="nav-link">Medidas</a>
-
-              <div class="brand-panel" id="brandPanel" style="text-align: justify;">
-                <div class="brand-panel-inner">
-                  <div class="brand-panel-header"></div>
-                  <div id="brandColumns" class="brand-columns"></div>
-                </div>
-              </div>
-
-              <a href="contato.html" class="nav-button nav-link">Contato</a>
-            </nav>
-          </div>
-
-          <div class="logo-wrap">
-            <img src="logo.png" alt="ZEIDAN PARFUM" class="logo" />
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section class="benefits-section">
-  <div class="benefits-container">
-    
-    <div class="benefit-item">
-      <div class="benefit-icon">
-        <i class="fa-regular fa-credit-card"></i>
-      </div>
-      <div class="benefit-info">
-        <h3>PARCELE SEM JUROS!</h3>
-        <p>Todo o site em até 3x sem juros no cartão.</p>
-      </div>
-    </div>
-
-    <div class="benefit-item">
-      <div class="benefit-icon">
-        <i class="fa-brands fa-pix"></i>
-      </div>
-      <div class="benefit-info">
-        <h3>DESCONTO NO PIX!</h3>
-        <p>Ganhe mais 5% de desconto pagando via Pix.</p>
-      </div>
-    </div>
-
-    <div class="benefit-item">
-      <div class="benefit-icon">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-      <div class="benefit-info">
-        <h3>SITE SEGURO!</h3>
-        <p>Seus dados estão protegidos e criptografados.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  </div>
-</section>
-
-    <main id="inicio" class="page-content">
-
-  <div id="vitrine-home">
-
-    <section class="gender-section-banner">
-    <div class="gender-banner-item" onclick="filtrarGeneroManual('FEMININO')">
-        <img src="img/fem.png" alt="Calçados Femininos">
-    </div>
-
-    <div class="gender-banner-item" onclick="filtrarGeneroManual('MASCULINO')">
-        <img src="img/mas.png" alt="Calçados Masculinos">
-    </div>
-    </section>
-
-    <div class="wrapper-scroll scroll-arrastavel">
-    </div>
-      
-      <section class="product-section">
-        <div class="section-header">
-            <div class="section-title" style="font-weight: 700; font-size: 25px; display: flex; white-space: nowrap; padding: 0 0; margin-top: 0; margin-left: -20px !important;">Destaques da semana</div>
-        </div>
-        <div class="horizontal-scroll-container" data-marca="DESTAQUES"></div>
-      </section>
-
-      <section class="banner-section">
-        <img src="img/bannerairforce.jpg" alt="Banner Nike" class="full-width-banner";>
-        <div class="banner-text" style="color: #ffffff; letter-spacing: 0cap;";>
-            <div style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">NIKE AIR FORCE 1</div>
-            <p>Que a força esteja com você!</p>
-            <img src="img/nike.png" alt="Logo Nike" class="banner-brand-logo">
-        </div>
-      </section>
-
-      <section class="product-section">
-        <div class="section-header">
-            <div class="section-title" style="font-weight: 700; font-size: 35px; display: flex; padding: 0 0; margin-top: 0; margin-left: -20px !important;">Nike</div>
-        </div>
-        <div class="horizontal-scroll-container" data-marca="NIKE"></div>
-      </section>
-
-      <section class="banner-section" style="background: #f5f5f5;">
-        <img src="img/9060nb.png" alt="Banner New Balance" class="full-width-banner">
-        <div class="banner-text align-left">
-            <div style="font-size: 15px; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">life is about</div>
-            <p style="color:#FFF; font-size: 35px; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">balance</p>
-            <img src="img/nblogo.png" alt="Logo NB" class="banner-brand-logo" style="margin-top: 5px !important;">
-        </div>
-      </section>
-
-      <section class="product-section">
-        <div class="section-header">
-            <div class="section-title" style="font-weight: 700; font-size: 35px; display: flex; padding: 0 0; margin-top: 0; margin-left: -20px !important;">New Balance</div>
-        </div>
-        <div class="horizontal-scroll-container" data-marca="NEW BALANCE"></div>
-      </section>
-
-       <section class="banner-section" style="background: #f5f5f5;">
-        <img src="img/proevo1.jpeg" alt="Banner Adidas" class="full-width-banner">
-        <div class="banner-text align-left">
-            <div style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">Adizero Pro Evo
-            </div>
-            <p style="color:#FFF">O conforto definitivo</p>
-            <img src="img/adidas.webp" alt="Logo Adidas" class="banner-brand-logo" style="margin-top: 5px !important;">
-        </div>
-      </section>
-
-      <section class="product-section">
-        <div class="section-header">
-            <div class="section-title" style="font-weight: 700; font-size: 35px; display: flex; padding: 0 0; margin-top: 0; margin-left: -20px !important;">Adidas</div>
-        </div>
-        <div class="horizontal-scroll-container" data-marca="ADIDAS"></div>
-      </section>
-
-      <section class="banner-section" style="background: #f5f5f5;">
-        <img src="img/chinelin.jpg" alt="Banner Chinelo" class="full-width-banner">
-        <div class="banner-text align-left">
-            <div style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">DE CHINELIN VAMOS LONGE</div>
-            <p style="color:#FFF">Mais liberdade pra você</p>
-        </div>
-      </section>
-      
-      <section class="product-section">
-        <div class="section-header">
-            <div class="section-title" style="font-weight: 700; font-size: 25px; display: flex; white-space: nowrap; padding: 0 0; margin-top: 0; margin-left: -20px !important;">Papetes e Chinelos</div>
-        </div>
-        <div class="horizontal-scroll-container" data-categoria="Slide,Papete,Sandália,Chinelo"></div>
-      </section>
-
-      <section id="historico-section" style="display: none; padding: 40px 20px;">
-    <div class="historico-header" style="text-align: center; margin-bottom: 25px;">
-        <h3 style="font-size: 1.2rem; color: #333; text-transform: uppercase; letter-spacing: 1px;">
-            <i class="fa-solid fa-clock-rotate-left" style="margin-right: 8px; color: #ccc;"></i> Vistos Recentemente
-        </h3>
-    </div>
-    
-    <div id="historico-grid" class="historico-container"></div>
-  </section>
-  </div>
-
-  <div id="vitrine-busca" style="display: none; padding-top: 0px;">
-      <div class="section-header">
-          <h2 class="section-title" id="titulo-busca">Resultados</h2>
-          <a href="#" onclick="window.location.reload()" class="see-all-link" style="font-size: 14px; color: #555; display: flex; padding: 0 0; margin-top: -20px; margin-left: -20px !important;">Voltar para Home</a>
-      </div>
-      <div id="grid-produtos" class="product-grid"></div>
-  </div>
-
-</main>
-
-    <div id="imageModal" class="image-modal">
-      <div class="image-modal-backdrop"></div>
-      <div class="image-modal-content">
-        <button id="imageModalClose" class="image-modal-close" type="button">
-          ✕
-        </button>
-        <img id="imageModalImg" src="" alt="" />
-      </div>
-    </div>
-
-<div class="cart-floating-btn" onclick="toggleCart()">
-  <i class="fa-solid fa-cart-shopping"></i>
-  <span id="cart-count">0</span>
-</div>
-
-<div id="cart-modal" class="cart-modal-overlay">
-    <div class="cart-modal-content">
-      <div class="cart-header">
-        <h3>Minha Sacola</h3>
-        <button onclick="toggleCart()" class="close-cart">✕</button>
-      </div>
-      <div id="cart-items" class="cart-items-container" style="flex: 1 !important; overflow-y: auto !important; padding: 15px !important; display: flex !important; flex-direction: column !important;">
-        
-        <p class="empty-msg" style="flex: 1 !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; width: 100% !important; font-size: 16px; color: #666; text-align: center;">
-            Sua sacola está vazia
-        </p>
-        
-      </div>
-      
-      <div class="cart-footer" style="width: 100% !important; box-sizing: border-box !important; padding: 15px !important; display: flex !important; flex-direction: column !important; gap: 15px !important; background: #fff !important;">
-        
-        <div class="cart-total" style="display: flex; justify-content: space-between; border-top: 1px solid #eee; padding-top: 15px; width: 100% !important;">
-            <span style="font-size: 16px; font-weight: 600;">Subtotal:</span>
-            <span id="cart-total-value" style="font-size: 18px; font-weight: 800; color: #000;">R$ 0,00</span>
-        </div>
-
-        <button onclick="finalizarNoZap()" class="btn-whatsapp-checkout" style="width: 100% !important; box-sizing: border-box !important; padding: 15px !important; margin: 0 !important; display: block !important; max-width: 100% !important; height: auto !important; position: static !important;">
-          <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido
-        </button>
-        
-        <button onclick="toggleCart()" class="btn-continue" style="width: 100% !important; box-sizing: border-box !important; padding: 10px !important; margin: 0 !important; display: block !important; max-width: 100% !important; height: auto !important; position: static !important;">Continuar Comprando</button>
-
-      </div>
-    </div>
-  </div>
-
-
-<script>
-    // Se o navegador suportar, desliga a restauração automática de scroll
-    if (history.scrollRestoration) {
-        history.scrollRestoration = 'manual';
-    } else {
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
+        .banner-brand-logo {
+            display: block;
+            max-width: 80px;
+            height: auto;
+            margin: 0 auto;
         }
-    }
-</script>
 
-<script src="script.js"></script>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <a href="https://instagram.com/zeidanshoes" target="_blank" class="footer-instagram">
-          <img src="instagram.png" alt="Instagram" class="footer-instagram-img" />
-        </a>
-
-        <div class="footer-columns">
-          <div class="footer-column">
-            <h4 class="footer-title">MENU</h4>
-            <a href="index.html" class="footer-link">Início</a>
-            <a href="contato.html" class="footer-link">Contato</a>
-            <a href="guia-medidas.html" class="footer-link">Guia de Medidas</a>
-            <a href="troca.html" class="footer-link">Trocas e Devoluções</a>
-          </div>
-        </div>
-      </div> 
-
-      <div class="payment-bar-container">
-          <div class="payment-text">FORMAS DE PAGAMENTO</div>
-          <div class="payment-icons">
-              <img src="mastercard.png" alt="Mastercard">
-              <img src="visa.png" alt="Visa">
-              <img src="amex.png" alt="Amex">
-              <img src="elo.png" alt="Elo">
-              <img src="pix.png" alt="Pix">
-          </div>
-
-          <div class="security-badge-css">
-              <div class="lock-icon">
-                  <i class="fa-solid fa-lock"></i>
-              </div>
-              <div class="security-text-css">
-                  <span>SITE</span>
-                  <strong>100% SEGURO</strong>
-              </div>
-          </div>
-      </div>
-
-      <p class="footer-copy">
-          Copyright ZEIDAN SHOES - 2026. Todos os direitos reservados.
-      </p>
-    </footer>
-
-<div id="widget-zap-pro" style="display: block !important;">
-    
+        @media (max-width: 768px) {
+            .banner-brand-logo {
+                max-width: 60px;
+                margin-top: -30px;
+            }
+        }
+    </style>
     <style>
-        /* Container flutuante */
+        .gender-section-banner {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 0px;
+        }
+
+        .gender-banner-item {
+            width: 50%;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            margin-bottom: 15px;
+            margin-top: -40px;
+        }
+
+        .gender-banner-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gender-banner-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .gender-section-banner {
+                margin: 10px 0;
+                padding: 0 !important;
+                width: 100%;
+            }
+        }
+    </style>
+    <style>
         #widget-zap-wrapper {
             position: fixed !important;
             bottom: 105px !important;
             right: 30px !important;
-            z-index: 9999 !important; /* Z-index máximo */
+            z-index: 9999 !important;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
         }
 
-        /* BOTÃO PULSANTE */
         .zap-btn-pro {
             width: 60px;
             height: 60px;
@@ -665,39 +344,51 @@ body.viewing-product #box-sugestoes {
             color: white;
             font-size: 30px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             position: relative;
             transition: transform 0.2s;
         }
-        .zap-btn-pro:hover { transform: scale(1.05); }
-        
-        /* Animação de pulso */
-        .zap-pulse {
-            position: absolute; width: 100%; height: 100%;
-            border-radius: 50%; border: 2px solid #25D366;
-            animation: pulse-animation 2s infinite; opacity: 0;
-        }
-        @keyframes pulse-animation {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.5); opacity: 0; }
+
+        .zap-btn-pro:hover {
+            transform: scale(1.05);
         }
 
-        /* O MENU (CAIXA DE ATENDIMENTO) */
+        .zap-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #25D366;
+            animation: pulse-animation 2s infinite;
+            opacity: 0;
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
         #menu-zap-pro {
-            display: none; /* Começa escondido */
+            display: none;
             width: 300px;
-            background: #f0f2f5; /* Fundo cinza claro igual do Zap */
+            background: #f0f2f5;
             border-radius: 16px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             margin-bottom: 15px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.3s, transform 0.3s;
-            pointer-events: none; /* Desliga cliques quando escondido */
+            pointer-events: none;
         }
-        
-        /* Classe para mostrar o menu com animação */
+
         #menu-zap-pro.ativo {
             display: block;
             opacity: 1;
@@ -705,7 +396,6 @@ body.viewing-product #box-sugestoes {
             pointer-events: auto;
         }
 
-        /* HEADER (CABEÇALHO VERDE ESCURO) */
         .pro-header {
             background: #095E54;
             color: white;
@@ -715,192 +405,558 @@ body.viewing-product #box-sugestoes {
             gap: 12px;
             position: relative;
         }
+
         .pro-avatar {
-            width: 45px; height: 45px;
-            background: white; border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
             padding: 2px;
             flex-shrink: 0;
         }
-        .pro-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
-        
-        .pro-info h3 { margin: 0; font-size: 16px; font-weight: 700; line-height: 1.2; }
-        .pro-info p { margin: 0; font-size: 12px; opacity: 0.8; margin-top: 2px; }
-        
-        .pro-close {
-            position: absolute; top: 10px; right: 10px;
-            background: none; border: none; color: white;
-            font-size: 20px; cursor: pointer; opacity: 0.7;
-        }
-        .pro-close:hover { opacity: 1; }
 
-        /* CORPO (BODY) */
-        .pro-body { padding: 15px; }
-        
+        .pro-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        .pro-info h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .pro-info p {
+            margin: 0;
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+
+        .pro-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .pro-close:hover {
+            opacity: 1;
+        }
+
+        .pro-body {
+            padding: 15px;
+        }
+
         .pro-welcome {
             background: white;
             padding: 12px 15px;
             border-radius: 0 15px 15px 15px;
-            font-size: 13px; color: #333;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            font-size: 13px;
+            color: #333;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             margin-bottom: 15px;
             line-height: 1.4;
             width: fit-content;
         }
 
-        /* BOTÕES DE OPÇÃO (Vendas / Suporte) */
         .pro-option {
             background: white;
             border-radius: 12px;
             padding: 12px;
             margin-bottom: 8px;
-            display: flex; align-items: center; gap: 12px;
-            text-decoration: none; color: #111;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #111;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             transition: background 0.2s, transform 0.1s;
             cursor: pointer;
         }
-        .pro-option:hover { background: #fafafa; transform: translateY(-2px); }
-        
-        .opt-icon {
-            width: 36px; height: 36px;
-            background: #dcf8c6; /* Verde clarinho do zap */
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #25D366; font-size: 16px; flex-shrink: 0;
+
+        .pro-option:hover {
+            background: #fafafa;
+            transform: translateY(-2px);
         }
-        .opt-text strong { display: block; font-size: 14px; margin-bottom: 2px; }
-        .opt-text span { font-size: 11px; color: #888; }
-        .opt-arrow { margin-left: auto; color: #ccc; font-weight: bold; }
 
+        .opt-icon {
+            width: 36px;
+            height: 36px;
+            background: #dcf8c6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #25D366;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .opt-text strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .opt-text span {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .opt-arrow {
+            margin-left: auto;
+            color: #ccc;
+            font-weight: bold;
+        }
     </style>
+</head>
 
-    <div id="widget-zap-wrapper">
-        
-        <div id="menu-zap-pro">
-            <div class="pro-header">
-                <div class="pro-avatar">
-                    <img src="logo.png" alt="Zeidan"> 
+<body>
+    <section id="topo" class="hero">
+        <div class="hero-inner">
+            <div class="hero-top">
+                <div class="hero-bar">
+
+                    <div class="search-wrap">
+                        <input type="text" id="searchInput" placeholder="O que você está buscando?" />
+                        <button class="search-btn" type="button">🔍</button>
+                    </div>
+
+                    <nav class="main-nav">
+                        <button id="homeLink" class="nav-button" type="button">Início</button>
+                        <button id="brandsToggle" class="nav-button" type="button">Marcas</button>
+                        <a href="guia-medidas.html" class="nav-link">Medidas</a>
+
+                        <div class="brand-panel" id="brandPanel" style="text-align: justify;">
+                            <div class="brand-panel-inner">
+                                <div class="brand-panel-header"></div>
+                                <div id="brandColumns" class="brand-columns"></div>
+                            </div>
+                        </div>
+
+                        <a href="contato.html" class="nav-button nav-link">Contato</a>
+                    </nav>
                 </div>
-                <div class="pro-info">
-                    <h3><font color="#ffffff">Atendimento Zeidan </font></h3>
-                    <p>Normalmente responde na hora</p>
+
+                <div class="logo-wrap">
+                    <img src="logo.png" alt="ZEIDAN PARFUM" class="logo" />
                 </div>
-                <button class="pro-close" onclick="fecharZapPro()">×</button>
             </div>
-            
-            <div class="pro-body">
-                <div class="pro-welcome">
-                    Olá! Como podemos te ajudar hoje?
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="benefits-container">
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fa-regular fa-credit-card"></i>
                 </div>
-                
-                <div class="pro-option" onclick="irZapPro('vendas')">
-                    <div class="opt-icon"><i class="fa-solid fa-bag-shopping"></i></div>
-                    <div class="opt-text">
-                        <strong>Falar com Vendas</strong>
-                        <span>Encomendas e Catálogo</span>
-                    </div>
-                    <div class="opt-arrow">›</div>
+                <div class="benefit-info">
+                    <h3>PARCELE SEM JUROS!</h3>
+                    <p>Todo o site em até 3x sem juros no cartão.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fa-brands fa-pix"></i>
+                </div>
+                <div class="benefit-info">
+                    <h3>DESCONTO NO PIX!</h3>
+                    <p>Ganhe mais 5% de desconto pagando via Pix.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="benefit-info">
+                    <h3>SITE SEGURO!</h3>
+                    <p>Seus dados estão protegidos e criptografados.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    </div>
+    </section>
+
+    <main id="inicio" class="page-content">
+
+        <div id="vitrine-home">
+
+            <section class="gender-section-banner">
+                <div class="gender-banner-item" onclick="filtrarGeneroManual('FEMININO')">
+                    <img src="img/fem.png" alt="Calçados Femininos">
                 </div>
 
-                <div class="pro-option" onclick="irZapPro('suporte')">
-                    <div class="opt-icon"><i class="fa-solid fa-headset"></i></div>
-                    <div class="opt-text">
-                        <strong>Suporte / Dúvidas</strong>
-                        <span>Acompanhar pedido</span>
+                <div class="gender-banner-item" onclick="filtrarGeneroManual('MASCULINO')">
+                    <img src="img/mas.png" alt="Calçados Masculinos">
+                </div>
+            </section>
+
+            <div class="wrapper-scroll scroll-arrastavel">
+            </div>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <div class="section-title"
+                        style="font-weight: 700; font-size: 25px; display: flex; white-space: nowrap; padding: 0 0; margin-top: 0; margin-left: -20px !important;">
+                        Destaques da semana</div>
+                </div>
+                <div class="horizontal-scroll-container" data-marca="DESTAQUES"></div>
+            </section>
+
+            <section class="banner-section">
+                <img src="img/bannerairforce.jpg" alt="Banner Nike" class="full-width-banner" ;>
+                <div class="banner-text" style="color: #ffffff; letter-spacing: 0cap;" ;>
+                    <div
+                        style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
+                        NIKE AIR FORCE 1</div>
+                    <p>Que a força esteja com você!</p>
+                    <img src="img/nike.png" alt="Logo Nike" class="banner-brand-logo">
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <div class="section-title"
+                        style="font-weight: 700; font-size: 35px; display: flex; padding: 0 0; margin-top: 0; margin-left: -20px !important;">
+                        Nike</div>
+                </div>
+                <div class="horizontal-scroll-container" data-marca="NIKE"></div>
+            </section>
+
+            <section class="banner-section" style="background: #f5f5f5;">
+                <img src="img/9060nb.png" alt="Banner New Balance" class="full-width-banner">
+                <div class="banner-text align-left">
+                    <div
+                        style="font-size: 15px; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
+                        life is about</div>
+                    <p
+                        style="color:#FFF; font-size: 35px; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
+                        balance</p>
+                    <img src="img/nblogo.png" alt="Logo NB" class="banner-brand-logo"
+                        style="margin-top: 5px !important;">
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <div class="section-title"
+                        style="font-weight: 700; font-size: 35px; display: flex; padding: 0 0; margin-top: 0; margin-left: -20px !important;">
+                        New Balance</div>
+                </div>
+                <div class="horizontal-scroll-container" data-marca="NEW BALANCE"></div>
+            </section>
+
+            <section class="banner-section" style="background: #f5f5f5;">
+                <img src="img/proevo1.jpeg" alt="Banner Adidas" class="full-width-banner">
+                <div class="banner-text align-left">
+                    <div
+                        style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
+                        Adizero Pro Evo
                     </div>
-                    <div class="opt-arrow">›</div>
+                    <p style="color:#FFF">O conforto definitivo</p>
+                    <img src="img/adidas.webp" alt="Logo Adidas" class="banner-brand-logo"
+                        style="margin-top: 5px !important;">
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <div class="section-title"
+                        style="font-weight: 700; font-size: 35px; display: flex; padding: 0 0; margin-top: 0; margin-left: -20px !important;">
+                        Adidas</div>
+                </div>
+                <div class="horizontal-scroll-container" data-marca="ADIDAS"></div>
+            </section>
+
+            <section class="banner-section" style="background: #f5f5f5;">
+                <img src="img/chinelin.jpg" alt="Banner Chinelo" class="full-width-banner">
+                <div class="banner-text align-left">
+                    <div
+                        style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
+                        DE CHINELIN VAMOS LONGE</div>
+                    <p style="color:#FFF">Mais liberdade pra você</p>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <div class="section-title"
+                        style="font-weight: 700; font-size: 25px; display: flex; white-space: nowrap; padding: 0 0; margin-top: 0; margin-left: -20px !important;">
+                        Papetes e Chinelos</div>
+                </div>
+                <div class="horizontal-scroll-container" data-categoria="Slide,Papete,Sandália,Chinelo"></div>
+            </section>
+
+            <section id="historico-section" style="display: none; padding: 40px 20px;">
+                <div class="historico-header" style="text-align: center; margin-bottom: 25px;">
+                    <h3 style="font-size: 1.2rem; color: #333; text-transform: uppercase; letter-spacing: 1px;">
+                        <i class="fa-solid fa-clock-rotate-left" style="margin-right: 8px; color: #ccc;"></i> Vistos
+                        Recentemente
+                    </h3>
+                </div>
+
+                <div id="historico-grid" class="historico-container"></div>
+            </section>
+        </div>
+
+        <div id="vitrine-busca" style="display: none; padding-top: 0px;">
+            <div class="section-header">
+                <h2 class="section-title" id="titulo-busca">Resultados</h2>
+                <a href="#" onclick="window.location.reload()" class="see-all-link"
+                    style="font-size: 14px; color: #555; display: flex; padding: 0 0; margin-top: -20px; margin-left: -20px !important;">Voltar
+                    para Home</a>
+            </div>
+            <div id="grid-produtos" class="product-grid"></div>
+        </div>
+
+    </main>
+
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-backdrop"></div>
+        <div class="image-modal-content">
+            <button id="imageModalClose" class="image-modal-close" type="button">
+                ✕
+            </button>
+            <img id="imageModalImg" src="" alt="" />
+        </div>
+    </div>
+
+    <div class="cart-floating-btn" onclick="toggleCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-modal" class="cart-modal-overlay">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Minha Sacola</h3>
+                <button onclick="toggleCart()" class="close-cart">✕</button>
+            </div>
+            <div id="cart-items" class="cart-items-container"
+                style="flex: 1 !important; overflow-y: auto !important; padding: 15px !important; display: flex !important; flex-direction: column !important;">
+
+                <p class="empty-msg"
+                    style="flex: 1 !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; width: 100% !important; font-size: 16px; color: #666; text-align: center;">
+                    Sua sacola está vazia
+                </p>
+
+            </div>
+
+            <div class="cart-footer"
+                style="width: 100% !important; box-sizing: border-box !important; padding: 15px !important; display: flex !important; flex-direction: column !important; gap: 15px !important; background: #fff !important;">
+
+                <div class="cart-total"
+                    style="display: flex; justify-content: space-between; border-top: 1px solid #eee; padding-top: 15px; width: 100% !important;">
+                    <span style="font-size: 16px; font-weight: 600;">Subtotal:</span>
+                    <span id="cart-total-value" style="font-size: 18px; font-weight: 800; color: #000;">R$ 0,00</span>
+                </div>
+
+                <button onclick="finalizarNoZap()" class="btn-whatsapp-checkout"
+                    style="width: 100% !important; box-sizing: border-box !important; padding: 15px !important; margin: 0 !important; display: block !important; max-width: 100% !important; height: auto !important; position: static !important;">
+                    <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido
+                </button>
+
+                <button onclick="toggleCart()" class="btn-continue"
+                    style="width: 100% !important; box-sizing: border-box !important; padding: 10px !important; margin: 0 !important; display: block !important; max-width: 100% !important; height: auto !important; position: static !important;">Continuar
+                    Comprando</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        } else {
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a href="https://instagram.com/zeidanshoes" target="_blank" class="footer-instagram">
+                <img src="instagram.png" alt="Instagram" class="footer-instagram-img" />
+            </a>
+
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4 class="footer-title">MENU</h4>
+                    <a href="index.html" class="footer-link">Início</a>
+                    <a href="contato.html" class="footer-link">Contato</a>
+                    <a href="guia-medidas.html" class="footer-link">Guia de Medidas</a>
+                    <a href="troca.html" class="footer-link">Trocas e Devoluções</a>
                 </div>
             </div>
         </div>
 
-        <div class="zap-btn-pro" onclick="toggleZapPro()">
-            <div class="zap-pulse"></div>
-            <i class="fa-brands fa-whatsapp"></i>
+        <div class="payment-bar-container">
+            <div class="payment-text">FORMAS DE PAGAMENTO</div>
+            <div class="payment-icons">
+                <img src="mastercard.png" alt="Mastercard">
+                <img src="visa.png" alt="Visa">
+                <img src="amex.png" alt="Amex">
+                <img src="elo.png" alt="Elo">
+                <img src="pix.png" alt="Pix">
+            </div>
+
+            <div class="security-badge-css">
+                <div class="lock-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="security-text-css">
+                    <span>SITE</span>
+                    <strong>100% SEGURO</strong>
+                </div>
+            </div>
         </div>
 
+        <p class="footer-copy">
+            Copyright ZEIDAN SHOES - 2026. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <div id="widget-zap-pro" style="display: block !important;">
+
+        <div id="widget-zap-wrapper">
+
+            <div id="menu-zap-pro">
+                <div class="pro-header">
+                    <div class="pro-avatar">
+                        <img src="logo.png" alt="Zeidan">
+                    </div>
+                    <div class="pro-info">
+                        <h3>
+                            <font color="#ffffff">Atendimento Zeidan </font>
+                        </h3>
+                        <p>Normalmente responde na hora</p>
+                    </div>
+                    <button class="pro-close" onclick="fecharZapPro()">×</button>
+                </div>
+
+                <div class="pro-body">
+                    <div class="pro-welcome">
+                        Olá! Como podemos te ajudar hoje?
+                    </div>
+
+                    <div class="pro-option" onclick="irZapPro('vendas')">
+                        <div class="opt-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <div class="opt-text">
+                            <strong>Falar com Vendas</strong>
+                            <span>Encomendas e Catálogo</span>
+                        </div>
+                        <div class="opt-arrow">›</div>
+                    </div>
+
+                    <div class="pro-option" onclick="irZapPro('suporte')">
+                        <div class="opt-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="opt-text">
+                            <strong>Suporte / Dúvidas</strong>
+                            <span>Acompanhar pedido</span>
+                        </div>
+                        <div class="opt-arrow">›</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zap-btn-pro" onclick="toggleZapPro()">
+                <div class="zap-pulse"></div>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+        </div>
+
+        <script>
+            function toggleZapPro() {
+                var menu = document.getElementById('menu-zap-pro');
+                if (menu.classList.contains('ativo')) {
+                    menu.classList.remove('ativo');
+                    setTimeout(() => { if (!menu.classList.contains('ativo')) menu.style.display = 'none'; }, 300);
+                } else {
+                    menu.style.display = 'block';
+                    setTimeout(() => { menu.classList.add('ativo'); }, 10);
+                }
+            }
+
+            function fecharZapPro() {
+                var menu = document.getElementById('menu-zap-pro');
+                menu.classList.remove('ativo');
+                setTimeout(() => { menu.style.display = 'none'; }, 300);
+            }
+
+            function irZapPro(tipo) {
+                var num = "5531991668430";
+                var msg = "";
+                if (tipo === 'vendas') msg = "Olá Zeidan Shoes! Vim pelo site e gostaria saber mais sobre os tênis!";
+                if (tipo === 'suporte') msg = "Olá Zeidan Shoes! Preciso de suporte sobre meu pedido.";
+                window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), '_blank');
+            }
+        </script>
     </div>
 
     <script>
-        function toggleZapPro() {
-            var menu = document.getElementById('menu-zap-pro');
-            if (menu.classList.contains('ativo')) {
-                menu.classList.remove('ativo');
-                // Pequeno delay para esconder o display none depois da animação
-                setTimeout(() => { if(!menu.classList.contains('ativo')) menu.style.display = 'none'; }, 300);
-            } else {
-                menu.style.display = 'block';
-                // Pequeno delay para permitir que o navegador processe o display block antes de animar a opacidade
-                setTimeout(() => { menu.classList.add('ativo'); }, 10);
+        window.filtrarGeneroManual = function (generoAlvo) {
+            console.log("Tentando filtrar por:", generoAlvo);
+            let listaProdutos = [];
+
+            if (typeof window.allProducts !== 'undefined' && window.allProducts.length > 0) {
+                listaProdutos = window.allProducts;
+            } else if (typeof allProducts !== 'undefined' && allProducts.length > 0) {
+                listaProdutos = allProducts;
+            } else if (typeof window.perfumes !== 'undefined' && window.perfumes.length > 0) {
+                listaProdutos = window.perfumes;
+            } else if (typeof perfumes !== 'undefined' && perfumes.length > 0) {
+                listaProdutos = perfumes;
             }
-        }
+            if (listaProdutos.length === 0) {
+                alert("Os produtos ainda estão carregando ou não foram encontrados. Aguarde alguns segundos e tente novamente.");
+                return;
+            }
 
-        function fecharZapPro() {
-            var menu = document.getElementById('menu-zap-pro');
-            menu.classList.remove('ativo');
-            setTimeout(() => { menu.style.display = 'none'; }, 300);
-        }
+            let homeView = document.getElementById('vitrine-home');
+            let searchView = document.getElementById('vitrine-busca');
+            let grid = document.getElementById('grid-produtos');
 
-        function irZapPro(tipo) {
-            var num = "5531991668430";
-            var msg = "";
-            if(tipo === 'vendas') msg = "Olá Zeidan Shoes! Vim pelo site e gostaria saber mais sobre os tênis!";
-            if(tipo === 'suporte') msg = "Olá Zeidan Shoes! Preciso de suporte sobre meu pedido.";
-            window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), '_blank');
-        }
-    </script>
-</div>
+            if (!grid) grid = document.querySelector('.product-grid');
 
-<script>
-    window.filtrarGeneroManual = function(generoAlvo) {
-        console.log("Tentando filtrar por:", generoAlvo);
+            if (!searchView || !grid) {
+                alert("Erro Técnico: A área de 'vitrine-busca' não existe no HTML.");
+                return;
+            }
 
-        // 1. MODO DETETIVE: Procura a lista de produtos em qualquer lugar
-        let listaProdutos = [];
+            if (homeView) homeView.style.display = 'none';
 
-        if (typeof window.allProducts !== 'undefined' && window.allProducts.length > 0) {
-            listaProdutos = window.allProducts;
-        } else if (typeof allProducts !== 'undefined' && allProducts.length > 0) {
-            listaProdutos = allProducts;
-        } else if (typeof window.perfumes !== 'undefined' && window.perfumes.length > 0) {
-            listaProdutos = window.perfumes; // Caso esteja usando o script do Zeidan Parfum
-        } else if (typeof perfumes !== 'undefined' && perfumes.length > 0) {
-            listaProdutos = perfumes;
-        }
+            const historico = document.getElementById('historico-section');
+            if (historico) historico.style.display = 'none';
 
-        // 2. Se não achou nada, aí sim avisa
-        if (listaProdutos.length === 0) {
-            alert("Os produtos ainda estão carregando ou não foram encontrados. Aguarde alguns segundos e tente novamente.");
-            return;
-        }
+            const detalhes = document.querySelector('.product-detail');
+            if (detalhes) detalhes.style.display = 'none';
 
-        // 3. Configura as telas
-        let homeView = document.getElementById('vitrine-home');
-        let searchView = document.getElementById('vitrine-busca');
-        let grid = document.getElementById('grid-produtos');
-        
-        // Tenta achar o grid pela classe se não achar pelo ID
-        if (!grid) grid = document.querySelector('.product-grid');
+            searchView.style.display = 'block';
 
-        if (!searchView || !grid) {
-            alert("Erro Técnico: A área de 'vitrine-busca' não existe no HTML.");
-            return;
-        }
-
-        // 4. Troca de Tela
-        if (homeView) homeView.style.display = 'none';
-        
-        const historico = document.getElementById('historico-section');
-        if(historico) historico.style.display = 'none';
-        
-        const detalhes = document.querySelector('.product-detail');
-        if(detalhes) detalhes.style.display = 'none';
-
-        searchView.style.display = 'block';
-
-        // 5. Atualiza o Título
-        const headerContainer = searchView.querySelector('.section-header') || document.getElementById('titulo-busca');
-        if (headerContainer) {
-            headerContainer.innerHTML = `
+            const headerContainer = searchView.querySelector('.section-header') || document.getElementById('titulo-busca');
+            if (headerContainer) {
+                headerContainer.innerHTML = `
                 <div style="text-align:center; margin-bottom:20px;">
                     <h2 style="font-size: 24px; font-weight: 800; text-transform: uppercase;">
                         Calçados ${generoAlvo === 'FEMININO' ? 'Femininos' : 'Masculinos'}
@@ -910,119 +966,116 @@ body.viewing-product #box-sugestoes {
                     </a>
                 </div>
             `;
-        }
+            }
 
-        // 6. FILTRAGEM USANDO A LISTA QUE ENCONTRAMOS
-        const resultados = listaProdutos.filter(p => {
-            // Tenta achar o gênero em várias propriedades (Genero, genero, Gênero)
-            const g = (p.Genero || p.genero || p["Gênero"] || "UNISSEX").toUpperCase().trim();
-            
-            return g === generoAlvo || 
-                   g === "UNISSEX" || 
-                   g === "UNISEX" || 
-                   g.includes("COMPARTILHÁVEL");
-        });
+            const resultados = listaProdutos.filter(p => {
+                const g = (p.Genero || p.genero || p["Gênero"] || "UNISSEX").toUpperCase().trim();
 
-        // 7. Desenha os produtos
-        grid.innerHTML = ""; 
-        
-        if (resultados.length === 0) {
-            grid.innerHTML = `<div style="text-align:center; padding:50px; width:100%;">Nenhum modelo encontrado.</div>`;
-        } else {
-            resultados.forEach(p => {
-                // Tenta usar a função de criar card (global ou local)
-                if (typeof window.createProductCard === 'function') {
-                    const card = window.createProductCard(p);
-                    card.style.width = "100%";
-                    card.style.maxWidth = "none";
-                    grid.appendChild(card);
-                } else if (typeof createProductCard === 'function') {
-                    const card = createProductCard(p);
-                    card.style.width = "100%";
-                    card.style.maxWidth = "none";
-                    grid.appendChild(card);
-                }
+                return g === generoAlvo ||
+                    g === "UNISSEX" ||
+                    g === "UNISEX" ||
+                    g.includes("COMPARTILHÁVEL");
             });
-        }
 
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-</script>
+            grid.innerHTML = "";
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const slider = document.getElementById('historico-grid');
+            if (resultados.length === 0) {
+                grid.innerHTML = `<div style="text-align:center; padding:50px; width:100%;">Nenhum modelo encontrado.</div>`;
+            } else {
+                resultados.forEach(p => {
+                    if (typeof window.createProductCard === 'function') {
+                        const card = window.createProductCard(p);
+                        card.style.width = "100%";
+                        card.style.maxWidth = "none";
+                        grid.appendChild(card);
+                    } else if (typeof createProductCard === 'function') {
+                        const card = createProductCard(p);
+                        card.style.width = "100%";
+                        card.style.maxWidth = "none";
+                        grid.appendChild(card);
+                    }
+                });
+            }
 
-    if(slider) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slider = document.getElementById('historico-grid');
+
+            if (slider) {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('active');
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+            }
         });
+    </script>
 
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('active');
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sliders = document.querySelectorAll('.horizontal-scroll-container');
+
+            sliders.forEach(slider => {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('active');
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+            });
         });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-    }
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const sliders = document.querySelectorAll('.horizontal-scroll-container');
-
-    sliders.forEach(slider => {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-    });
-});
-</script>
+    </script>
 </body>
+
 </html>

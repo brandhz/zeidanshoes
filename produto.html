@@ -10,7 +10,6 @@
   <link rel="shortcut icon" href="logopequena.png" type="image/x-icon">
 
   <style>
-    /* Seletor de Tamanhos */
     .size-selector-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -53,7 +52,6 @@
       font-weight: 600;
     }
 
-    /* Seletor de Cores */
     .color-selector-wrap {
       display: flex;
       gap: 10px;
@@ -65,7 +63,6 @@
       width: 35px;
       height: 35px;
       border-radius: 50%;
-      /* Faz ficar redondo */
       border: 2px solid #ddd;
       cursor: pointer;
       transition: transform 0.2s, border-color 0.2s;
@@ -78,15 +75,12 @@
       border-color: #999;
     }
 
-    /* Estilo para a cor que está selecionada atualmente */
     .color-option-btn.selected {
       border: 2px solid #4cae56;
       transform: scale(1.15);
       box-shadow: 0 0 0 2px #fff inset;
-      /* Efeito de anel */
     }
 
-    /* Tooltip opcional (mostra o nome da cor ao passar o mouse) */
     .color-option-btn:hover::after {
       content: attr(title);
       position: absolute;
@@ -121,15 +115,12 @@
       flex-wrap: wrap;
     }
 
-    /* Link Home */
     .bread-link {
       text-decoration: none;
       color: #000;
-      /* Branco gelo */
       font-weight: 400;
     }
 
-    /* Link da Marca (Destaque) */
     .bread-link-marca {
       color: #000;
       font-weight: 700;
@@ -143,14 +134,10 @@
 
     }
 
-    /* Nome do Modelo (Onde você está agora) */
     .bread-current {
       color: #000;
-      /* Cinza mais escuro pois não é link */
       font-weight: 400;
       text-transform: uppercase;
-
-      /* Garante que se o nome for longo, não quebre o layout */
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -158,210 +145,172 @@
     }
   </style>
   <style>
-          /* --- ESTILO PADRÃO (PC/DESKTOP) --- */
-          .product-gallery {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 20px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-          }
+    .product-gallery {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-          .main-image-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%;
-            /* Mantém quadrado no PC */
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: #000;
-          }
+    .main-image-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: #000;
+    }
 
-          .main-img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            height: 90%;
-            object-fit: contain;
-          }
+    .main-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
 
-          /* Miniaturas */
-          .thumbnails-scroll-container {
-            width: 100%;
-            overflow-x: auto;
-            padding: 5px 0;
-            display: flex;
-            justify-content: center;
-          }
+    .thumbnails-scroll-container {
+      width: 100%;
+      overflow-x: auto;
+      padding: 5px 0;
+      display: flex;
+      justify-content: center;
+    }
 
-          .thumbnails-track {
-            display: flex;
-            gap: 10px;
-          }
+    .thumbnails-track {
+      display: flex;
+      gap: 10px;
+    }
 
-          .thumb-item {
-            width: 60px;
-            height: 60px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            flex-shrink: 0;
-          }
+    .thumb-item {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
 
-          .thumb-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+    .thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-          .thumb-item.active {
-            border-color: #000;
-          }
+    .thumb-item.active {
+      border-color: #000;
+    }
 
-          /* --- CORREÇÃO MOBILE (CELULAR) --- */
-          @media (max-width: 768px) {
+    @media (max-width: 768px) {
 
-            /* 1. Força a div a sair das margens laterais */
-            .product-detail-image {
-              margin-left: -20px !important;
-              /* Compensa o padding do site */
-              margin-right: -20px !important;
-              width: calc(100% + 40px) !important;
-            }
+      .product-detail-image {
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        width: calc(100% + 40px) !important;
+      }
 
-            .product-gallery {
-              margin-bottom: 0 !important;
-              gap: 5px !important;
-            }
+      .product-gallery {
+        margin-bottom: 0 !important;
+        gap: 5px !important;
+      }
 
-            /* 2. Container da imagem: Reseta altura e fundo */
-            .main-image-container {
-              padding-bottom: 0 !important;
-              /* Remove quadrado forçado */
-              height: auto !important;
-              /* Altura automática baseada na imagem */
-              min-height: 300px !important;
-              /* Garante altura mínima para não sumir */
-              border: none !important;
-              border-radius: 0 !important;
-              display: flex !important;
-              align-items: center;
-              justify-content: center;
-            }
+      .main-image-container {
+        padding-bottom: 0 !important;
+        height: auto !important;
+        min-height: 300px !important;
+        border: none !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+      }
 
-            /* 3. A Imagem: Gigante e solta */
-            .main-img {
-              position: relative !important;
-              /* Remove posição absoluta */
-              transform: none !important;
-              top: auto !important;
-              left: auto !important;
+      .main-img {
+        position: relative !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+      }
 
-              width: 100% !important;
-              /* Largura total */
-              height: auto !important;
-              /* Altura proporcional */
-              object-fit: contain !important;
-              display: block !important;
-              /* Garante visibilidade */
-            }
+      .thumbnails-scroll-container {
+        background: #fff;
+        padding: 10px 0;
+      }
+    }
 
-            /* Ajuste das thumbs no mobile para ficarem centralizadas */
-            .thumbnails-scroll-container {
-              background: #fff;
-              padding: 10px 0;
-            }
-          }
+    .btn-share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #f5f5f5;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
 
-          .btn-share {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            /* Espaço entre ícone e texto */
-            width: 100%;
-            padding: 12px;
-            margin-top: 15px;
-            /* Separa do botão de comprar */
-            background-color: #f5f5f5;
-            /* Cinza clarinho */
-            color: #333;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            /* Cantos arredondados */
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-          }
+    .btn-share:hover {
+      background-color: #e0e0e0;
+    }
 
-          .btn-share:hover {
-            background-color: #e0e0e0;
-          }
+    .btn-share:active {
+      transform: scale(0.98);
+    }
 
-          /* Opcional: Efeito de clique */
-          .btn-share:active {
-            transform: scale(0.98);
-          }
+    @media (min-width: 1024px) {
 
-          /* --- LAYOUT DE PC (DUAS COLUNAS) --- */
-          @media (min-width: 1024px) {
+      .product-detail {
+        display: flex !important;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
 
-            /* Transforma a seção principal em uma "mesa" lado a lado */
-            .product-detail {
-              display: flex !important;
-              justify-content: center;
-              align-items: flex-start;
-              /* Importante para o texto não esticar */
-              gap: 50px;
-              /* Espaço entre a foto e o texto */
-              max-width: 1200px;
-              margin: 40px auto;
-              /* Centraliza na tela */
-              padding: 0 20px;
-            }
+      .product-detail-image {
+        width: 55% !important;
+        margin: 0 !important;
+      }
 
-            /* COLUNA 1: IMAGENS (Esquerda) */
-            .product-detail-image {
-              width: 55% !important;
-              /* Ocupa pouco mais da metade */
-              margin: 0 !important;
-              /* Remove margens antigas */
-            }
+      .product-detail-content {
+        width: 40% !important;
+        position: sticky;
+        top: 120px;
+        text-align: left;
+      }
 
-            /* COLUNA 2: INFORMAÇÕES (Direita) */
-            .product-detail-content {
-              width: 40% !important;
-
-              /* Truque extra: Faz o texto acompanhar o scroll enquanto você vê as fotos */
-              position: sticky;
-              top: 120px;
-              /* Distância do topo */
-
-              text-align: left;
-              /* Garante texto alinhado à esquerda */
-            }
-
-            /* Ajustes finos para ficar bonito no PC */
-            .product-detail-title {
-              font-size: 2rem;
-              /* Título maior no PC */
-              margin-top: 0;
-            }
-          }
-        </style>
+      .product-detail-title {
+        font-size: 2rem;
+        margin-top: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
     <div class="hero-inner">
       <div class="logo-wrap" style="display: flex; justify-content: center; margin-top: 60px; margin-bottom: 30px;">
-      <a href="index.html">
-        <img src="logo.png" alt="ZEIDAN SHOES" class="logo" />
+        <a href="index.html">
+          <img src="logo.png" alt="ZEIDAN SHOES" class="logo" />
         </a>
       </div>
       <nav class="main-nav">
@@ -374,14 +323,16 @@
   </header>
 
   <section class="banner-section" style="margin-top: -10px !important; z-index: -1; margin-bottom: 0;">
-        <img src="img/samba.jpg" alt="Logo Samba" class="full-width-banner";>
-        <div class="banner-text">
-        <div class="banner-text align-left">
-          <img src="img/adidas.webp" alt="Banner Adidas" class="banner-brand-logo" style="margin-bottom: 0px !important; margin-top: 0px; width: 15%;">
-          <div style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
-            ADIDAS SAMBA</div>
-          <p style="color:#FFF">Versátil, como o samba.</p>
-      </section>
+    <img src="img/samba.jpg" alt="Logo Samba" class="full-width-banner" ;>
+    <div class="banner-text">
+      <div class="banner-text align-left">
+        <img src="img/adidas.webp" alt="Banner Adidas" class="banner-brand-logo"
+          style="margin-bottom: 0px !important; margin-top: 0px; width: 15%;">
+        <div
+          style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
+          ADIDAS SAMBA</div>
+        <p style="color:#FFF">Versátil, como o samba.</p>
+  </section>
 
   <main class="page-content">
 
@@ -417,7 +368,7 @@
         <div id="box-cores" style="margin: 10px 0; display: none;">
           <div class="selector-label" style="font-size:12px; color:#888; text-transform:uppercase; font-weight:700;">
             Cores Disponíveis:</div>
-          <div id="color-container" class="color-selector-wrap">
+          <div id="color-container" class="color-selector-wrap" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
           </div>
         </div>
 
@@ -468,7 +419,8 @@
       <img src="img/nb9060.webp" alt="Banner New Balance" class="full-width-banner">
       <div class="banner-text">
         <div class="banner-text align-left">
-          <img src="img/nblogo.png" alt="Logo NB" class="banner-brand-logo" style="margin-bottom: 5px !important; width: 20%;">
+          <img src="img/nblogo.png" alt="Logo NB" class="banner-brand-logo"
+            style="margin-bottom: 5px !important; width: 20%;">
           <div
             style="font-size: 1.5em; font-weight: bold; line-height: 1; margin-bottom: 0; align-items: center; text-align: center;">
             new balance 9060</div>
@@ -561,36 +513,30 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
 
-      // Configuração
       const idPreco = "produtoPreco";
       const idParcelas = "produtoParcelas";
 
-      // Função que faz a mágica
       function atualizarParcelas() {
         const elementoPreco = document.getElementById(idPreco);
         const elementoParcelas = document.getElementById(idParcelas);
 
         if (!elementoPreco || !elementoParcelas) return;
 
-        // Limpa e converte o valor (R$ 1.000,00 -> 1000.00)
         let texto = elementoPreco.innerText || elementoPreco.textContent;
         let valorLimpo = texto.replace(/[^0-9,]/g, '').replace(',', '.');
         let valor = parseFloat(valorLimpo);
 
-        // Se o valor for válido, calcula e mostra
         if (!isNaN(valor) && valor > 0) {
           let parcela = valor / 3;
           let formatado = parcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
           elementoParcelas.innerText = "3x " + formatado;
-          elementoParcelas.style.display = "block"; // Garante que apareça
+          elementoParcelas.style.display = "block"; 
         } else {
-          elementoParcelas.style.display = "none"; // Esconde se não tiver preço
+          elementoParcelas.style.display = "none"; 
         }
       }
 
-      // --- A PARTE ESPERTA (OBSERVER) ---
-      // Isso cria um vigia que roda a função sempre que o texto do preço mudar
       const alvo = document.getElementById(idPreco);
       if (alvo) {
         const observador = new MutationObserver(atualizarParcelas);
@@ -599,57 +545,42 @@
     });
   </script>
   <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // 1. Pega os elementos originais da página (onde o loadProducts escreve)
-    const elMarcaOriginal = document.getElementById('produtoMarca');
-    const elTituloOriginal = document.getElementById('produtoTitulo');
-    
-    // 2. Pega os elementos do nosso novo Breadcrumb
-    const elBreadContainer = document.getElementById('breadcrumb-container');
-    const elBreadMarca = document.getElementById('breadcrumb-marca-dinamica');
-    const elBreadModelo = document.getElementById('breadcrumb-modelo');
+    document.addEventListener("DOMContentLoaded", function () {
+      const elMarcaOriginal = document.getElementById('produtoMarca');
+      const elTituloOriginal = document.getElementById('produtoTitulo');
+      const elBreadContainer = document.getElementById('breadcrumb-container');
+      const elBreadMarca = document.getElementById('breadcrumb-marca-dinamica');
+      const elBreadModelo = document.getElementById('breadcrumb-modelo');
 
-    // Função que preenche e ativa o breadcrumb
-    function ativarBreadcrumb() {
-        // Só roda se o texto da marca já tiver sido carregado pelo seu script principal
+      function ativarBreadcrumb() {
         if (elMarcaOriginal && elMarcaOriginal.innerText.trim().length > 0) {
-            
-            // A. Limpa o nome da marca (Tira o "• ESPORTIVO" se tiver)
-            let textoSujo = elMarcaOriginal.innerText; 
-            let marcaLimpa = textoSujo.split('•')[0].trim(); 
-            
-            // B. Pega o nome do modelo
-            let nomeModelo = "Produto";
-            if (elTituloOriginal) nomeModelo = elTituloOriginal.innerText;
 
-            // C. Escreve no Breadcrumb
-            if(elBreadMarca) elBreadMarca.innerText = marcaLimpa;
-            if(elBreadModelo) elBreadModelo.innerText = nomeModelo;
-            
-            // D. Mostra a barra (tira o display: none)
-            if(elBreadContainer) elBreadContainer.style.display = "flex";
+          let textoSujo = elMarcaOriginal.innerText;
+          let marcaLimpa = textoSujo.split('•')[0].trim();
 
-            // E. O CLIQUE QUE FAZ FUNCIONAR
-            if(elBreadMarca) {
-                elBreadMarca.style.cursor = "pointer"; // Mãozinha
-                elBreadMarca.onclick = function() {
-                    // Salva a marca e manda pra home
-                    localStorage.setItem("marcaSelecionada", marcaLimpa);
-                    window.location.href = "index.html";
-                };
-            }
+          let nomeModelo = "Produto";
+          if (elTituloOriginal) nomeModelo = elTituloOriginal.innerText;
+
+          if (elBreadMarca) elBreadMarca.innerText = marcaLimpa;
+          if (elBreadModelo) elBreadModelo.innerText = nomeModelo;
+
+          if (elBreadContainer) elBreadContainer.style.display = "flex";
+
+          if (elBreadMarca) {
+            elBreadMarca.style.cursor = "pointer"; 
+            elBreadMarca.onclick = function () {
+              localStorage.setItem("marcaSelecionada", marcaLimpa);
+              window.location.href = "index.html";
+            };
+          }
         }
-    }
+      }
 
-    // 3. Cria um "Vigia" (Observer)
-    // Como seu site carrega os dados depois (loadProducts), o vigia espera a mudança acontecer
-    if (elMarcaOriginal) {
+      if (elMarcaOriginal) {
         const observador = new MutationObserver(ativarBreadcrumb);
         observador.observe(elMarcaOriginal, { childList: true, characterData: true, subtree: true });
-    }
-});
-</script>
-
+      }
+    });
+  </script>
 </body>
-
 </html>

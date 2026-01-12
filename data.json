@@ -1,5 +1,75 @@
 [
   {
+    "id_slug": "nike-air-force-branco", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/afb.jpeg",
+      "img/afb1.jpeg",
+      "img/afb2.jpeg",
+      "img/afb3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      }
+    ]
+  },
+  {
     "id_slug": "nike-dunk-low-panda",
     "Marca": "NIKE",
     "Produto": "Dunk Low Panda",
@@ -28,6 +98,306 @@
         "slug": "nike-dunk-low-green", 
         "hex": "#5e5836", 
         "nome": "Verde Musgo/Creme" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-samba-og", 
+    "Marca": "ADIDAS",
+    "Produto": "Samba OG",
+    "Preco_Venda": "R$ 179,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/sambaog.jpg",
+      "img/sambaog1.jpeg",
+      "img/sambaog2.jpeg",
+      "img/sambaog3.jpeg",
+      "img/sambaog4.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Samba OG é um clássico com visual retrô de futebol, cabedal em couro com sobreposições em camurça e o icônico solado gum em borracha caramelo. Ele tem silhueta baixa, bico em “T” na biqueira e as três listras laterais, criando um tênis limpo, versátil e muito estiloso para looks casuais e streetwear que nunca saem de moda.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-samba-og", 
+        "hex": "#675952", 
+        "nome": "Solado marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-bege", 
+        "hex": "#e0a788", 
+        "nome": "Solado bege" 
+      },   
+      { 
+        "slug": "adidas-samba-og-offwhite", 
+        "hex": "#eeeeee", 
+        "nome": "Off-White" 
+      }, 
+      { 
+        "slug": "adidas-samba-og-preto", 
+        "hex": "#1c1c1c", 
+        "nome": "Solado preto" 
+      },
+      { 
+        "slug": "adidas-samba-og-marrom", 
+        "hex": "#574236", 
+        "nome": "Marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-samba-og-bege", 
+    "Marca": "ADIDAS",
+    "Produto": "Samba OG",
+    "Preco_Venda": "R$ 179,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/sambege.jpeg",
+      "img/sambege1.jpeg",
+      "img/sambege2.jpeg",
+      "img/sambege3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Samba OG é um clássico com visual retrô de futebol, cabedal em couro com sobreposições em camurça e o icônico solado gum em borracha caramelo. Ele tem silhueta baixa, bico em “T” na biqueira e as três listras laterais, criando um tênis limpo, versátil e muito estiloso para looks casuais e streetwear que nunca saem de moda.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-samba-og-bege", 
+        "hex": "#e0a788", 
+        "nome": "Solado bege" 
+      },
+      { 
+        "slug": "adidas-samba-og", 
+        "hex": "#675952", 
+        "nome": "Solado marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-offwhite", 
+        "hex": "#eeeeee", 
+        "nome": "Off-White" 
+      },
+      { 
+        "slug": "adidas-samba-og-preto", 
+        "hex": "#1c1c1c", 
+        "nome": "Solado preto" 
+      },
+      { 
+        "slug": "adidas-samba-og-marrom", 
+        "hex": "#574236", 
+        "nome": "Marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-samba-og-offwhite", 
+    "Marca": "ADIDAS",
+    "Produto": "Samba OG",
+    "Preco_Venda": "R$ 179,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/sambranco.jpeg",
+      "img/sambranco1.jpeg",
+      "img/sambranco2.jpeg",
+      "img/sambranco3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Samba OG é um clássico com visual retrô de futebol, cabedal em couro com sobreposições em camurça e o icônico solado gum em borracha caramelo. Ele tem silhueta baixa, bico em “T” na biqueira e as três listras laterais, criando um tênis limpo, versátil e muito estiloso para looks casuais e streetwear que nunca saem de moda.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-samba-og-offwhite", 
+        "hex": "#eeeeee", 
+        "nome": "Off-White" 
+      },
+      { 
+        "slug": "adidas-samba-og-bege", 
+        "hex": "#e0a788", 
+        "nome": "Solado bege" 
+      },
+      { 
+        "slug": "adidas-samba-og", 
+        "hex": "#675952", 
+        "nome": "Solado marrom" 
+      },
+       { 
+        "slug": "adidas-samba-og-preto", 
+        "hex": "#1c1c1c", 
+        "nome": "Solado preto" 
+      },
+      { 
+        "slug": "adidas-samba-og-marrom", 
+        "hex": "#574236", 
+        "nome": "Marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-samba-og-preto", 
+    "Marca": "ADIDAS",
+    "Produto": "Samba OG",
+    "Preco_Venda": "R$ 179,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/sampreto.jpeg",
+      "img/sampreto1.jpeg",
+      "img/sampreto2.jpeg",
+      "img/sampreto3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Samba OG é um clássico com visual retrô de futebol, cabedal em couro com sobreposições em camurça e o icônico solado gum em borracha caramelo. Ele tem silhueta baixa, bico em “T” na biqueira e as três listras laterais, criando um tênis limpo, versátil e muito estiloso para looks casuais e streetwear que nunca saem de moda.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-samba-og-preto", 
+        "hex": "#1c1c1c", 
+        "nome": "Solado preto" 
+      },
+      { 
+        "slug": "adidas-samba-og-offwhite", 
+        "hex": "#eeeeee", 
+        "nome": "Off-White" 
+      },
+      { 
+        "slug": "adidas-samba-og-bege", 
+        "hex": "#e0a788", 
+        "nome": "Solado bege" 
+      },
+      { 
+        "slug": "adidas-samba-og", 
+        "hex": "#675952", 
+        "nome": "Solado marrom" 
+      },
+      {
+        "slug": "adidas-samba-og-marrom", 
+        "hex": "#574236", 
+        "nome": "Marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo" 
+      }
+    ]
+  },
+   {
+    "id_slug": "adidas-samba-og-marrom", 
+    "Marca": "ADIDAS",
+    "Produto": "Samba OG",
+    "Preco_Venda": "R$ 179,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/sammarrom.jpeg",
+      "img/sammarrom1.jpeg",
+      "img/sammarrom2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37], 
+    "Descricao": "O Adidas Samba OG é um clássico com visual retrô de futebol, cabedal em couro com sobreposições em camurça e o icônico solado gum em borracha caramelo. Ele tem silhueta baixa, bico em “T” na biqueira e as três listras laterais, criando um tênis limpo, versátil e muito estiloso para looks casuais e streetwear que nunca saem de moda.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-samba-og-marrom", 
+        "hex": "#574236", 
+        "nome": "Marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-preto", 
+        "hex": "#1c1c1c", 
+        "nome": "Solado preto" 
+      },
+      { 
+        "slug": "adidas-samba-og-offwhite", 
+        "hex": "#eeeeee", 
+        "nome": "Off-White" 
+      },
+      { 
+        "slug": "adidas-samba-og-bege", 
+        "hex": "#e0a788", 
+        "nome": "Solado bege" 
+      },
+      { 
+        "slug": "adidas-samba-og", 
+        "hex": "#675952", 
+        "nome": "Solado marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-samba-og-bordo", 
+    "Marca": "ADIDAS",
+    "Produto": "Samba OG",
+    "Preco_Venda": "R$ 179,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/sambordo.jpeg",
+      "img/sambordo1.jpeg",
+      "img/sambordo2.jpeg",
+      "img/sambordo3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Samba OG é um clássico com visual retrô de futebol, cabedal em couro com sobreposições em camurça e o icônico solado gum em borracha caramelo. Ele tem silhueta baixa, bico em “T” na biqueira e as três listras laterais, criando um tênis limpo, versátil e muito estiloso para looks casuais e streetwear que nunca saem de moda.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-samba-og-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo" 
+      },
+      { 
+        "slug": "adidas-samba-og-marrom", 
+        "hex": "#574236", 
+        "nome": "Marrom" 
+      },
+      { 
+        "slug": "adidas-samba-og-preto", 
+        "hex": "#1c1c1c", 
+        "nome": "Solado preto" 
+      },
+      { 
+        "slug": "adidas-samba-og-offwhite", 
+        "hex": "#eeeeee", 
+        "nome": "Off-White" 
+      },
+      { 
+        "slug": "adidas-samba-og-bege", 
+        "hex": "#e0a788", 
+        "nome": "Solado bege" 
+      },
+      { 
+        "slug": "adidas-samba-og", 
+        "hex": "#675952", 
+        "nome": "Solado marrom" 
       }
     ]
   },
@@ -102,17 +472,18 @@
   {
     "id_slug": "nike-air-force-brown", 
     "Marca": "NIKE",
-    "Produto": "Air Force 1 Brown",
+    "Produto": "Air Force 1",
     "Preco_Venda": "R$ 199,90",
     "Genero":"Feminino",
     "Imagens": [
-      "img/dunk-marrom.jpg",
-      "img/dunk-marrom-1.jpg",
-      "img/dunk-marrom-2.jpg"
+      "img/afmarrom.jpg",
+      "img/afmarrom1.jpg",
+      "img/afmarrom2.jpg",
+      "img/afmarrom3.jpg"
     ],
     "Categoria": "Tênis",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O Dunk Low Brown tem sobreposições em marrom, criando um visual neutro, sofisticado e cheio de estilo. Tem um design versátil que combina com looks casuais, streetwear e até mais arrumados, sendo perfeito para quem quer um sneaker atemporal e que combina com vários estilos.",
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -122,19 +493,604 @@
         "nome": "Marrom/Creme" 
       },
       { 
-        "slug": "", 
-        "hex": "#", 
-        "nome": "" 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
       },
       { 
-        "slug": "", 
-        "hex": "#", 
-        "nome": "" 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
       },
       { 
-        "slug": "", 
-        "hex": "#", 
-        "nome": ""
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-preto", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/afp.jpeg",
+      "img/afp1.jpeg",
+      "img/afp2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [37, 38, 39, 40, 41, 42], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+     { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-preto-nobuk", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Masculino",
+    "Imagens": [
+      "img/afnobuk.jpeg",
+      "img/afnobuk1.jpeg",
+      "img/afnobuk2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-vermelho", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/afver.jpeg",
+      "img/afver1.jpeg",
+      "img/afver2.jpeg",
+      "img/afver3.jpeg",
+      "img/afver4.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 38], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-grafite", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Masculino",
+    "Imagens": [
+      "img/afgra.jpeg",
+      "img/afgra1.jpeg",
+      "img/afgra2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+     { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-camo-verde", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Masculino",
+    "Imagens": [
+      "img/afg.jpeg",
+      "img/afg1.jpeg",
+      "img/afg2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-marinho", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Masculino",
+    "Imagens": [
+      "img/afmar.jpeg",
+      "img/afmar1.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [38, 39, 40, 41], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-celeste", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/afcel.jpeg",
+      "img/afcel1.jpeg",
+      "img/afcel2.jpeg",
+      "img/afcel3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [36, 37, 38], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-air-force-flamingo", 
+    "Marca": "NIKE",
+    "Produto": "Air Force 1",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/aflam.jpeg",
+      "img/aflam1.jpeg",
+      "img/aflam2.jpeg",
+      "img/aflam3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Air Force 1 é um clássico do streetwear, com cabedal em couro liso, silhueta robusta e visual clean que virou ícone nas ruas e na cultura hip hop. Ele combina sola de borracha grossa e detalhes simples, mas marcantes, criando um tênis versátil que entra fácil em qualquer look, do casual básico aos outfits mais estilosos.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-air-force-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "nike-air-force-celeste", 
+        "hex": "#789ae8", 
+        "nome": "Celeste" 
+      },
+      { 
+        "slug": "nike-air-force-marinho", 
+        "hex": "#070f59", 
+        "nome": "Marinho" 
+      },
+      { 
+        "slug": "nike-air-force-camo-verde", 
+        "hex": "#53655e", 
+        "nome": "Camo Verde" 
+      },
+      { 
+        "slug": "nike-air-force-grafite", 
+        "hex": "#555555", 
+        "nome": "Grafite" 
+      },
+      { 
+        "slug": "nike-air-force-vermelho", 
+        "hex": "#a80b0b", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "nike-air-force-preto-nobuk", 
+        "hex": "#333333", 
+        "nome": "Preto Nobuk" 
+      }, 
+      { 
+        "slug": "nike-air-force-preto", 
+        "hex": "#111111", 
+        "nome": "Preto" 
+      },    
+      { 
+        "slug": "nike-air-force-brown", 
+        "hex": "#4e2916", 
+        "nome": "Marrom/Creme" 
+      },
+      { 
+        "slug": "nike-air-force-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco" 
       }
     ]
   },
@@ -271,6 +1227,36 @@
         "slug": "new-balance-9060-creme", 
         "hex": "#eac395", 
         "nome": "Creme" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
       }
     ]
   },
@@ -306,6 +1292,36 @@
         "slug": "new-balance-9060-creme", 
         "hex": "#eac395", 
         "nome": "Creme"
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
       }
     ]
   },
@@ -324,9 +1340,429 @@
     "Categoria": "Tênis",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
     "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
-    "Destaque": true,
+    "Destaque": false,
 
     "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-branco", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/9060bcc.jpeg",
+      "img/9060bcc1.jpeg",
+      "img/9060bcc2.jpeg",
+      "img/9060bcc3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 41, 42], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+       { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-bege-taupe", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/9060bt.jpeg",
+      "img/9060bt1.jpeg",
+      "img/9060bt2.jpeg",
+      "img/9060bt3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 42], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-caramelo", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/9060cara.jpeg",
+      "img/9060cara1.jpeg",
+      "img/9060cara2.jpeg",
+      "img/9060cara3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-off-gelo", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/9060gelo.jpeg",
+      "img/9060gelo1.jpeg",
+      "img/9060gelo2.jpeg",
+      "img/9060gelo3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 38, 39], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-branco-preto", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/9060bp.jpeg",
+      "img/9060bp1.jpeg",
+      "img/9060bp2.jpeg",
+      "img/9060bp3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 38, 39, 40, 43], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-preto-branco", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/9060pb.jpeg",
+      "img/9060pb1.jpeg",
+      "img/9060pb2.jpeg",
+      "img/9060pb3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [36, 39, 40, 41, 43], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
       { 
         "slug": "new-balance-9060-creme", 
         "hex": "#eac395", 
@@ -347,7 +1783,7 @@
 {
     "id_slug": "papete-miu-miu-branca", 
     "Marca": "MIU MIU",
-    "Produto": "PAPETE MIU MIU",
+    "Produto": "Papete Miu Miu",
     "Preco_Venda": "R$ 199,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -355,7 +1791,7 @@
     ],
     "Categoria": "Papete",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "A papete Miu Miu tem aquele visual de luxo despojado, com tiras largas e acabamento acolchoado que trazem uma estética fashion e confortável ao mesmo tempo. Funcionando tanto com looks casuais quanto produções mais arrumadinhas de verão. É a típica peça desejo: simples no desenho, mas com cara de grife, perfeita para elevar qualquer look básico com um toque de sofisticação.",
+    "Descricao": "A Papete Miu Miu tem aquele visual de luxo despojado, com tiras largas e acabamento acolchoado que trazem uma estética fashion e confortável ao mesmo tempo. Funcionando tanto com looks casuais quanto produções mais arrumadinhas de verão. É a típica peça desejo: simples no desenho, mas com cara de grife, perfeita para elevar qualquer look básico com um toque de sofisticação.",
     "Destaque": true,
 
     "Cores_Relacionadas": [
@@ -379,7 +1815,7 @@
   {
     "id_slug": "papete-miu-miu-bege", 
     "Marca": "MIU MIU",
-    "Produto": "PAPETE MIU MIU",
+    "Produto": "Papete Miu Miu",
     "Preco_Venda": "R$ 199,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -387,7 +1823,7 @@
     ],
     "Categoria": "Papete",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "A papete Miu Miu tem aquele visual de luxo despojado, com tiras largas e acabamento acolchoado que trazem uma estética fashion e confortável ao mesmo tempo. Funcionando tanto com looks casuais quanto produções mais arrumadinhas de verão. É a típica peça desejo: simples no desenho, mas com cara de grife, perfeita para elevar qualquer look básico com um toque de sofisticação.",
+    "Descricao": "A Papete Miu Miu tem aquele visual de luxo despojado, com tiras largas e acabamento acolchoado que trazem uma estética fashion e confortável ao mesmo tempo. Funcionando tanto com looks casuais quanto produções mais arrumadinhas de verão. É a típica peça desejo: simples no desenho, mas com cara de grife, perfeita para elevar qualquer look básico com um toque de sofisticação.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -411,7 +1847,7 @@
   {
     "id_slug": "papete-miu-miu-marrom", 
     "Marca": "MIU MIU",
-    "Produto": "PAPETE MIU MIU",
+    "Produto": "Papete Miu Miu",
     "Preco_Venda": "R$ 199,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -419,7 +1855,7 @@
     ],
     "Categoria": "Papete",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "A papete Miu Miu tem aquele visual de luxo despojado, com tiras largas e acabamento acolchoado que trazem uma estética fashion e confortável ao mesmo tempo. Funcionando tanto com looks casuais quanto produções mais arrumadinhas de verão. É a típica peça desejo: simples no desenho, mas com cara de grife, perfeita para elevar qualquer look básico com um toque de sofisticação.",
+    "Descricao": "A Papete Miu Miu tem aquele visual de luxo despojado, com tiras largas e acabamento acolchoado que trazem uma estética fashion e confortável ao mesmo tempo. Funcionando tanto com looks casuais quanto produções mais arrumadinhas de verão. É a típica peça desejo: simples no desenho, mas com cara de grife, perfeita para elevar qualquer look básico com um toque de sofisticação.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -443,7 +1879,7 @@
   {
     "id_slug": "chinelo-miu-miu-marrom", 
     "Marca": "MIU MIU",
-    "Produto": "CHINELO MIU MIU",
+    "Produto": "Chinelo Miu Miu",
     "Preco_Venda": "R$ 99,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -451,7 +1887,7 @@
     ],
     "Categoria": "Chinelo",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
+    "Descricao": "O Chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
     "Destaque": true,
 
     "Cores_Relacionadas": [
@@ -480,7 +1916,7 @@
   {
     "id_slug": "chinelo-miu-miu-branco", 
     "Marca": "MIU MIU",
-    "Produto": "CHINELO MIU MIU",
+    "Produto": "Chinelo Miu Miu",
     "Preco_Venda": "R$ 99,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -488,7 +1924,7 @@
     ],
     "Categoria": "Chinelo",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
+    "Descricao": "O Chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -517,7 +1953,7 @@
   {
     "id_slug": "chinelo-miu-miu-preto", 
     "Marca": "MIU MIU",
-    "Produto": "CHINELO MIU MIU",
+    "Produto": "Chinelo Miu Miu",
     "Preco_Venda": "R$ 99,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -525,7 +1961,7 @@
     ],
     "Categoria": "Chinelo",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
+    "Descricao": "O Chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -554,7 +1990,7 @@
    {
     "id_slug": "chinelo-miu-miu-areia", 
     "Marca": "MIU MIU",
-    "Produto": "CHINELO MIU MIU",
+    "Produto": "Chinelo Miu Miu",
     "Preco_Venda": "R$ 99,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -562,7 +1998,7 @@
     ],
     "Categoria": "Chinelo",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
+    "Descricao": "O Chinelo Miu Miu tem tiras finas em formato de “Y” e sola de borracha, mas com acabamento mais sofisticado e o logo da marca em destaque, dando cara de grife a um modelo básico do dia a dia. Ele passa uma estética minimalista e chique, perfeito para praia, piscina ou looks casuais de verão, deixando qualquer produção simples com um toque mais estiloso e moderno.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -591,7 +2027,7 @@
   {
     "id_slug": "slide-miu-miu-areia", 
     "Marca": "MIU MIU",
-    "Produto": "SLIDE MIU MIU",
+    "Produto": "Slide Miu Miu",
     "Preco_Venda": "R$ 129,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -599,7 +2035,7 @@
     ],
     "Categoria": "Slide",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
+    "Descricao": "O Slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
     "Destaque": true,
 
     "Cores_Relacionadas": [
@@ -628,7 +2064,7 @@
   {
     "id_slug": "slide-miu-miu-branco", 
     "Marca": "MIU MIU",
-    "Produto": "SLIDE MIU MIU",
+    "Produto": "Slide Miu Miu",
     "Preco_Venda": "R$ 129,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -636,7 +2072,7 @@
     ],
     "Categoria": "Slide",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
+    "Descricao": "O Slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -665,7 +2101,7 @@
   {
     "id_slug": "slide-miu-miu-preto", 
     "Marca": "MIU MIU",
-    "Produto": "SLIDE MIU MIU",
+    "Produto": "Slide Miu Miu",
     "Preco_Venda": "R$ 129,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -673,7 +2109,7 @@
     ],
     "Categoria": "Slide",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
+    "Descricao": "O Slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -702,7 +2138,7 @@
   {
     "id_slug": "slide-miu-miu-salmão", 
     "Marca": "MIU MIU",
-    "Produto": "SLIDE MIU MIU",
+    "Produto": "Slide Miu Miu",
     "Preco_Venda": "R$ 129,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -710,7 +2146,7 @@
     ],
     "Categoria": "Slide",
     "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
+    "Descricao": "O Slide Miu Miu tem aquele visual luxo minimalista, com tira única larga e o logo em destaque, que deixa o chinelo simples com cara de peça de grife. Ele funciona tanto em versões de lona, couro ou pelúcia, sempre com acabamento bem clean e sofisticado, perfeito para usar com jeans, alfaiataria leve ou até looks de praia mais arrumadinhos.",
     "Destaque": false,
 
     "Cores_Relacionadas": [
@@ -733,6 +2169,32 @@
         "slug": "slide-miu-miu-preto", 
         "hex": "#000000", 
         "nome": "Preto" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-duramo-sl2-rosa", 
+    "Marca": "ADIDAS",
+    "Produto": "Duramo SL2",
+    "Preco_Venda": "R$ 189,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/durasl2.jpeg",
+      "img/durasl21.jpeg",
+      "img/durasl2.jpeg",
+      "img/durasl23.jpeg",
+      "img/durasl24.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Adidas Duramo SL 2 tem visual de running moderno e clean, com cabedal em mesh e linhas mais retas que deixam o tênis leve e esportivo, mas bem versátil para o dia a dia. A entressola volumosa e o solado emborrachado dão aquela cara de tênis de corrida atual, funcionando tanto com roupas de treino quanto com looks casuais e athleisure fora da academia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-duramo-sl2-rosa", 
+        "hex": "#e2b6d8", 
+        "nome": "Rosa" 
       }
     ]
   },
@@ -910,32 +2372,6 @@
     ]
   },
   {
-    "id_slug": "adidas-superstar-branco", 
-    "Marca": "ADIDAS",
-    "Produto": "Superstar",
-    "Preco_Venda": "R$ 149,90",
-    "Genero":"Masculino",
-    "Imagens": [
-      "img/superstar.jpeg",
-      "img/superstar1.jpeg",
-      "img/superstar2.jpeg",
-      "img/superstar4.jpeg",
-      "img/superstar5.jpeg"
-    ],
-    "Categoria": "Tênis",
-    "Tamanhos": [39, 40, 41], 
-    "Descricao": "O Adidas Superstar é um clássico urbano com cabedal em couro liso, biqueira de borracha em formato de concha (shell toe) e as três listras laterais que viraram ícone de estilo streetwear. É um tênis baixo, de visual clean e atemporal, que combina fácil com jeans, alfaiataria casual e até looks mais fashion, sempre passando uma imagem de autenticidade e atitude.",
-    "Destaque": false,
-
-    "Cores_Relacionadas": [
-      { 
-        "slug": "adidas-superstar", 
-        "hex": "#ffffff", 
-        "nome": "Branco" 
-      }    
-    ]
-  },
-  {
     "id_slug": "converse-all-star-plataforma", 
     "Marca": "CONVERSE",
     "Produto": "All-Star Plataforma",
@@ -988,7 +2424,7 @@
   {
     "id_slug": "on-cloudtilt-black-asphalt", 
     "Marca": "ON RUNNING",
-    "Produto": "Cloudtilt Black Asphalt",
+    "Produto": "Cloudtilt",
     "Preco_Venda": "R$ 329,90",
     "Genero":"Feminino",
     "Imagens": [
@@ -1243,6 +2679,112 @@
         "hex": "#eeeeee", 
         "nome": "Branco" 
       }    
+    ]
+  },
+  {
+    "id_slug": "nike-revolution-off-branco", 
+    "Marca": "NIKE",
+    "Produto": "Revolution",
+    "Preco_Venda": "R$ 149,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/rev.jpeg",
+      "img/rev1.jpeg",
+      "img/rev2.jpeg",
+      "img/rev3.jpeg",
+      "img/rev4.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Revolution é um tênis de corrida com visual simples e moderno, cabedal em mesh e linhas limpas que deixam o modelo leve e esportivo. Ele tem aquela cara de running básico e versátil, perfeito para quem quer um tênis discreto, que combina fácil com roupas de treino e também com looks casuais do dia a dia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-revolution-off-branco", 
+        "hex": "#f7ead7", 
+        "nome": "Off-White" 
+      },
+      { 
+        "slug": "nike-revolution-off-preto", 
+        "hex": "#111111", 
+        "nome": "Off-Black" 
+      },
+      { 
+        "slug": "nike-revolution-off-azul", 
+        "hex": "#3390e6", 
+        "nome": "Off-Blue" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-revolution-off-preto", 
+    "Marca": "NIKE",
+    "Produto": "Revolution",
+    "Preco_Venda": "R$ 149,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/revb.jpeg",
+      "img/revb2.jpeg",
+      "img/revb3.jpeg",
+      "img/revb4.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Revolution é um tênis de corrida com visual simples e moderno, cabedal em mesh e linhas limpas que deixam o modelo leve e esportivo. Ele tem aquela cara de running básico e versátil, perfeito para quem quer um tênis discreto, que combina fácil com roupas de treino e também com looks casuais do dia a dia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-revolution-off-preto", 
+        "hex": "#111111", 
+        "nome": "Off-Black" 
+      },
+      { 
+        "slug": "nike-revolution-off-branco", 
+        "hex": "#f7ead7", 
+        "nome": "Off-White" 
+      },
+      { 
+        "slug": "nike-revolution-off-azul", 
+        "hex": "#3390e6", 
+        "nome": "Off-Blue" 
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-revolution-off-azul", 
+    "Marca": "NIKE",
+    "Produto": "Revolution",
+    "Preco_Venda": "R$ 149,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/reva.jpeg",
+      "img/reva1.jpeg",
+      "img/reva2.jpeg",
+      "img/reva3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Revolution é um tênis de corrida com visual simples e moderno, cabedal em mesh e linhas limpas que deixam o modelo leve e esportivo. Ele tem aquela cara de running básico e versátil, perfeito para quem quer um tênis discreto, que combina fácil com roupas de treino e também com looks casuais do dia a dia.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-revolution-off-azul", 
+        "hex": "#3390e6", 
+        "nome": "Off-Blue" 
+      },
+      { 
+        "slug": "nike-revolution-off-preto", 
+        "hex": "#111111", 
+        "nome": "Off-Black" 
+      },
+      { 
+        "slug": "nike-revolution-off-branco", 
+        "hex": "#f7ead7", 
+        "nome": "Off-White" 
+      }
     ]
   }
 ]
