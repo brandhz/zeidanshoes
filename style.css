@@ -472,6 +472,7 @@ body {
         padding: 8px 0;
       }
     }
+  }
 
     /* Modal de Zoom */
     .image-modal {
@@ -490,6 +491,10 @@ body {
     }
 
     .image-modal-content img {
+      display: block;
+      width: auto;
+      height: auto;
+      object-fit: contain;
       max-width: 90vw;
       max-height: 80vh;
       border-radius: 8px;

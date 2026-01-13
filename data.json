@@ -72,15 +72,16 @@
   {
     "id_slug": "nike-dunk-low-panda",
     "Marca": "NIKE",
-    "Produto": "Dunk Low Panda",
+    "Produto": "Dunk Low",
     "Preco_Venda": "R$ 199,90",
     "Genero": "Unissex",
-    "Imagens": ["img/dunk-panda.jpg",
-  "img/dunk-panda-1.jpg"
-],
+    "Imagens": [
+      "img/dunk-panda.jpg",
+      "img/dunk-panda-1.jpg"
+    ],
     "Categoria": "Tênis",
     "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
-    "Descricao": "O Nike Dunk Low Panda é um clássico em preto e branco, com cabedal em couro e design clean que combina com tudo. É um tênis versátil, perfeito para looks casuais, streetwear e até mais arrumados, sem perder o estilo urbano.",
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
     "Destaque": true,
     
     "Cores_Relacionadas": [
@@ -98,6 +99,447 @@
         "slug": "nike-dunk-low-green", 
         "hex": "#5e5836", 
         "nome": "Verde Musgo/Creme" 
+      },
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-dunk-low-azul-claro", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/dunk-azul-claro.jpg",
+      "img/dunk-azul-claro-1.jpg",
+      "img/dunk-azul-claro-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      }
+    ]
+  },  
+  {
+    "id_slug": "nike-dunk-low-green", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/dunk-verde.jpg",
+      "img/dunk-verde-1.jpg",
+      "img/dunk-verde-2.jpg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-dunk-low-bordo", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/dunkb.jpeg",
+      "img/dunkb1.jpeg",
+      "img/dunkb2.jpeg",
+      "img/dunkb3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      }
+    ]
+  }, 
+  {
+    "id_slug": "nike-dunk-low-cinza", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/dunkc.jpeg",
+      "img/dunkc1.jpeg",
+      "img/dunkc2.jpeg",
+      "img/dunkc3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      }
+    ]
+  },
+  {
+    "id_slug": "nike-dunk-low-all-black", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/dunkab.jpeg",
+      "img/dunkab1.jpeg",
+      "img/dunkab2.jpeg",
+      "img/dunkab3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40], 
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      }
+    ]
+  }, 
+  {
+    "id_slug": "nike-dunk-low-branco", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/dunkw.jpeg",
+      "img/dunkw1.jpeg",
+      "img/dunkw2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42], 
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      }
+    ]
+  }, 
+  {
+    "id_slug": "nike-dunk-low-caramelo", 
+    "Marca": "NIKE",
+    "Produto": "Dunk Low",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Masculino",
+    "Imagens": [
+      "img/dunkca.jpeg",
+      "img/dunkca1.jpeg",
+      "img/dunkca2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42], 
+    "Descricao": "O Nike Dunk Low é um tênis de cano baixo com visual de basquete retrô dos anos 80, marcado por painéis em couro, Swoosh lateral e construção bem estruturada. Ele tem silhueta clássica e versátil, que funciona do jeans básico à alfaiataria casual, entregando aquele estilo urbano com personalidade em qualquer colorway.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "nike-dunk-low-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo"
+      },
+      { 
+        "slug": "nike-dunk-low-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco"
+      },
+      { 
+        "slug": "nike-dunk-low-all-black", 
+        "hex": "#111111", 
+        "nome": "All Black"
+      },
+      { 
+        "slug": "nike-dunk-low-cinza", 
+        "hex": "#cdcdcd", 
+        "nome": "Cinza"
+      },
+      { 
+        "slug": "nike-dunk-low-bordo", 
+        "hex": "#4b1319", 
+        "nome": "Bordo"
+      },
+      { 
+        "slug": "nike-dunk-low-green", 
+        "hex": "#5e5836", 
+        "nome": "Verde Musgo/Creme"
+      },
+      { 
+        "slug": "nike-dunk-low-panda", 
+        "hex": "#000000", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "nike-dunk-low-azul-claro", 
+        "hex": "#0687e3", 
+        "nome": "Azul Claro/Branco" 
       }
     ]
   },
@@ -401,74 +843,6 @@
       }
     ]
   },
-  {
-    "id_slug": "nike-dunk-low-azul-claro", 
-    "Marca": "NIKE",
-    "Produto": "Dunk Low Light Blue",
-    "Preco_Venda": "R$ 199,90",
-    "Genero":"Unissex",
-    "Imagens": [
-      "img/dunk-azul-claro.jpg",
-      "img/dunk-azul-claro-1.jpg",
-      "img/dunk-azul-claro-2.jpg"
-    ],
-    "Categoria": "Tênis",
-    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 
-    "Descricao": "O Nike Dunk Low Light Blue é um clássico moderno, com cabedal em couro em tons claros (como branco ou cinza claro) e detalhes em azul claro, criando um visual limpo, fresco e cheio de estilo. Seu design combina perfeitamente com looks casuais, streetwear e até mais arrumados, sendo um sneaker versátil que funciona bem em várias ocasiões do dia a dia.",
-    "Destaque": false,
-
-    "Cores_Relacionadas": [
-      { 
-        "slug": "nike-dunk-low-azul-claro", 
-        "hex": "#0687e3", 
-        "nome": "Azul Claro/Branco" 
-      },
-      { 
-        "slug": "nike-dunk-low-panda", 
-        "hex": "#000000", 
-        "nome": "Preto/Branco" 
-      },
-      { 
-        "slug": "nike-dunk-low-green", 
-        "hex": "#5e5836", 
-        "nome": "Verde Musgo/Creme"
-      }
-    ]
-  },  
-  {
-    "id_slug": "nike-dunk-low-green", 
-    "Marca": "NIKE",
-    "Produto": "Dunk Low Military Green",
-    "Preco_Venda": "R$ 199,90",
-    "Genero":"Feminino",
-    "Imagens": [
-      "img/dunk-verde.jpg",
-      "img/dunk-verde-1.jpg",
-      "img/dunk-verde-2.jpg"
-    ],
-    "Categoria": "Tênis",
-    "Tamanhos": [34, 35, 36, 37, 38, 39], 
-    "Descricao": "O Nike Dunk Low Military Green é um clássico com cabedal em couro em tons terrosos, dominado por um verde musgo elegante e combinações com bege, creme ou marrom claro, trazendo um visual sofisticado e natural. É perfeito para looks casuais, streetwear e até mais arrumados, com um ar moderno e atemporal que combina com várias ocasiões do dia a dia.",
-    "Destaque": false,
-
-    "Cores_Relacionadas": [
-      { 
-        "slug": "nike-dunk-low-green", 
-        "hex": "#5e5836", 
-        "nome": "Verde Musgo/Creme"
-      },
-      { 
-        "slug": "nike-dunk-low-panda", 
-        "hex": "#000000", 
-        "nome": "Preto/Branco" 
-      },
-      { 
-        "slug": "nike-dunk-low-azul-claro", 
-        "hex": "#0687e3", 
-        "nome": "Azul Claro/Branco" 
-      }
-    ]
-  }, 
   {
     "id_slug": "nike-air-force-brown", 
     "Marca": "NIKE",
@@ -1257,6 +1631,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1322,6 +1706,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1387,6 +1781,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1452,6 +1856,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1517,6 +1931,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1582,6 +2006,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1647,6 +2081,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1712,6 +2156,16 @@
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
         "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
       }
     ]
   },
@@ -1733,6 +2187,166 @@
     "Destaque": false,
 
     "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-azul-acinzentado", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Masculino",
+    "Imagens": [
+      "img/9060ac.jpeg",
+      "img/9060ac1.jpeg",
+      "img/9060ac2.jpeg",
+      "img/9060ac3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [39, 40, 41], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
+      { 
+        "slug": "new-balance-9060-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "new-balance-9060-branco-preto", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
+      },
+      { 
+        "slug": "new-balance-9060-off-gelo", 
+        "hex": "#dbeef3", 
+        "nome": "Off Gelo" 
+      },
+      { 
+        "slug": "new-balance-9060-caramelo", 
+        "hex": "#cbbb99", 
+        "nome": "Caramelo" 
+      },
+      { 
+        "slug": "new-balance-9060-bege-taupe", 
+        "hex": "#87877f", 
+        "nome": "Bege Taupe" 
+      },
+      { 
+        "slug": "new-balance-9060-branco", 
+        "hex": "#eeeeee", 
+        "nome": "Branco/Cinza" 
+      },
+      { 
+        "slug": "new-balance-9060-creme", 
+        "hex": "#eac395", 
+        "nome": "Creme" 
+      },
+      { 
+       "slug": "new-balance-9060-verde-e-creme", 
+        "hex": "#003f32", 
+        "nome": "Creme/Verde" 
+      },
+      { 
+        "slug": "new-balance-9060-cinza-claro", 
+        "hex":  "#dbdbdb", 
+        "nome": "Cinza Claro" 
+      },
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
+      }
+    ]
+  },
+  {
+    "id_slug": "new-balance-9060-all-black", 
+    "Marca": "NEW BALANCE",
+    "Produto": "NB 9060",
+    "Preco_Venda": "R$ 299,90",
+    "Genero":"Masculino",
+    "Imagens": [
+      "img/9060ab.jpeg",
+      "img/9060ab1.jpeg",
+      "img/9060ab2.jpeg",
+      "img/9060ab3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [39], 
+    "Descricao": "O New Balance 9060 é um tênis com vibe daddy shoe, silhueta robusta e visual futurista que mistura referências retrô dos anos 2000 com um design moderno e marcante. Ele se destaca pelo cabedal em camadas, linhas onduladas e solado oversized, trazendo muita personalidade para looks urbanos e casuais, perfeito para quem gosta de sneaker estiloso que chama atenção no pé.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "new-balance-9060-all-black", 
+        "hex": "#1f1f1f", 
+        "nome": "All Black" 
+      },
+      { 
+        "slug": "new-balance-9060-azul-acinzentado", 
+        "hex": "#9aa4a6", 
+        "nome": "Azul Acinzentado" 
+      },
       { 
         "slug": "new-balance-9060-preto-branco", 
         "hex": "#111111", 
@@ -2621,13 +3235,39 @@
     "Categoria": "Tênis",
     "Tamanhos": [34, 36, 37, 38, 39, 40, 41, 42, 43], 
     "Descricao": "O Vans Sk8 Low é a versão de cano baixo do clássico Sk8-Hi, mantendo o mesmo visual de skate com a sidestripe icônica da marca. Ele combina cabedal em lona e camurça com aquele estilo urbano atemporal, perfeito para looks casuais e streetwear que pedem um tênis versátil e estiloso.",
-    "Destaque": true,
+    "Destaque": false,
 
     "Cores_Relacionadas": [
       { 
         "slug": "vans-sk8-low-marrom", 
         "hex": "#6e4a3e", 
         "nome": "Marrom" 
+      }
+    ]
+  },
+  {
+    "id_slug": "vans-old-skool", 
+    "Marca": "VANS",
+    "Produto": "Old Skool",
+    "Preco_Venda": "R$ 159,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/vansos.jpeg",
+      "img/vansos1.jpeg",
+      "img/vansos2.jpeg",
+      "img/vansos3.jpeg",
+      "img/vansos4.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 36, 37, 38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Vans Old Skool é um clássico de cano baixo, com cabedal em lona e camurça e a icônica faixa lateral (sidestripe) que virou marca registrada da Vans. Tem aquele visual skate/street bem atemporal, combinando fácil com jeans, calça reta, shorts e até peças mais arrumadas, sempre com uma pegada urbana e descolada.",
+    "Destaque": true,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "vans-old-skool", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
       }
     ]
   },
@@ -2784,6 +3424,615 @@
         "slug": "nike-revolution-off-branco", 
         "hex": "#f7ead7", 
         "nome": "Off-White" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-forum-2-off-flamingo", 
+    "Marca": "ADIDAS",
+    "Produto": "Forum II",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/forum2r.jpeg",
+      "img/forum2r1.jpeg",
+      "img/forum2r2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Forum 2 segue a linha do clássico Forum, com visual retrô de basquete dos anos 80, cabedal em couro e solado robusto que dão bastante presença no pé. A silhueta tem aquele shape mais pesado, com tira e detalhes inspirados nas quadras, perfeito para looks streetwear e casuais com pegada vintage e estilosa.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-forum-2-off-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Off/Flamingo" 
+      },
+      { 
+        "slug": "adidas-forum-2-off-white", 
+        "hex": "#cea189", 
+        "nome": "Off White" 
+      },
+      { 
+        "slug": "adidas-forum-2-off-azul", 
+        "hex": "#95afc8", 
+        "nome": "Off/Azul Bebê" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-forum-2-off-white", 
+    "Marca": "ADIDAS",
+    "Produto": "Forum II",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/forum2o.jpeg",
+      "img/forum2o1.jpeg",
+      "img/forum2o2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Forum 2 segue a linha do clássico Forum, com visual retrô de basquete dos anos 80, cabedal em couro e solado robusto que dão bastante presença no pé. A silhueta tem aquele shape mais pesado, com tira e detalhes inspirados nas quadras, perfeito para looks streetwear e casuais com pegada vintage e estilosa.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-forum-2-off-white", 
+        "hex": "#cea189", 
+        "nome": "Off White" 
+      },
+      { 
+        "slug": "adidas-forum-2-off-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Off/Flamingo" 
+      },
+      { 
+        "slug": "adidas-forum-2-off-azul", 
+        "hex": "#95afc8", 
+        "nome": "Off/Azul Bebê" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-forum-2-off-azul", 
+    "Marca": "ADIDAS",
+    "Produto": "Forum II",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/forum2a.jpeg",
+      "img/forum2a1.jpeg",
+      "img/forum2a2.jpeg",
+      "img/forum2a3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Forum 2 segue a linha do clássico Forum, com visual retrô de basquete dos anos 80, cabedal em couro e solado robusto que dão bastante presença no pé. A silhueta tem aquele shape mais pesado, com tira e detalhes inspirados nas quadras, perfeito para looks streetwear e casuais com pegada vintage e estilosa.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-forum-2-off-white", 
+        "hex": "#95afc8", 
+        "nome": "Off/Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-forum-2-off-white", 
+        "hex": "#cea189", 
+        "nome": "Off White" 
+      },
+      { 
+        "slug": "adidas-forum-2-off-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Off/Flamingo" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-campus-off-gliter", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/campus.jpeg",
+      "img/campus1.jpeg",
+      "img/campus2.jpeg",
+      "img/campus3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+       { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]  
+  }, 
+  {
+    "id_slug": "adidas-campus-cinza-gliter", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/campuscg.jpeg",
+      "img/campuscg1.jpeg",
+      "img/campuscg2.jpeg",
+      "img/campuscg3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+       { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-campus-azul-bebe", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/campusab.jpeg",
+      "img/campusab1.jpeg",
+      "img/campusab2.jpeg",
+      "img/campusab3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+       { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-campus-flamingo", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Feminino",
+    "Imagens": [
+      "img/campusf.jpeg",
+      "img/campusf1.jpeg",
+      "img/campusf2.jpeg",
+      "img/campusf3.jpeg",
+      "img/campusf4.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 39], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+       { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-campus-ferrugem", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/campusc.jpeg",
+      "img/campusc1.jpeg",
+      "img/campusc2.jpeg",
+      "img/campusc3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+       { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-campus-verde", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/campusv.jpeg",
+      "img/campusv1.jpeg",
+      "img/campusv2.jpeg",
+      "img/campusv3.jpeg",
+      "img/campusv4.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      },
+       { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-campus-vermelho", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/campusve.jpeg",
+      "img/campusve1.jpeg",
+      "img/campusve2.jpeg",
+      "img/campusve3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [36, 37, 38, 40, 41, 42, 42], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-campus-preto-branco", 
+    "Marca": "ADIDAS",
+    "Produto": "Campus",
+    "Preco_Venda": "R$ 199,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/campusp.jpeg",
+      "img/campusp1.jpeg",
+      "img/campusp2.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [35, 36, 37, 40, 41, 42, 42, 43], 
+    "Descricao": "O Adidas Campus é um clássico com visual retrô, normalmente em camurça, silhueta baixa e as três listras laterais, trazendo aquela cara de tênis vintage das quadras e da cena hip-hop dos anos 80. Hoje ele aparece muito na versão Campus 00s, com sola mais grossa e proporções levemente exageradas, perfeito para looks urbanos e streetwear com pegada nostálgica, mas bem atual.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-campus-preto-branco", 
+        "hex": "#111111", 
+        "nome": "Preto/Branco" 
+      },
+      { 
+        "slug": "adidas-campus-vermelho", 
+        "hex": "#aa262f", 
+        "nome": "Vermelho" 
+      },
+      { 
+        "slug": "adidas-campus-verde", 
+        "hex": "#375e5b", 
+        "nome": "Verde" 
+      },
+      { 
+        "slug": "adidas-campus-ferrugem", 
+        "hex": "#8a6d5d", 
+        "nome": "Ferrugem" 
+      },
+      { 
+        "slug": "adidas-campus-flamingo", 
+        "hex": "#cea189", 
+        "nome": "Flamingo" 
+      },
+      { 
+        "slug": "adidas-campus-azul-bebe", 
+        "hex": "#95afc8", 
+        "nome": "Azul Bebê" 
+      },
+      { 
+        "slug": "adidas-campus-cinza-gliter", 
+        "hex": "#dbdcdc", 
+        "nome": "Cinza/Gliter" 
+      },
+      { 
+        "slug": "adidas-campus-off-gliter", 
+        "hex": "#cea189", 
+        "nome": "Off/Gliter" 
+      }
+    ]
+  },
+  {
+    "id_slug": "adidas-superstar-branco", 
+    "Marca": "ADIDAS",
+    "Produto": "Superstar",
+    "Preco_Venda": "R$ 149,90",
+    "Genero":"Unissex",
+    "Imagens": [
+      "img/superstar.jpeg",
+      "img/superstar1.jpeg",
+      "img/superstar2.jpeg",
+      "img/superstar3.jpeg"
+    ],
+    "Categoria": "Tênis",
+    "Tamanhos": [34, 35, 36, 37, 38, 39, 40, 41, 42, 42, 43], 
+    "Descricao": "O Adidas Superstar é um clássico urbano com cabedal em couro liso, biqueira de borracha em formato de concha (shell toe) e as três listras laterais, que dão ao modelo um visual marcante e atemporal. É aquele tênis versátil que combina com praticamente tudo, do jeans básico à alfaiataria casual, trazendo sempre uma pegada de estilo, atitude e referência à cultura de rua.",
+    "Destaque": false,
+
+    "Cores_Relacionadas": [
+      { 
+        "slug": "adidas-superstar-branco", 
+        "hex": "#ffffff", 
+        "nome": "Branco/Preto" 
       }
     ]
   }
